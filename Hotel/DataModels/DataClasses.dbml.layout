@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.375, 8.5" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e7c64921-9e71-4fc7-8995-6f59e7f3f1d6" absoluteBounds="6.125, 2, 2, 2.3356245930989585">
+      <DataClassMoniker Name="/DataClassesDataContext/room" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73d0ddd6-e8e3-47fe-a2a7-d2462557bdc4" absoluteBounds="6.14, 2.46, 1.9700000000000002, 1.7756245930989585" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f48d48d-8335-4764-92fd-147cb83872d5" absoluteBounds="7.875, 0.5, 2, 1.1895064290364583">
+      <DataClassMoniker Name="/DataClassesDataContext/roomFloors" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eace803c-2dad-404b-a358-0193f92fc809" absoluteBounds="7.89, 0.96, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 1.09475321451823); (6.9999995 : 1.09475321451823); (6.9999995 : 2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/roomFloors/roomFloors_room" />
+      <nodes>
+        <classShapeMoniker Id="0f48d48d-8335-4764-92fd-147cb83872d5" />
+        <classShapeMoniker Id="e7c64921-9e71-4fc7-8995-6f59e7f3f1d6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="657f20e9-2688-4ab1-84bb-1fa62b0bd5ea" absoluteBounds="6.25, 4.875, 2, 1.1895064290364583">
+      <DataClassMoniker Name="/DataClassesDataContext/roomStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e398f9d-0daa-4cb6-af57-cb188aec41a3" absoluteBounds="6.265, 5.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.1875 : 4.875); (7.1875 : 4.33562459309896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/roomStatus/roomStatus_room" />
+      <nodes>
+        <classShapeMoniker Id="657f20e9-2688-4ab1-84bb-1fa62b0bd5ea" />
+        <classShapeMoniker Id="e7c64921-9e71-4fc7-8995-6f59e7f3f1d6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f46b7084-9051-45ed-86cc-9c8498ad2e15" absoluteBounds="8.5, 3.375, 2, 1.9535852050781251">
+      <DataClassMoniker Name="/DataClassesDataContext/roomtype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aad6ab44-d8d0-458d-8836-151109effea6" absoluteBounds="8.515, 3.835, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 3.85531229654948); (8.125 : 3.85531229654948)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/roomtype/roomtype_room" />
+      <nodes>
+        <classShapeMoniker Id="f46b7084-9051-45ed-86cc-9c8498ad2e15" />
+        <classShapeMoniker Id="e7c64921-9e71-4fc7-8995-6f59e7f3f1d6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cd627a36-94c4-498d-a85d-3c0c61fb34f4" absoluteBounds="11.125, 2.375, 2, 2.9086836751302081">
+      <DataClassMoniker Name="/DataClassesDataContext/roomManage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64f65955-eca5-40fa-b4b8-354bc28795da" absoluteBounds="11.14, 2.835, 1.9700000000000002, 2.348683675130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a67e6a68-2c74-4bbf-a38d-7222bb96b94b" absoluteBounds="10.5, 0.75, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/DataClassesDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a31559eb-e0de-4795-9408-5fb96172247a" absoluteBounds="10.515, 1.21, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

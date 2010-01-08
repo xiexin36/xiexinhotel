@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Hotel" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Hotel.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="Hotels.Properties.Settings" SettingsPropertyName="HotelConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.room" Member="room">
+    <Type Name="room">
+      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rStatue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rFloor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHourRoom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="roomFloors_room" Member="roomFloors" ThisKey="rFloor" OtherKey="floorId" Type="roomFloors" IsForeignKey="true" />
+      <Association Name="roomStatus_room" Member="roomStatus" ThisKey="rStatue" OtherKey="status" Type="roomStatus" IsForeignKey="true" />
+      <Association Name="roomtype_room" Member="roomtype" ThisKey="rType" OtherKey="type" Type="roomtype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roomFloors" Member="roomFloors">
+    <Type Name="roomFloors">
+      <Column Name="floorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="floorName" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="roomFloors_room" Member="room" ThisKey="floorId" OtherKey="rFloor" Type="room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roomStatus" Member="roomStatus">
+    <Type Name="roomStatus">
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="statusName" Type="System.String" DbType="NChar(4) NOT NULL" CanBeNull="false" />
+      <Association Name="roomStatus_room" Member="room" ThisKey="status" OtherKey="rStatue" Type="room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roomtype" Member="roomtype">
+    <Type Name="roomtype">
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="onePrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="hourStartPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="hourAddPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="discountPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="roomtype_room" Member="room" ThisKey="type" OtherKey="rType" Type="room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roomManage" Member="roomManage">
+    <Type Name="roomManage">
+      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rStatue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rFloor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHourRoom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="floorName" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="statusName" Type="System.String" DbType="NChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="roomId" Member="roomId" />
+      <Argument Parameter="rType" Member="rType" />
+      <Argument Parameter="rStatue" Member="rStatue" />
+      <Argument Parameter="rFloor" Member="rFloor" />
+      <Argument Parameter="phone" Member="phone" />
+      <Argument Parameter="isHourRoom" Member="isHourRoom" />
+      <Argument Parameter="description" Member="description" />
+      <Argument Parameter="time" Member="time" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId2">
+      <Argument Parameter="roomId" Member="roomId" />
+      <Argument Parameter="rType" Member="rType" />
+      <Argument Parameter="rStatue" Member="rStatue" />
+      <Argument Parameter="rFloor" Member="rFloor" />
+      <Argument Parameter="phone" Member="phone" />
+      <Argument Parameter="isHourRoom" Member="isHourRoom" />
+      <Argument Parameter="description" Member="description" />
+      <Argument Parameter="time" Member="time" />
+      <Argument Parameter="original_roomId" Member="roomId" Version="Original" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId3">
+      <Argument Parameter="original_roomId" Member="roomId" Version="Original" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="dbo.[user]" Member="user">
+    <Type Name="user">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rights" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.selectRoomAddMany" Method="selectRoomAddMany">
+    <Parameter Name="startNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="selectRoomCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId3" Name="dbo.DeleteRoom" Method="DeleteRoom">
+    <Parameter Name="Original_roomId" Parameter="original_roomId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId1" Name="dbo.InsertRoom" Method="InsertRoom">
+    <Parameter Name="roomId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rStatue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rFloor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="phone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isHourRoom" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="time" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="InsertRoom_个结果">
+      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rStatue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rFloor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHourRoom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Id="FunctionId2" Name="dbo.UpdateRoom" Method="UpdateRoom">
+    <Parameter Name="roomId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rStatue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rFloor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="phone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isHourRoom" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="time" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="Original_roomId" Parameter="original_roomId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UpdateRoom_个结果">
+      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rStatue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rFloor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHourRoom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

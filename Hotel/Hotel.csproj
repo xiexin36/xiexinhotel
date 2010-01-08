@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14DF4BA4-0EAF-428D-BAD4-CFDD5A5B4CD8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hotels</RootNamespace>
+    <AssemblyName>Hotels</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Synchronization.Data, Version=1.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.Server, Version=1.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=3.5.0.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModels\DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="DataModels\DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Registe.resx">
+      <DependentUpon>Registe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\RoomButton.resx">
+      <DependentUpon>RoomButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\批量添加房间.resx">
+      <DependentUpon>批量添加房间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\交接班.resx">
+      <DependentUpon>交接班.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\员工留言本.resx">
+      <DependentUpon>员工留言本.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\其他基础资料.resx">
+      <DependentUpon>其他基础资料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\房价方案.resx">
+      <DependentUpon>房价方案.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\操作员折扣设置.resx">
+      <DependentUpon>操作员折扣设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\操作员管理.resx">
+      <DependentUpon>操作员管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\客人留言.resx">
+      <DependentUpon>客人留言.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\客房特价管理.resx">
+      <DependentUpon>客房特价管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\客房管理.resx">
+      <DependentUpon>客房管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\挂单客人.resx">
+      <DependentUpon>挂单客人.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\挂账结算.resx">
+      <DependentUpon>挂账结算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\宾客账务.resx">
+      <DependentUpon>宾客账务.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\拆分账单.resx">
+      <DependentUpon>拆分账单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\撤单.resx">
+      <DependentUpon>撤单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\登记新资料.resx">
+      <DependentUpon>登记新资料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\客房入住率统计.resx">
+      <DependentUpon>客房入住率统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\消费分类明细表.resx">
+      <DependentUpon>消费分类明细表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\消费分类汇总表.resx">
+      <DependentUpon>消费分类汇总表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\客房清单.resx">
+      <DependentUpon>客房清单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\结账实收明细表.resx">
+      <DependentUpon>结账实收明细表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\结账明细表.resx">
+      <DependentUpon>结账明细表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\结账汇总表.resx">
+      <DependentUpon>结账汇总表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客消费报表.resx">
+      <DependentUpon>宾客消费报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客账户余额表.resx">
+      <DependentUpon>宾客账户余额表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\当班收银统计.resx">
+      <DependentUpon>当班收银统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客入住报表.resx">
+      <DependentUpon>宾客入住报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客类型统计.resx">
+      <DependentUpon>宾客类型统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客退房报表.resx">
+      <DependentUpon>宾客退房报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\宾客来源统计.resx">
+      <DependentUpon>宾客来源统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\营业情况速览.resx">
+      <DependentUpon>营业情况速览.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\统计报表\营业日报表.resx">
+      <DependentUpon>营业日报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\协议单位.resx">
+      <DependentUpon>协议单位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\商品信息.resx">
+      <DependentUpon>商品信息.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\入住登记.resx">
+      <DependentUpon>入住登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\交接班查询.resx">
+      <DependentUpon>交接班查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\前台收银查询.resx">
+      <DependentUpon>前台收银查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\发票发放查询.resx">
+      <DependentUpon>发票发放查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\可用房查询.resx">
+      <DependentUpon>可用房查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\在店宾客查询.resx">
+      <DependentUpon>在店宾客查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\客史查询.resx">
+      <DependentUpon>客史查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\宾客账务查询.resx">
+      <DependentUpon>宾客账务查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\将走房查询.resx">
+      <DependentUpon>将走房查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\仓库调拨单.resx">
+      <DependentUpon>仓库调拨单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\仓库资料.resx">
+      <DependentUpon>仓库资料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\供应商资料.resx">
+      <DependentUpon>供应商资料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\入库单.resx">
+      <DependentUpon>入库单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\入库明细单.resx">
+      <DependentUpon>入库明细单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\库存单据.resx">
+      <DependentUpon>库存单据.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\库存单据查询.resx">
+      <DependentUpon>库存单据查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\库存盘点.resx">
+      <DependentUpon>库存盘点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\库存进销存统计.resx">
+      <DependentUpon>库存进销存统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\当前库存.resx">
+      <DependentUpon>当前库存.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\明细单.resx">
+      <DependentUpon>明细单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\退货单.resx">
+      <DependentUpon>退货单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\部门资料.resx">
+      <DependentUpon>部门资料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\领料单.resx">
+      <DependentUpon>领料单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\库存管理\领料退货单.resx">
+      <DependentUpon>领料退货单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\房价调整记录.resx">
+      <DependentUpon>房价调整记录.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\房间打扫查询.resx">
+      <DependentUpon>房间打扫查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\挂账查询.resx">
+      <DependentUpon>挂账查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\换房记录查询.resx">
+      <DependentUpon>换房记录查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\操作日志查询.resx">
+      <DependentUpon>操作日志查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\物品消耗汇总.resx">
+      <DependentUpon>物品消耗汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\物品消耗清单.resx">
+      <DependentUpon>物品消耗清单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\系统设置.resx">
+      <DependentUpon>系统设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\话单查询.resx">
+      <DependentUpon>话单查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\费用入账查询.resx">
+      <DependentUpon>费用入账查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\门锁发卡记录.resx">
+      <DependentUpon>门锁发卡记录.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\预订登记.resx">
+      <DependentUpon>预订登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\查询中心\预订查询.resx">
+      <DependentUpon>预订查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\费用类型.resx">
+      <DependentUpon>费用类型.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\费用项目.resx">
+      <DependentUpon>费用项目.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\黑名单.resx">
+      <DependentUpon>黑名单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\费用入账.resx">
+      <DependentUpon>费用入账.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\非住客账.resx">
+      <DependentUpon>非住客账.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\账务催缴.resx">
+      <DependentUpon>账务催缴.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\财务中心\账单合并.resx">
+      <DependentUpon>账单合并.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Windows\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Registe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Registe.Designer.cs">
+      <DependentUpon>Registe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoomButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\RoomButton.Designer.cs">
+      <DependentUpon>RoomButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\批量添加房间.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\批量添加房间.Designer.cs">
+      <DependentUpon>批量添加房间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\交接班.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\交接班.designer.cs">
+      <DependentUpon>交接班.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\员工留言本.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\员工留言本.designer.cs">
+      <DependentUpon>员工留言本.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\其他基础资料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\其他基础资料.designer.cs">
+      <DependentUpon>其他基础资料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\房价方案.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\房价方案.designer.cs">
+      <DependentUpon>房价方案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\操作员折扣设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\操作员折扣设置.designer.cs">
+      <DependentUpon>操作员折扣设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\操作员管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\操作员管理.designer.cs">
+      <DependentUpon>操作员管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\客人留言.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\客人留言.designer.cs">
+      <DependentUpon>客人留言.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\客房特价管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\客房特价管理.designer.cs">
+      <DependentUpon>客房特价管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\客房管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\客房管理.designer.cs">
+      <DependentUpon>客房管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\挂单客人.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\挂单客人.designer.cs">
+      <DependentUpon>挂单客人.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\挂账结算.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\挂账结算.designer.cs">
+      <DependentUpon>挂账结算.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\宾客账务.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\宾客账务.designer.cs">
+      <DependentUpon>宾客账务.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\拆分账单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\拆分账单.designer.cs">
+      <DependentUpon>拆分账单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\撤单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\撤单.designer.cs">
+      <DependentUpon>撤单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\登记新资料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\登记新资料.designer.cs">
+      <DependentUpon>登记新资料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\客房入住率统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\客房入住率统计.designer.cs">
+      <DependentUpon>客房入住率统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\消费分类明细表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\消费分类明细表.designer.cs">
+      <DependentUpon>消费分类明细表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\消费分类汇总表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\消费分类汇总表.designer.cs">
+      <DependentUpon>消费分类汇总表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\客房清单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\客房清单.designer.cs">
+      <DependentUpon>客房清单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账实收明细表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账实收明细表.designer.cs">
+      <DependentUpon>结账实收明细表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账明细表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账明细表.designer.cs">
+      <DependentUpon>结账明细表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账汇总表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\结账汇总表.designer.cs">
+      <DependentUpon>结账汇总表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客消费报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客消费报表.designer.cs">
+      <DependentUpon>宾客消费报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客账户余额表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客账户余额表.designer.cs">
+      <DependentUpon>宾客账户余额表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\当班收银统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\当班收银统计.designer.cs">
+      <DependentUpon>当班收银统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客入住报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客入住报表.designer.cs">
+      <DependentUpon>宾客入住报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客类型统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客类型统计.designer.cs">
+      <DependentUpon>宾客类型统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客退房报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客退房报表.designer.cs">
+      <DependentUpon>宾客退房报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客来源统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\宾客来源统计.designer.cs">
+      <DependentUpon>宾客来源统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\营业情况速览.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\营业情况速览.designer.cs">
+      <DependentUpon>营业情况速览.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\统计报表\营业日报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\统计报表\营业日报表.designer.cs">
+      <DependentUpon>营业日报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\协议单位.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\协议单位.designer.cs">
+      <DependentUpon>协议单位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\商品信息.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\商品信息.designer.cs">
+      <DependentUpon>商品信息.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\入住登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\入住登记.designer.cs">
+      <DependentUpon>入住登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\交接班查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\交接班查询.designer.cs">
+      <DependentUpon>交接班查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\前台收银查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\前台收银查询.designer.cs">
+      <DependentUpon>前台收银查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\发票发放查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\发票发放查询.designer.cs">
+      <DependentUpon>发票发放查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\可用房查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\可用房查询.designer.cs">
+      <DependentUpon>可用房查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\在店宾客查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\在店宾客查询.designer.cs">
+      <DependentUpon>在店宾客查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\客史查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\客史查询.designer.cs">
+      <DependentUpon>客史查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\宾客账务查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\宾客账务查询.designer.cs">
+      <DependentUpon>宾客账务查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\将走房查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\将走房查询.designer.cs">
+      <DependentUpon>将走房查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\仓库调拨单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\仓库调拨单.Designer.cs">
+      <DependentUpon>仓库调拨单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\仓库资料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\仓库资料.designer.cs">
+      <DependentUpon>仓库资料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\供应商资料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\供应商资料.designer.cs">
+      <DependentUpon>供应商资料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\入库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\入库单.designer.cs">
+      <DependentUpon>入库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\入库明细单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\入库明细单.designer.cs">
+      <DependentUpon>入库明细单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存单据.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存单据.designer.cs">
+      <DependentUpon>库存单据.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存单据查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存单据查询.designer.cs">
+      <DependentUpon>库存单据查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存盘点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存盘点.designer.cs">
+      <DependentUpon>库存盘点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存进销存统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\库存进销存统计.designer.cs">
+      <DependentUpon>库存进销存统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\当前库存.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\当前库存.designer.cs">
+      <DependentUpon>当前库存.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\明细单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\明细单.designer.cs">
+      <DependentUpon>明细单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\退货单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\退货单.designer.cs">
+      <DependentUpon>退货单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\部门资料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\部门资料.designer.cs">
+      <DependentUpon>部门资料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\领料单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\领料单.designer.cs">
+      <DependentUpon>领料单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\库存管理\领料退货单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\库存管理\领料退货单.designer.cs">
+      <DependentUpon>领料退货单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\房价调整记录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\房价调整记录.designer.cs">
+      <DependentUpon>房价调整记录.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\房间打扫查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\房间打扫查询.designer.cs">
+      <DependentUpon>房间打扫查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\挂账查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\挂账查询.designer.cs">
+      <DependentUpon>挂账查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\换房记录查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\换房记录查询.designer.cs">
+      <DependentUpon>换房记录查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\操作日志查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\操作日志查询.designer.cs">
+      <DependentUpon>操作日志查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\物品消耗汇总.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\物品消耗汇总.designer.cs">
+      <DependentUpon>物品消耗汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\物品消耗清单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\物品消耗清单.designer.cs">
+      <DependentUpon>物品消耗清单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\系统设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\系统设置.Designer.cs">
+      <DependentUpon>系统设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\话单查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\话单查询.designer.cs">
+      <DependentUpon>话单查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\费用入账查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\费用入账查询.designer.cs">
+      <DependentUpon>费用入账查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\门锁发卡记录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\门锁发卡记录.designer.cs">
+      <DependentUpon>门锁发卡记录.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\预订登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\预订登记.designer.cs">
+      <DependentUpon>预订登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\查询中心\预订查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\查询中心\预订查询.designer.cs">
+      <DependentUpon>预订查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\费用类型.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\费用类型.designer.cs">
+      <DependentUpon>费用类型.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\费用项目.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\费用项目.designer.cs">
+      <DependentUpon>费用项目.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\黑名单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\黑名单.designer.cs">
+      <DependentUpon>黑名单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\费用入账.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\费用入账.designer.cs">
+      <DependentUpon>费用入账.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\非住客账.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\非住客账.designer.cs">
+      <DependentUpon>非住客账.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\账务催缴.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\账务催缴.designer.cs">
+      <DependentUpon>账务催缴.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\财务中心\账单合并.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\财务中心\账单合并.designer.cs">
+      <DependentUpon>账单合并.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\宾客续住.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\补打账单.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\非住客账.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\费用入账.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\换房.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\客房状态.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\入住登记.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\退出系统.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\退房登记.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\消费入账.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\在店客人.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\账务催缴.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataModels\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet.xsc">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="HotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="HotelDataSet.xss">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\Hotels.DataModels.roomFloors.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomManage.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomStatus.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomtype.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.user.datasource" />
+    <None Include="Resources\返回图标.jpg" />
+    <None Include="Resources\退出图标.jpg" />
+    <None Include="Resources\Excel.jpg" />
+    <None Include="Resources\查询.jpg" />
+    <None Include="Resources\打印.jpg" />
+    <None Include="Resources\返回.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Hotel.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Hotel_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Hotel.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridViewManageTable\DataGridViewManageTable.csproj">
+      <Project>{5D85C539-036D-49D3-83DA-07F4422F956E}</Project>
+      <Name>DataGridViewManageTable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
