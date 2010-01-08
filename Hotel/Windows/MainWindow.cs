@@ -33,7 +33,16 @@ namespace Hotels.Windows
         private void MenuTrip_Click(object sender, EventArgs e)
         {
             Type t = Type.GetType(path + sender.ToString());
-            Form f = (Form)Activator.CreateInstance(t);//创建所需的实例对象
+            Form f=new Form();
+            try
+            {
+            	f = (Form)Activator.CreateInstance(t);//创建所需的实例对象
+            }
+            catch (System.Exception ex)
+            {
+            	
+            }
+            
             //窗体以ShowDialog()形式显示时,在使用close()后,不能释放资源	         
             using (f)
             {

@@ -33,7 +33,13 @@ namespace DataGridViewManageTable
         }        
         private void MaskDecimal(object o,KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            if (e.KeyChar==8)
+            {
+                e.Handled = false;
+                errorProvider.SetError(this, "");
+                return;
+            }
+            if (Char.IsDigit(e.KeyChar))
             {
                 if (this.Text.Length>=this.numLength)
                 {

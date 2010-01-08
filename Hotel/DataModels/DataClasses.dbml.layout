@@ -14,7 +14,7 @@
         <elementListCompartment Id="eace803c-2dad-404b-a358-0193f92fc809" absoluteBounds="7.89, 0.96, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.875 : 1.09475321451823); (6.9999995 : 1.09475321451823); (6.9999995 : 2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 1.09475321451823); (6.9999995 : 1.09475321451823); (6.9999995 : 2)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesDataContext/roomFloors/roomFloors_room" />
       <nodes>
         <classShapeMoniker Id="0f48d48d-8335-4764-92fd-147cb83872d5" />
@@ -27,7 +27,7 @@
         <elementListCompartment Id="8e398f9d-0daa-4cb6-af57-cb188aec41a3" absoluteBounds="6.265, 5.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.1875 : 4.875); (7.1875 : 4.33562459309896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.1875 : 4.875); (7.1875 : 4.33562459309896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesDataContext/roomStatus/roomStatus_room" />
       <nodes>
         <classShapeMoniker Id="657f20e9-2688-4ab1-84bb-1fa62b0bd5ea" />
@@ -40,7 +40,7 @@
         <elementListCompartment Id="aad6ab44-d8d0-458d-8836-151109effea6" absoluteBounds="8.515, 3.835, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.5 : 3.85531229654948); (8.125 : 3.85531229654948)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 3.85531229654948); (8.125 : 3.85531229654948)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesDataContext/roomtype/roomtype_room" />
       <nodes>
         <classShapeMoniker Id="f46b7084-9051-45ed-86cc-9c8498ad2e15" />
