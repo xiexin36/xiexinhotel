@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel结账后 = new System.Windows.Forms.Panel();
@@ -55,6 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.myComboBoxNoEdit1 = new DataGridViewManageTable.MyComboBoxNoEdit(this.components);
+            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -72,35 +75,33 @@
             this.label21 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRoomStyleFloor = new System.Windows.Forms.RadioButton();
+            this.radioButtonRoomStyleFull = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel结账后.SuspendLayout();
@@ -125,7 +126,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-2, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(562, 353);
+            this.tabControl1.Size = new System.Drawing.Size(562, 372);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -151,7 +152,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(554, 327);
+            this.tabPage1.Size = new System.Drawing.Size(554, 346);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "基本设置";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -415,6 +416,7 @@
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Controls.Add(this.myComboBoxNoEdit1);
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.label29);
             this.tabPage2.Controls.Add(this.label28);
@@ -427,35 +429,58 @@
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.numericUpDown1);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(554, 327);
+            this.tabPage2.Size = new System.Drawing.Size(554, 346);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "房态设置";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // myComboBoxNoEdit1
+            // 
+            this.myComboBoxNoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSizeComboxSelcet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.myComboBoxNoEdit1.FormattingEnabled = true;
+            this.myComboBoxNoEdit1.Items.AddRange(new object[] {
+            "1215*855",
+            "1500*1095",
+            "1800*1305",
+            "2370*1710"});
+            this.myComboBoxNoEdit1.Location = new System.Drawing.Point(114, 182);
+            this.myComboBoxNoEdit1.Name = "myComboBoxNoEdit1";
+            this.myComboBoxNoEdit1.Size = new System.Drawing.Size(121, 20);
+            this.myComboBoxNoEdit1.TabIndex = 13;
+            this.myComboBoxNoEdit1.Text = global::Hotels.Properties.Settings.Default.roomButtonSizeComboxSelcet;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(15, 321);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(395, 12);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "提示：定金大于0的预订单不会自动取消，需要在“预订管理”中手动取消";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(237, 284);
+            this.label29.Location = new System.Drawing.Point(237, 300);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(137, 12);
             this.label29.TabIndex = 11;
@@ -464,7 +489,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(194, 258);
+            this.label28.Location = new System.Drawing.Point(194, 274);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(125, 12);
             this.label28.TabIndex = 10;
@@ -472,7 +497,7 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(129, 281);
+            this.maskedTextBox2.Location = new System.Drawing.Point(129, 297);
             this.maskedTextBox2.Mask = "90:00";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(100, 21);
@@ -482,7 +507,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(13, 285);
+            this.label27.Location = new System.Drawing.Point(13, 301);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(113, 12);
             this.label27.TabIndex = 8;
@@ -490,7 +515,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(85, 254);
+            this.maskedTextBox1.Location = new System.Drawing.Point(85, 270);
             this.maskedTextBox1.Mask = "90:00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(90, 21);
@@ -500,7 +525,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 258);
+            this.label26.Location = new System.Drawing.Point(13, 274);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(65, 12);
             this.label26.TabIndex = 8;
@@ -509,7 +534,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(27, 196);
+            this.label22.Location = new System.Drawing.Point(27, 212);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 12);
             this.label22.TabIndex = 7;
@@ -524,7 +549,7 @@
             this.panel4.Controls.Add(this.label24);
             this.panel4.Controls.Add(this.comboBox4);
             this.panel4.Controls.Add(this.label23);
-            this.panel4.Location = new System.Drawing.Point(13, 202);
+            this.panel4.Location = new System.Drawing.Point(13, 218);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(493, 38);
             this.panel4.TabIndex = 6;
@@ -566,7 +591,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(66, 8);
+            this.comboBox4.Location = new System.Drawing.Point(68, 9);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(83, 20);
             this.comboBox4.TabIndex = 1;
@@ -584,7 +609,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(26, 117);
+            this.label21.Location = new System.Drawing.Point(26, 133);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(89, 12);
             this.label21.TabIndex = 2;
@@ -592,7 +617,8 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(388, 164);
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomButtonFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.Location = new System.Drawing.Point(388, 180);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             17,
             0,
@@ -604,35 +630,24 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Value = global::Hotels.Properties.Settings.Default.roomButtonFont;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(280, 168);
+            this.label20.Location = new System.Drawing.Point(280, 184);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(101, 12);
             this.label20.TabIndex = 3;
             this.label20.Text = "房态图字体大小：";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 164);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 4;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 168);
+            this.label18.Location = new System.Drawing.Point(13, 184);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(101, 12);
             this.label18.TabIndex = 3;
@@ -641,75 +656,61 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.radioButton6);
-            this.panel3.Controls.Add(this.radioButton5);
-            this.panel3.Location = new System.Drawing.Point(13, 123);
+            this.panel3.Controls.Add(this.radioButtonRoomStyleFloor);
+            this.panel3.Controls.Add(this.radioButtonRoomStyleFull);
+            this.panel3.Location = new System.Drawing.Point(13, 139);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(495, 34);
             this.panel3.TabIndex = 2;
             // 
-            // radioButton6
+            // radioButtonRoomStyleFloor
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(231, 8);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(59, 16);
-            this.radioButton6.TabIndex = 1;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "按楼层";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButtonRoomStyleFloor.AutoSize = true;
+            this.radioButtonRoomStyleFloor.Checked = true;
+            this.radioButtonRoomStyleFloor.Location = new System.Drawing.Point(231, 8);
+            this.radioButtonRoomStyleFloor.Name = "radioButtonRoomStyleFloor";
+            this.radioButtonRoomStyleFloor.Size = new System.Drawing.Size(59, 16);
+            this.radioButtonRoomStyleFloor.TabIndex = 1;
+            this.radioButtonRoomStyleFloor.TabStop = true;
+            this.radioButtonRoomStyleFloor.Text = "按楼层";
+            this.radioButtonRoomStyleFloor.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radioButtonRoomStyleFull
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(56, 9);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(71, 16);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "全方位图";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButtonRoomStyleFull.AutoSize = true;
+            this.radioButtonRoomStyleFull.Checked = global::Hotels.Properties.Settings.Default.roomTableStyleFull;
+            this.radioButtonRoomStyleFull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Hotels.Properties.Settings.Default, "roomTableStyleFull", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radioButtonRoomStyleFull.Location = new System.Drawing.Point(56, 9);
+            this.radioButtonRoomStyleFull.Name = "radioButtonRoomStyleFull";
+            this.radioButtonRoomStyleFull.Size = new System.Drawing.Size(71, 16);
+            this.radioButtonRoomStyleFull.TabIndex = 0;
+            this.radioButtonRoomStyleFull.TabStop = true;
+            this.radioButtonRoomStyleFull.Text = "全方位图";
+            this.radioButtonRoomStyleFull.UseVisualStyleBackColor = true;
+            this.radioButtonRoomStyleFull.CheckedChanged += new System.EventHandler(this.radioButtonRoomStyleFull_CheckedChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(45, 97);
+            this.label15.Location = new System.Drawing.Point(45, 113);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(173, 12);
             this.label15.TabIndex = 1;
             this.label15.Text = "提示：单击颜色框可以设置颜色";
             // 
-            // label11
-            // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Location = new System.Drawing.Point(340, 74);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 12);
-            this.label11.TabIndex = 0;
-            this.label11.Click += new System.EventHandler(this.label12_Click);
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(271, 74);
+            this.label19.Location = new System.Drawing.Point(271, 80);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 0;
             this.label19.Text = "请即打扫";
             // 
-            // label14
-            // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Location = new System.Drawing.Point(82, 74);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 12);
-            this.label14.TabIndex = 0;
-            this.label14.Click += new System.EventHandler(this.label12_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 74);
+            this.label8.Location = new System.Drawing.Point(11, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 12);
             this.label8.TabIndex = 0;
@@ -718,29 +719,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(271, 46);
+            this.label17.Location = new System.Drawing.Point(271, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 0;
             this.label17.Text = "空房间";
-            // 
-            // label10
-            // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(340, 46);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 12);
-            this.label10.TabIndex = 0;
-            this.label10.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label13
-            // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Location = new System.Drawing.Point(82, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 12);
-            this.label13.TabIndex = 0;
-            this.label13.Click += new System.EventHandler(this.label12_Click);
             // 
             // label16
             // 
@@ -754,29 +737,77 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 46);
+            this.label7.Location = new System.Drawing.Point(11, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 0;
             this.label7.Text = "修理中";
             // 
-            // label12
+            // label14
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Location = new System.Drawing.Point(82, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 12);
-            this.label12.TabIndex = 0;
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label14.BackColor = global::Hotels.Properties.Settings.Default.roomNeedClean;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label14.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomNeedClean", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label14.Location = new System.Drawing.Point(347, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 22);
+            this.label14.TabIndex = 0;
+            this.label14.Click += new System.EventHandler(this.labelColor_Click);
+            // 
+            // label11
+            // 
+            this.label11.BackColor = global::Hotels.Properties.Settings.Default.roomEmpty;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomEmpty", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label11.Location = new System.Drawing.Point(347, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 22);
+            this.label11.TabIndex = 0;
+            this.label11.Click += new System.EventHandler(this.labelColor_Click);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = global::Hotels.Properties.Settings.Default.roomReserved;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label13.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomReserved", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label13.Location = new System.Drawing.Point(82, 75);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 22);
+            this.label13.TabIndex = 0;
+            this.label13.Click += new System.EventHandler(this.labelColor_Click);
+            // 
+            // label10
+            // 
+            this.label10.BackColor = global::Hotels.Properties.Settings.Default.roomRepair;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label10.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomRepair", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label10.Location = new System.Drawing.Point(82, 44);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 22);
+            this.label10.TabIndex = 0;
+            this.label10.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label9
             // 
+            this.label9.BackColor = global::Hotels.Properties.Settings.Default.roomCleaning;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(340, 19);
+            this.label9.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomCleaning", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label9.Location = new System.Drawing.Point(347, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 12);
+            this.label9.Size = new System.Drawing.Size(120, 22);
             this.label9.TabIndex = 0;
-            this.label9.Click += new System.EventHandler(this.label12_Click);
+            this.label9.Click += new System.EventHandler(this.labelColor_Click);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = global::Hotels.Properties.Settings.Default.roomLive;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label12.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomLive", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label12.Location = new System.Drawing.Point(82, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(120, 22);
+            this.label12.TabIndex = 0;
+            this.label12.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label6
             // 
@@ -794,87 +825,10 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(554, 327);
+            this.tabPage3.Size = new System.Drawing.Size(554, 346);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "其他设置";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(554, 327);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "其他设置二";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(554, 327);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "接口设置";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(554, 327);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "电话接口";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(554, 327);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "账单设置";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(295, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "确定";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(408, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(15, 305);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(395, 12);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "提示：定金大于0的预订单不会自动取消，需要在“预订管理”中手动取消";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(31, 22);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "结账取整：";
             // 
             // comboBox7
             // 
@@ -891,17 +845,87 @@
             this.comboBox7.Size = new System.Drawing.Size(121, 20);
             this.comboBox7.TabIndex = 1;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(31, 22);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "结账取整：";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(554, 346);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "其他设置二";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(554, 346);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "接口设置";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(554, 346);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "电话接口";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(554, 346);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "账单设置";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // buttonOK
+            // 
+            this.buttonOK.Location = new System.Drawing.Point(286, 378);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.TabIndex = 1;
+            this.buttonOK.Text = "确定";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(406, 378);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.Text = "取消";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // 系统设置
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 387);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(562, 413);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "系统设置";
             this.Text = "系统设置";
+            this.Load += new System.EventHandler(this.系统设置_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -957,26 +981,20 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel结账后;
         private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButtonRoomStyleFloor;
+        private System.Windows.Forms.RadioButton radioButtonRoomStyleFull;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label20;
@@ -999,5 +1017,11 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private DataGridViewManageTable.MyComboBoxNoEdit myComboBoxNoEdit1;
     }
 }

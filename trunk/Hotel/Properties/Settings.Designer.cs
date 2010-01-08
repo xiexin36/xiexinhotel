@@ -57,5 +57,125 @@ namespace Hotels.Properties {
                 this["RoomFloorMax"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 0")]
+        public global::System.Drawing.Color roomLive {
+            get {
+                return ((global::System.Drawing.Color)(this["roomLive"]));
+            }
+            set {
+                this["roomLive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Teal")]
+        public global::System.Drawing.Color roomRepair {
+            get {
+                return ((global::System.Drawing.Color)(this["roomRepair"]));
+            }
+            set {
+                this["roomRepair"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("128, 128, 255")]
+        public global::System.Drawing.Color roomReserved {
+            get {
+                return ((global::System.Drawing.Color)(this["roomReserved"]));
+            }
+            set {
+                this["roomReserved"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DodgerBlue")]
+        public global::System.Drawing.Color roomCleaning {
+            get {
+                return ((global::System.Drawing.Color)(this["roomCleaning"]));
+            }
+            set {
+                this["roomCleaning"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
+        public global::System.Drawing.Color roomEmpty {
+            get {
+                return ((global::System.Drawing.Color)(this["roomEmpty"]));
+            }
+            set {
+                this["roomEmpty"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 128")]
+        public global::System.Drawing.Color roomNeedClean {
+            get {
+                return ((global::System.Drawing.Color)(this["roomNeedClean"]));
+            }
+            set {
+                this["roomNeedClean"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool roomTableStyleFull {
+            get {
+                return ((bool)(this["roomTableStyleFull"]));
+            }
+            set {
+                this["roomTableStyleFull"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1215, 885")]
+        public global::System.Drawing.Size roomButtonSize {
+            get {
+                return ((global::System.Drawing.Size)(this["roomButtonSize"]));
+            }
+            set {
+                this["roomButtonSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public decimal roomButtonFont {
+            get {
+                return ((decimal)(this["roomButtonFont"]));
+            }
+            set {
+                this["roomButtonFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1215*885")]
+        public string roomButtonSizeComboxSelcet {
+            get {
+                return ((string)(this["roomButtonSizeComboxSelcet"]));
+            }
+            set {
+                this["roomButtonSizeComboxSelcet"] = value;
+            }
+        }
     }
 }

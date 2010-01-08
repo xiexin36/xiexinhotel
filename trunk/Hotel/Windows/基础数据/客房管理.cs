@@ -27,6 +27,7 @@ namespace Hotels.Windows
             this.roomManageBindingSource.DataSource = this.db.roomManage;
             this.roomtypeBindingSource.DataSource = this.db.roomtype;
             isSave = true;
+
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

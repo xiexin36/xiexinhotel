@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace Hotels.Windows
 {
     static class Program
@@ -15,7 +16,7 @@ namespace Hotels.Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 客房管理());        
+            Application.Run(new MainWindow());        
         }
     }
 }

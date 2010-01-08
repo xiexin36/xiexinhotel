@@ -20,15 +20,7 @@ namespace Hotels.Windows
 
         private void Test_Load(object sender, EventArgs e)
         {
-            //this.roomManageDataGridView.AllowUserToAddRows = false;
-            //this.roomManageDataGridView.AllowUserToDeleteRows = false;
-            //this.roomManageDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //this.roomManageDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //this.roomManageDataGridView.MultiSelect = false;
-            this.roomManageBindingSource.DataSource = db.roomManage;
-            this.roomFloorsBindingSource.DataSource = db.roomFloors;
-            this.roomtypeBindingSource.DataSource = db.roomtype;
-            this.roomStatusBindingSource.DataSource = db.roomStatus;
+           
         }
 
         private void roomManageBindingNavigatorSaveItem_Click(object sender, EventArgs e)

@@ -11,12 +11,12 @@ namespace Hotels.Windows
 {
     public partial class RoomButton : UserControl
     {
-        public RoomLable roomLable=new RoomLable();
+        public RoomLable roomLable = new RoomLable();
         public RoomButton()
         {
             InitializeComponent();
         }
-        
+
 
         private void RoomButton_Load(object sender, EventArgs e)
         {
@@ -39,19 +39,19 @@ namespace Hotels.Windows
             ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
 borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
-    
+
     }
-     public class RoomLable:UserControl
+    public class RoomLable : UserControl
     {
 
-        protected   override   void   OnPaint(PaintEventArgs   e)     
-         {     
-                            base.OnPaint(e);     
-                            int   borderWidth   =   3;     
-                            Color   borderColor   =   Color.Red;     
-                            ControlPaint.DrawBorder(e.Graphics,   e.ClipRectangle,   borderColor,     
-                borderWidth,   ButtonBorderStyle.Solid,   borderColor,   borderWidth,      ButtonBorderStyle.Solid,   borderColor,   borderWidth,   ButtonBorderStyle.Solid,   borderColor,   borderWidth,   ButtonBorderStyle.Solid);     
-          }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int borderWidth = 3;
+            Color borderColor = Color.Red;
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid);
+        }
 
     }
 }
