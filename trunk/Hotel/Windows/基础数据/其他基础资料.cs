@@ -20,5 +20,9 @@ namespace Hotels.Windows
         {
             this.Close();
         }
+
+        private void 其他基础资料_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

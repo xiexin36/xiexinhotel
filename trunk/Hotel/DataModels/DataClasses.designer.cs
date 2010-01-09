@@ -45,6 +45,15 @@ namespace Hotels.DataModels
     partial void Insertuser(user instance);
     partial void Updateuser(user instance);
     partial void Deleteuser(user instance);
+    partial void InsertpayWays(payWays instance);
+    partial void UpdatepayWays(payWays instance);
+    partial void DeletepayWays(payWays instance);
+    partial void InsertgoodUnits(goodUnits instance);
+    partial void UpdategoodUnits(goodUnits instance);
+    partial void DeletegoodUnits(goodUnits instance);
+    partial void InsertpassengerSourses(passengerSourses instance);
+    partial void UpdatepassengerSourses(passengerSourses instance);
+    partial void DeletepassengerSourses(passengerSourses instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -125,6 +134,30 @@ namespace Hotels.DataModels
 			}
 		}
 		
+		public System.Data.Linq.Table<payWays> payWays
+		{
+			get
+			{
+				return this.GetTable<payWays>();
+			}
+		}
+		
+		public System.Data.Linq.Table<goodUnits> goodUnits
+		{
+			get
+			{
+				return this.GetTable<goodUnits>();
+			}
+		}
+		
+		public System.Data.Linq.Table<passengerSourses> passengerSourses
+		{
+			get
+			{
+				return this.GetTable<passengerSourses>();
+			}
+		}
+		
 		private void InsertroomManage(roomManage obj)
 		{
 			this.InsertRoom(((System.Nullable<int>)(obj.roomId)), ((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.rStatue)), ((System.Nullable<int>)(obj.rFloor)), ((System.Nullable<int>)(obj.phone)), ((System.Nullable<bool>)(obj.isHourRoom)), obj.description, ((System.Nullable<System.DateTime>)(obj.time)));
@@ -169,6 +202,22 @@ namespace Hotels.DataModels
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomId, rType, rStatue, rFloor, phone, isHourRoom, description, time, original_roomId);
 			return ((ISingleResult<UpdateRoom_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetMaxFloorId")]
+		public int GetMaxFloorId([Parameter(DbType="Int")] ref System.Nullable<int> maxId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxId);
+			maxId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetMaxRoomTypeId")]
+		public int GetMaxRoomTypeId([Parameter(DbType="Int")] ref System.Nullable<int> maxId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxId);
+			maxId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -1350,6 +1399,264 @@ namespace Hotels.DataModels
 					this._Rights = value;
 					this.SendPropertyChanged("Rights");
 					this.OnRightsChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.payWays")]
+	public partial class payWays : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _payWayId;
+		
+		private string _名称;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpayWayIdChanging(int value);
+    partial void OnpayWayIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public payWays()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_payWayId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int payWayId
+		{
+			get
+			{
+				return this._payWayId;
+			}
+			set
+			{
+				if ((this._payWayId != value))
+				{
+					this.OnpayWayIdChanging(value);
+					this.SendPropertyChanging();
+					this._payWayId = value;
+					this.SendPropertyChanged("payWayId");
+					this.OnpayWayIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.goodUnits")]
+	public partial class goodUnits : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _goodUnitsId;
+		
+		private string _名称;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OngoodUnitsIdChanging(int value);
+    partial void OngoodUnitsIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public goodUnits()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_goodUnitsId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int goodUnitsId
+		{
+			get
+			{
+				return this._goodUnitsId;
+			}
+			set
+			{
+				if ((this._goodUnitsId != value))
+				{
+					this.OngoodUnitsIdChanging(value);
+					this.SendPropertyChanging();
+					this._goodUnitsId = value;
+					this.SendPropertyChanged("goodUnitsId");
+					this.OngoodUnitsIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.passengerSourses")]
+	public partial class passengerSourses : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _passengerSourseId;
+		
+		private string _名称;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpassengerSourseIdChanging(int value);
+    partial void OnpassengerSourseIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public passengerSourses()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_passengerSourseId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int passengerSourseId
+		{
+			get
+			{
+				return this._passengerSourseId;
+			}
+			set
+			{
+				if ((this._passengerSourseId != value))
+				{
+					this.OnpassengerSourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._passengerSourseId = value;
+					this.SendPropertyChanged("passengerSourseId");
+					this.OnpassengerSourseIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
 				}
 			}
 		}

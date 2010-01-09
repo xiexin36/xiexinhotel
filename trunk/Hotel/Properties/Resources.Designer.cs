@@ -130,6 +130,13 @@ namespace Hotels.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap 表格图标 {
+            get {
+                object obj = ResourceManager.GetObject("表格图标", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap 账务催缴 {
             get {
                 object obj = ResourceManager.GetObject("账务催缴", resourceCulture);

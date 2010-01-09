@@ -36,30 +36,6 @@ namespace Hotels.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int RoomTypeMax {
-            get {
-                return ((int)(this["RoomTypeMax"]));
-            }
-            set {
-                this["RoomTypeMax"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int RoomFloorMax {
-            get {
-                return ((int)(this["RoomFloorMax"]));
-            }
-            set {
-                this["RoomFloorMax"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 0")]
         public global::System.Drawing.Color roomLive {
             get {
@@ -175,6 +151,66 @@ namespace Hotels.Properties {
             }
             set {
                 this["roomButtonSizeComboxSelcet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("房类")]
+        public string roomButtonSecondLine {
+            get {
+                return ((string)(this["roomButtonSecondLine"]));
+            }
+            set {
+                this["roomButtonSecondLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("姓名")]
+        public string roomButtonThirdLine {
+            get {
+                return ((string)(this["roomButtonThirdLine"]));
+            }
+            set {
+                this["roomButtonThirdLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("客人类型")]
+        public string roomButtonForthLine {
+            get {
+                return ((string)(this["roomButtonForthLine"]));
+            }
+            set {
+                this["roomButtonForthLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal roomToReserved {
+            get {
+                return ((decimal)(this["roomToReserved"]));
+            }
+            set {
+                this["roomToReserved"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal roomReservedToCancle {
+            get {
+                return ((decimal)(this["roomReservedToCancle"]));
+            }
+            set {
+                this["roomReservedToCancle"] = value;
             }
         }
     }
