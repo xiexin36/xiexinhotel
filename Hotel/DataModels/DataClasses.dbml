@@ -87,6 +87,24 @@
       <Column Name="Rights" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.payWays" Member="payWays">
+    <Type Name="payWays">
+      <Column Name="payWayId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="名称" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.goodUnits" Member="goodUnits">
+    <Type Name="goodUnits">
+      <Column Name="goodUnitsId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="名称" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.passengerSourses" Member="passengerSourses">
+    <Type Name="passengerSourses">
+      <Column Name="passengerSourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="名称" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.selectRoomAddMany" Method="selectRoomAddMany">
     <Parameter Name="startNum" Type="System.Int32" DbType="Int" />
     <Parameter Name="endNum" Type="System.Int32" DbType="Int" />
@@ -137,5 +155,13 @@
       <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.GetMaxFloorId" Method="GetMaxFloorId">
+    <Parameter Name="maxId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetMaxRoomTypeId" Method="GetMaxRoomTypeId">
+    <Parameter Name="maxId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

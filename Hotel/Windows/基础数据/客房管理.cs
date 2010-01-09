@@ -203,12 +203,12 @@ namespace Hotels.Windows
                 return;
             }
             rf = new roomFloors();
-            rf.floorId = Properties.Settings.Default.RoomFloorMax + 1;
-            Properties.Settings.Default.RoomFloorMax++;
-            Properties.Settings.Default.Save();           
+            int? id = null;
+            db.GetMaxFloorId(ref id);
+            rf.floorId=(int)(id+1);
             rf.floorName = this.textBoxFloorName.Text;          
-            this.roomtypeBindingSource.Add(rf);
-            this.roomManageBindingSource.MoveNext();
+            this.roomFloorsBindingSource.Add(rf);
+            this.roomFloorsBindingSource.MoveLast();
         }
 
         private void roomTypeAdd()
@@ -225,9 +225,9 @@ namespace Hotels.Windows
                 return;
             }
             rt = new roomtype();
-            rt.type = Properties.Settings.Default.RoomTypeMax + 1;
-            Properties.Settings.Default.RoomTypeMax++;
-            Properties.Settings.Default.Save();         
+            int? id=null;
+            db.GetMaxRoomTypeId(ref id);
+            rt.type = (int)(id+1);          
             rt.typeName = this.typeNameTextBox.Text;
             rt.onePrice = Convert.ToDecimal(this.myMaskBoxMoneyOnePrice.Text);
             if (this.myMaskBoxMoneyHourStartPrice.Text != "")
@@ -235,9 +235,8 @@ namespace Hotels.Windows
             if (this.myMaskBoxMoneyHourAddPrice.Text != "")
                 rt.hourAddPrice = Convert.ToDecimal(this.myMaskBoxMoneyHourAddPrice.Text);
             this.roomtypeBindingSource.Add(rt);
-            this.roomManageBindingSource.MoveNext();
+            this.roomtypeBindingSource.MoveNext();
         }
-
 
 
         private void roomUpdate()

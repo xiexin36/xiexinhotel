@@ -349,6 +349,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -952,7 +953,6 @@
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\DataSources\Hotels.DataModels.customRecord.datasource" />
     <None Include="Properties\DataSources\Hotels.DataModels.roomFloors.datasource" />
     <None Include="Properties\DataSources\Hotels.DataModels.roomManage.datasource" />
     <None Include="Properties\DataSources\Hotels.DataModels.roomStatus.datasource" />
@@ -973,6 +973,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Hotel.mdf</DependentUpon>
     </Content>
+    <None Include="Properties\DataSources\Hotels.DataModels.goodUnits.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.passengerSourses.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.payWays.datasource" />
+    <None Include="Resources\表格图标.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

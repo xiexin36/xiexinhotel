@@ -56,13 +56,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.myComboBoxNoEdit1 = new DataGridViewManageTable.MyComboBoxNoEdit(this.components);
+            this.myComboBoxNoEditRoomButtonSize = new DataGridViewManageTable.MyComboBoxNoEdit(this.components);
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -73,7 +71,6 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,13 +82,16 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -109,8 +109,10 @@
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -416,18 +418,15 @@
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.myComboBoxNoEdit1);
+            this.tabPage2.Controls.Add(this.myComboBoxNoEditRoomButtonSize);
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.label29);
             this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.maskedTextBox2);
             this.tabPage2.Controls.Add(this.label27);
-            this.tabPage2.Controls.Add(this.maskedTextBox1);
             this.tabPage2.Controls.Add(this.label26);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.numericUpDown1);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.panel3);
@@ -437,13 +436,16 @@
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.numericUpDown3);
+            this.tabPage2.Controls.Add(this.numericUpDown2);
+            this.tabPage2.Controls.Add(this.numericUpDown1);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -452,20 +454,21 @@
             this.tabPage2.Text = "房态设置";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // myComboBoxNoEdit1
+            // myComboBoxNoEditRoomButtonSize
             // 
-            this.myComboBoxNoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSizeComboxSelcet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.myComboBoxNoEdit1.FormattingEnabled = true;
-            this.myComboBoxNoEdit1.Items.AddRange(new object[] {
-            "1215*855",
+            this.myComboBoxNoEditRoomButtonSize.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSizeComboxSelcet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.myComboBoxNoEditRoomButtonSize.FormattingEnabled = true;
+            this.myComboBoxNoEditRoomButtonSize.Items.AddRange(new object[] {
+            "1215*0855",
             "1500*1095",
             "1800*1305",
             "2370*1710"});
-            this.myComboBoxNoEdit1.Location = new System.Drawing.Point(114, 182);
-            this.myComboBoxNoEdit1.Name = "myComboBoxNoEdit1";
-            this.myComboBoxNoEdit1.Size = new System.Drawing.Size(121, 20);
-            this.myComboBoxNoEdit1.TabIndex = 13;
-            this.myComboBoxNoEdit1.Text = global::Hotels.Properties.Settings.Default.roomButtonSizeComboxSelcet;
+            this.myComboBoxNoEditRoomButtonSize.Location = new System.Drawing.Point(114, 182);
+            this.myComboBoxNoEditRoomButtonSize.Name = "myComboBoxNoEditRoomButtonSize";
+            this.myComboBoxNoEditRoomButtonSize.Size = new System.Drawing.Size(121, 20);
+            this.myComboBoxNoEditRoomButtonSize.TabIndex = 6;
+            this.myComboBoxNoEditRoomButtonSize.Text = global::Hotels.Properties.Settings.Default.roomButtonSizeComboxSelcet;
+            this.myComboBoxNoEditRoomButtonSize.SelectedIndexChanged += new System.EventHandler(this.myComboBoxNoEditRoomButtonSize_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -480,11 +483,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(237, 300);
+            this.label29.Location = new System.Drawing.Point(242, 301);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(137, 12);
             this.label29.TabIndex = 11;
-            this.label29.Text = "时间自动将该预订单取消";
+            this.label29.Text = "小时自动将该预订单取消";
             // 
             // label28
             // 
@@ -493,16 +496,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(125, 12);
             this.label28.TabIndex = 10;
-            this.label28.Text = "时间将房间转为预留房";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(129, 297);
-            this.maskedTextBox2.Mask = "90:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 21);
-            this.maskedTextBox2.TabIndex = 9;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.label28.Text = "小时将房间转为预留房";
             // 
             // label27
             // 
@@ -512,15 +506,6 @@
             this.label27.Size = new System.Drawing.Size(113, 12);
             this.label27.TabIndex = 8;
             this.label27.Text = "预订房超过预订时间";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(85, 270);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(90, 21);
-            this.maskedTextBox1.TabIndex = 9;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label26
             // 
@@ -556,11 +541,18 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonForthLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "无",
+            "姓名",
+            "折后价",
+            "客人类型"});
             this.comboBox6.Location = new System.Drawing.Point(388, 8);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(83, 20);
-            this.comboBox6.TabIndex = 1;
+            this.comboBox6.TabIndex = 2;
+            this.comboBox6.Text = global::Hotels.Properties.Settings.Default.roomButtonForthLine;
             // 
             // label25
             // 
@@ -573,11 +565,18 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonThirdLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "无",
+            "姓名",
+            "折后价",
+            "房价方案"});
             this.comboBox5.Location = new System.Drawing.Point(225, 8);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(83, 20);
             this.comboBox5.TabIndex = 1;
+            this.comboBox5.Text = global::Hotels.Properties.Settings.Default.roomButtonThirdLine;
             // 
             // label24
             // 
@@ -590,11 +589,17 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSecondLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "无",
+            "房类",
+            "客人来源"});
             this.comboBox4.Location = new System.Drawing.Point(68, 9);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(83, 20);
-            this.comboBox4.TabIndex = 1;
+            this.comboBox4.TabIndex = 0;
+            this.comboBox4.Text = global::Hotels.Properties.Settings.Default.roomButtonSecondLine;
             // 
             // label23
             // 
@@ -614,26 +619,6 @@
             this.label21.Size = new System.Drawing.Size(89, 12);
             this.label21.TabIndex = 2;
             this.label21.Text = "房态表显示方式";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomButtonFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.Location = new System.Drawing.Point(388, 180);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            17,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = global::Hotels.Properties.Settings.Default.roomButtonFont;
             // 
             // label20
             // 
@@ -743,6 +728,65 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "修理中";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "入住房";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomReservedToCancle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown3.Location = new System.Drawing.Point(133, 298);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.ReadOnly = true;
+            this.numericUpDown3.Size = new System.Drawing.Size(103, 21);
+            this.numericUpDown3.TabIndex = 9;
+            this.numericUpDown3.Value = global::Hotels.Properties.Settings.Default.roomReservedToCancle;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomToReserved", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown2.Location = new System.Drawing.Point(85, 272);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.ReadOnly = true;
+            this.numericUpDown2.Size = new System.Drawing.Size(103, 21);
+            this.numericUpDown2.TabIndex = 8;
+            this.numericUpDown2.Value = global::Hotels.Properties.Settings.Default.roomToReserved;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomButtonFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.Location = new System.Drawing.Point(384, 183);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            17,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
+            this.numericUpDown1.Size = new System.Drawing.Size(93, 21);
+            this.numericUpDown1.TabIndex = 7;
+            this.numericUpDown1.Value = global::Hotels.Properties.Settings.Default.roomButtonFont;
+            // 
             // label14
             // 
             this.label14.BackColor = global::Hotels.Properties.Settings.Default.roomNeedClean;
@@ -751,7 +795,7 @@
             this.label14.Location = new System.Drawing.Point(347, 75);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(120, 22);
-            this.label14.TabIndex = 0;
+            this.label14.TabIndex = 5;
             this.label14.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label11
@@ -762,7 +806,7 @@
             this.label11.Location = new System.Drawing.Point(347, 44);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 22);
-            this.label11.TabIndex = 0;
+            this.label11.TabIndex = 3;
             this.label11.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label13
@@ -773,7 +817,7 @@
             this.label13.Location = new System.Drawing.Point(82, 75);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(120, 22);
-            this.label13.TabIndex = 0;
+            this.label13.TabIndex = 4;
             this.label13.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label10
@@ -784,7 +828,7 @@
             this.label10.Location = new System.Drawing.Point(82, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 22);
-            this.label10.TabIndex = 0;
+            this.label10.TabIndex = 2;
             this.label10.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label9
@@ -795,7 +839,7 @@
             this.label9.Location = new System.Drawing.Point(347, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 22);
-            this.label9.TabIndex = 0;
+            this.label9.TabIndex = 1;
             this.label9.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // label12
@@ -808,15 +852,6 @@
             this.label12.Size = new System.Drawing.Size(120, 22);
             this.label12.TabIndex = 0;
             this.label12.Click += new System.EventHandler(this.labelColor_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "入住房";
             // 
             // tabPage3
             // 
@@ -922,7 +957,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "系统设置";
             this.Text = "系统设置";
             this.Load += new System.EventHandler(this.系统设置_Load);
@@ -939,9 +974,11 @@
             this.tabPage2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
@@ -1002,9 +1039,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label25;
@@ -1022,6 +1057,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private DataGridViewManageTable.MyComboBoxNoEdit myComboBoxNoEdit1;
+        private DataGridViewManageTable.MyComboBoxNoEdit myComboBoxNoEditRoomButtonSize;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
     }
 }

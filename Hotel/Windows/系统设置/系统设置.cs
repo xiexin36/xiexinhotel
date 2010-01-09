@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using Hotels.Properties;
 
 namespace Hotels.Windows
 {
@@ -28,29 +29,40 @@ namespace Hotels.Windows
             if (result== DialogResult.OK)
             {
                 Label labelNow = sender as Label;
-                labelNow.BackColor = colorDialog.Color;             
+                labelNow.BackColor = colorDialog.Color;                
             }
+            
         }
 
         private void 系统设置_Load(object sender, EventArgs e)
-        {            
+        {
+                       
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
             this.Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Settings.Default.Reload();//刷新配置为上一次的配置数据,不进行修改
             this.Dispose();
         }
 
         private void radioButtonRoomStyleFull_CheckedChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.roomTableStyleFull = !Properties.Settings.Default.roomTableStyleFull;
+            Settings.Default.roomTableStyleFull = !Settings.Default.roomTableStyleFull;
         }
-       
+
+        private void myComboBoxNoEditRoomButtonSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = this.myComboBoxNoEditRoomButtonSize.Text;
+            Settings.Default.roomButtonSizeComboxSelcet = a;
+            int Sizewidth = Convert.ToInt32(a.Substring(0, 4));
+            int Sizeheight = Convert.ToInt32(a.Substring(5, 4));
+            Settings.Default.roomButtonSize = new Size(Sizewidth, Sizeheight);     
+        }
     }
 }
