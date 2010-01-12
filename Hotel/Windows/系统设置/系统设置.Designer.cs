@@ -85,7 +85,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownRoomButtonFont = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoomButtonFont)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -439,7 +439,7 @@
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.numericUpDown3);
             this.tabPage2.Controls.Add(this.numericUpDown2);
-            this.tabPage2.Controls.Add(this.numericUpDown1);
+            this.tabPage2.Controls.Add(this.numericUpDownRoomButtonFont);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label13);
@@ -457,12 +457,13 @@
             // myComboBoxNoEditRoomButtonSize
             // 
             this.myComboBoxNoEditRoomButtonSize.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSizeComboxSelcet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.myComboBoxNoEditRoomButtonSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.myComboBoxNoEditRoomButtonSize.FormattingEnabled = true;
             this.myComboBoxNoEditRoomButtonSize.Items.AddRange(new object[] {
-            "1215*0855",
-            "1500*1095",
-            "1800*1305",
-            "2370*1710"});
+            "105*72",
+            "110*80",
+            "120*90",
+            "130*95"});
             this.myComboBoxNoEditRoomButtonSize.Location = new System.Drawing.Point(114, 182);
             this.myComboBoxNoEditRoomButtonSize.Name = "myComboBoxNoEditRoomButtonSize";
             this.myComboBoxNoEditRoomButtonSize.Size = new System.Drawing.Size(121, 20);
@@ -542,6 +543,7 @@
             // comboBox6
             // 
             this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonForthLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
             "无",
@@ -566,6 +568,7 @@
             // comboBox5
             // 
             this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonThirdLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "无",
@@ -590,6 +593,7 @@
             // comboBox4
             // 
             this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Hotels.Properties.Settings.Default, "roomButtonSecondLine", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "无",
@@ -767,25 +771,26 @@
             this.numericUpDown2.TabIndex = 8;
             this.numericUpDown2.Value = global::Hotels.Properties.Settings.Default.roomToReserved;
             // 
-            // numericUpDown1
+            // numericUpDownRoomButtonFont
             // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomButtonFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.Location = new System.Drawing.Point(384, 183);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownRoomButtonFont.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Hotels.Properties.Settings.Default, "roomButtonFontNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDownRoomButtonFont.Location = new System.Drawing.Point(384, 183);
+            this.numericUpDownRoomButtonFont.Maximum = new decimal(new int[] {
             17,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericUpDownRoomButtonFont.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(93, 21);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = global::Hotels.Properties.Settings.Default.roomButtonFont;
+            this.numericUpDownRoomButtonFont.Name = "numericUpDownRoomButtonFont";
+            this.numericUpDownRoomButtonFont.ReadOnly = true;
+            this.numericUpDownRoomButtonFont.Size = new System.Drawing.Size(93, 21);
+            this.numericUpDownRoomButtonFont.TabIndex = 7;
+            this.numericUpDownRoomButtonFont.Value = global::Hotels.Properties.Settings.Default.roomButtonFontNumber;
+            this.numericUpDownRoomButtonFont.ValueChanged += new System.EventHandler(this.numericUpDownRoomButtonFont_ValueChanged);
             // 
             // label14
             // 
@@ -978,7 +983,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoomButtonFont)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
@@ -1033,7 +1038,7 @@
         private System.Windows.Forms.RadioButton radioButtonRoomStyleFloor;
         private System.Windows.Forms.RadioButton radioButtonRoomStyleFull;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownRoomButtonFont;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel4;

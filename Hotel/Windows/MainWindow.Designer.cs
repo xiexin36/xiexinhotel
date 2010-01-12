@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.接待登记ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,26 +214,33 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonCancle = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelDateTime = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRoomTypes = new System.Windows.Forms.ComboBox();
+            this.roomtypeComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxRoomFloors = new System.Windows.Forms.ComboBox();
+            this.roomFloorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxRoomStatus = new System.Windows.Forms.ComboBox();
+            this.roomStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanelRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelBrushColor = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonCancle = new System.Windows.Forms.Button();
+            this.timerWatch = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panelBackImage.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomtypeComboBoxBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomFloorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomStatusBindingSource)).BeginInit();
+            this.panelBrushColor.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -279,14 +287,14 @@
             this.入住登记ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.入住登记ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.入住登记ToolStripMenuItem.Text = "入住登记";
-            this.入住登记ToolStripMenuItem.Click += new System.EventHandler(this.MenuTrip_Click);
+            this.入住登记ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // 预订登记ToolStripMenuItem
             // 
             this.预订登记ToolStripMenuItem.Name = "预订登记ToolStripMenuItem";
             this.预订登记ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.预订登记ToolStripMenuItem.Text = "预订登记";
-            this.预订登记ToolStripMenuItem.Click += new System.EventHandler(this.MenuTrip_Click);
+            this.预订登记ToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1326,7 +1334,7 @@
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.关于ToolStripMenuItem.Text = "关于...";
+            this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.MenuTrip_Click);
             // 
             // toolStripSeparator29
@@ -1378,7 +1386,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 536);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 609);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(911, 26);
             this.statusStrip1.TabIndex = 1;
@@ -1426,6 +1434,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1459,7 +1468,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(60, 56);
             this.toolStripButton1.Text = "入住登记";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.MenuTrip_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -1605,31 +1614,32 @@
             this.panelBackImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBackImage.Location = new System.Drawing.Point(0, 84);
             this.panelBackImage.Name = "panelBackImage";
-            this.panelBackImage.Size = new System.Drawing.Size(911, 452);
+            this.panelBackImage.Size = new System.Drawing.Size(911, 525);
             this.panelBackImage.TabIndex = 3;
             // 
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
             this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Controls.Add(this.panel3, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.flowLayoutPanelRooms, 10, 2);
+            this.tableLayoutPanel.Controls.Add(this.panelBrushColor, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 4;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(911, 452);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(911, 525);
             this.tableLayoutPanel.TabIndex = 4;
             // 
             // panel3
             // 
+            this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label11);
@@ -1643,194 +1653,163 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 429);
+            this.panel3.Location = new System.Drawing.Point(6, 499);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(899, 17);
+            this.panel3.Size = new System.Drawing.Size(899, 20);
             this.panel3.TabIndex = 4;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(437, 0);
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(617, 2);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 19);
+            this.label15.Size = new System.Drawing.Size(56, 16);
             this.label15.TabIndex = 1;
-            this.label15.Text = "label5";
+            this.label15.Text = "即打扫";
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.Color.Pink;
+            this.label14.BackColor = global::Hotels.Properties.Settings.Default.roomNeedClean;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Location = new System.Drawing.Point(397, 0);
+            this.label14.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomNeedClean", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(556, 1);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 19);
+            this.label14.Size = new System.Drawing.Size(58, 18);
             this.label14.TabIndex = 0;
-            this.label14.Text = "label4";
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(277, 0);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(392, 2);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 19);
+            this.label11.Size = new System.Drawing.Size(40, 16);
             this.label11.TabIndex = 1;
-            this.label11.Text = "label5";
+            this.label11.Text = "修理";
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.Teal;
+            this.label10.BackColor = global::Hotels.Properties.Settings.Default.roomRepair;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(237, 0);
+            this.label10.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomRepair", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(332, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 19);
+            this.label10.Size = new System.Drawing.Size(58, 18);
             this.label10.TabIndex = 0;
-            this.label10.Text = "label4";
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(357, 0);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(504, 2);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 19);
+            this.label13.Size = new System.Drawing.Size(40, 16);
             this.label13.TabIndex = 1;
-            this.label13.Text = "label5";
+            this.label13.Text = "预留";
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(117, 0);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(168, 2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 19);
+            this.label7.Size = new System.Drawing.Size(40, 16);
             this.label7.TabIndex = 1;
-            this.label7.Text = "label5";
+            this.label7.Text = "入住";
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(197, 0);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(280, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 19);
+            this.label9.Size = new System.Drawing.Size(40, 16);
             this.label9.TabIndex = 1;
-            this.label9.Text = "label5";
+            this.label9.Text = "打扫";
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.Color.Fuchsia;
+            this.label12.BackColor = global::Hotels.Properties.Settings.Default.roomReserved;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Location = new System.Drawing.Point(317, 0);
+            this.label12.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomReserved", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(444, 1);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 19);
+            this.label12.Size = new System.Drawing.Size(58, 18);
             this.label12.TabIndex = 0;
-            this.label12.Text = "label4";
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.BackColor = global::Hotels.Properties.Settings.Default.roomLive;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(77, 0);
+            this.label6.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomLive", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(108, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 19);
+            this.label6.Size = new System.Drawing.Size(58, 18);
             this.label6.TabIndex = 0;
-            this.label6.Text = "label4";
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label8.BackColor = global::Hotels.Properties.Settings.Default.roomCleaning;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(157, 0);
+            this.label8.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomCleaning", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(220, 1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 19);
+            this.label8.Size = new System.Drawing.Size(58, 18);
             this.label8.TabIndex = 0;
-            this.label8.Text = "label4";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(37, 0);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(62, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 19);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
+            this.label5.Text = "空房";
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.Lime;
+            this.label4.BackColor = global::Hotels.Properties.Settings.Default.roomEmpty;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(-1, 0);
+            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Hotels.Properties.Settings.Default, "roomEmpty", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(4, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 19);
+            this.label4.Size = new System.Drawing.Size(58, 18);
             this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.buttonRefresh);
-            this.panel2.Controls.Add(this.buttonCancle);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(899, 22);
-            this.panel2.TabIndex = 1;
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackgroundImage = global::Hotels.Properties.Resources.返回图标;
-            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonRefresh.Location = new System.Drawing.Point(853, 0);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(23, 22);
-            this.buttonRefresh.TabIndex = 3;
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // buttonCancle
-            // 
-            this.buttonCancle.BackgroundImage = global::Hotels.Properties.Resources.退出图标;
-            this.buttonCancle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCancle.Location = new System.Drawing.Point(876, 0);
-            this.buttonCancle.Name = "buttonCancle";
-            this.buttonCancle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonCancle.Size = new System.Drawing.Size(23, 22);
-            this.buttonCancle.TabIndex = 2;
-            this.buttonCancle.UseVisualStyleBackColor = true;
-            this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(80, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "客房状态图";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.labelDateTime);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.comboBox3);
-            this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.comboBoxRoomTypes);
+            this.panel4.Controls.Add(this.comboBoxRoomFloors);
+            this.panel4.Controls.Add(this.comboBoxRoomStatus);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(6, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(899, 27);
             this.panel4.TabIndex = 2;
             // 
-            // label3
+            // labelDateTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(828, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDateTime.AutoSize = true;
+            this.labelDateTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelDateTime.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelDateTime.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelDateTime.Location = new System.Drawing.Point(817, 0);
+            this.labelDateTime.Name = "labelDateTime";
+            this.labelDateTime.Size = new System.Drawing.Size(82, 24);
+            this.labelDateTime.TabIndex = 3;
+            this.labelDateTime.Text = "label3";
+            this.labelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -1850,40 +1829,56 @@
             this.label2.Text = "房号定位";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
+            // comboBoxRoomTypes
             // 
-            this.comboBox3.DisplayMember = "Name";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(196, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(81, 20);
-            this.comboBox3.TabIndex = 0;
+            this.comboBoxRoomTypes.DataSource = this.roomtypeComboBoxBindingSource;
+            this.comboBoxRoomTypes.DisplayMember = "typeName";
+            this.comboBoxRoomTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoomTypes.FormattingEnabled = true;
+            this.comboBoxRoomTypes.Location = new System.Drawing.Point(196, 4);
+            this.comboBoxRoomTypes.Name = "comboBoxRoomTypes";
+            this.comboBoxRoomTypes.Size = new System.Drawing.Size(81, 20);
+            this.comboBoxRoomTypes.TabIndex = 0;
+            this.comboBoxRoomTypes.ValueMember = "type";
+            this.comboBoxRoomTypes.SelectionChangeCommitted += new System.EventHandler(this.comboBoxRoomStatus_SelectionChangeCommitted);
             // 
-            // comboBox2
+            // roomtypeComboBoxBindingSource
             // 
-            this.comboBox2.DisplayMember = "roomFloors";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(101, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(81, 20);
-            this.comboBox2.TabIndex = 0;
+            this.roomtypeComboBoxBindingSource.DataSource = typeof(Hotels.DataModels.roomtypeComboBox);
             // 
-            // comboBox1
+            // comboBoxRoomFloors
             // 
-            this.comboBox1.DisplayMember = "roomStatusName";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "全部房间",
-            "空房间",
-            "入住房间",
-            "打扫中",
-            "修理中",
-            "预留房",
-            "请即打扫"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(81, 20);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxRoomFloors.DataSource = this.roomFloorsBindingSource;
+            this.comboBoxRoomFloors.DisplayMember = "floorName";
+            this.comboBoxRoomFloors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoomFloors.FormattingEnabled = true;
+            this.comboBoxRoomFloors.Location = new System.Drawing.Point(101, 4);
+            this.comboBoxRoomFloors.Name = "comboBoxRoomFloors";
+            this.comboBoxRoomFloors.Size = new System.Drawing.Size(81, 20);
+            this.comboBoxRoomFloors.TabIndex = 0;
+            this.comboBoxRoomFloors.ValueMember = "floorId";
+            this.comboBoxRoomFloors.SelectionChangeCommitted += new System.EventHandler(this.comboBoxRoomStatus_SelectionChangeCommitted);
+            // 
+            // roomFloorsBindingSource
+            // 
+            this.roomFloorsBindingSource.DataSource = typeof(Hotels.DataModels.roomFloors);
+            // 
+            // comboBoxRoomStatus
+            // 
+            this.comboBoxRoomStatus.DataSource = this.roomStatusBindingSource;
+            this.comboBoxRoomStatus.DisplayMember = "statusName";
+            this.comboBoxRoomStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoomStatus.FormattingEnabled = true;
+            this.comboBoxRoomStatus.Location = new System.Drawing.Point(6, 4);
+            this.comboBoxRoomStatus.Name = "comboBoxRoomStatus";
+            this.comboBoxRoomStatus.Size = new System.Drawing.Size(81, 20);
+            this.comboBoxRoomStatus.TabIndex = 0;
+            this.comboBoxRoomStatus.ValueMember = "status";
+            this.comboBoxRoomStatus.SelectionChangeCommitted += new System.EventHandler(this.comboBoxRoomStatus_SelectionChangeCommitted);
+            // 
+            // roomStatusBindingSource
+            // 
+            this.roomStatusBindingSource.DataSource = typeof(Hotels.DataModels.roomStatus);
             // 
             // flowLayoutPanelRooms
             // 
@@ -1893,14 +1888,72 @@
             this.flowLayoutPanelRooms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelRooms.Location = new System.Drawing.Point(6, 73);
             this.flowLayoutPanelRooms.Name = "flowLayoutPanelRooms";
-            this.flowLayoutPanelRooms.Size = new System.Drawing.Size(899, 347);
+            this.flowLayoutPanelRooms.Size = new System.Drawing.Size(899, 417);
             this.flowLayoutPanelRooms.TabIndex = 5;
+            // 
+            // panelBrushColor
+            // 
+            this.panelBrushColor.AutoSize = true;
+            this.panelBrushColor.Controls.Add(this.buttonRefresh);
+            this.panelBrushColor.Controls.Add(this.label1);
+            this.panelBrushColor.Controls.Add(this.buttonCancle);
+            this.panelBrushColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBrushColor.Location = new System.Drawing.Point(6, 6);
+            this.panelBrushColor.Name = "panelBrushColor";
+            this.panelBrushColor.Size = new System.Drawing.Size(899, 22);
+            this.panelBrushColor.TabIndex = 6;
+            this.panelBrushColor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBrushColor_Paint);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackgroundImage = global::Hotels.Properties.Resources.返回图标;
+            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonRefresh.Location = new System.Drawing.Point(843, 0);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(28, 22);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "客房状态图";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonCancle
+            // 
+            this.buttonCancle.BackgroundImage = global::Hotels.Properties.Resources.退出图标;
+            this.buttonCancle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCancle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCancle.Location = new System.Drawing.Point(871, 0);
+            this.buttonCancle.Name = "buttonCancle";
+            this.buttonCancle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonCancle.Size = new System.Drawing.Size(28, 22);
+            this.buttonCancle.TabIndex = 2;
+            this.buttonCancle.UseVisualStyleBackColor = true;
+            this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click);
+            // 
+            // timerWatch
+            // 
+            this.timerWatch.Enabled = true;
+            this.timerWatch.Interval = 2000;
+            this.timerWatch.Tick += new System.EventHandler(this.timerWatch_Tick);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 562);
+            this.ClientSize = new System.Drawing.Size(911, 635);
             this.Controls.Add(this.panelBackImage);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -1911,6 +1964,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "客房管理系统";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1921,9 +1975,13 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomtypeComboBoxBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomFloorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomStatusBindingSource)).EndInit();
+            this.panelBrushColor.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2115,17 +2173,21 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label labelDateTime;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxRoomTypes;
+        private System.Windows.Forms.ComboBox comboBoxRoomFloors;
+        private System.Windows.Forms.ComboBox comboBoxRoomStatus;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRooms;
+        private System.Windows.Forms.Timer timerWatch;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonCancle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRooms;
+        private System.Windows.Forms.Panel panelBrushColor;
+        private System.Windows.Forms.BindingSource roomtypeComboBoxBindingSource;
+        private System.Windows.Forms.BindingSource roomFloorsBindingSource;
+        private System.Windows.Forms.BindingSource roomStatusBindingSource;
     }
 }

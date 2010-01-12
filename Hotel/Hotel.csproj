@@ -76,11 +76,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="HotelDataSet.cs">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HotelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +95,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,11 +107,68 @@
     <EmbeddedResource Include="Windows\RoomButton.resx">
       <DependentUpon>RoomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\暂时离开.resx">
+      <DependentUpon>暂时离开.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\修改密码.resx">
+      <DependentUpon>修改密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\备份数据库.resx">
+      <DependentUpon>备份数据库.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\安全退出\安全退出.resx">
+      <DependentUpon>安全退出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\帮助\关于.resx">
+      <DependentUpon>关于.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\基础数据\房价方案明细.resx">
+      <DependentUpon>房价方案明细.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\基础数据\批量添加房间.resx">
       <DependentUpon>批量添加房间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\打印机设置.resx">
+      <DependentUpon>打印机设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\失物招领.resx">
+      <DependentUpon>失物招领.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\宾客续住.resx">
+      <DependentUpon>宾客续住.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\寄存.resx">
+      <DependentUpon>寄存.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\换房.resx">
+      <DependentUpon>换房.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\联房开房.resx">
+      <DependentUpon>联房开房.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\消费入账.resx">
+      <DependentUpon>消费入账.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\补打账单.resx">
+      <DependentUpon>补打账单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\安全退出\清园旅社管理系统.resx">
+      <DependentUpon>清园旅社管理系统.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\数据初始化.resx">
+      <DependentUpon>数据初始化.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\更换操作员.resx">
+      <DependentUpon>更换操作员.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\权限管理.resx">
+      <DependentUpon>权限管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\用户单位设置.resx">
+      <DependentUpon>用户单位设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\自动修复数据.resx">
+      <DependentUpon>自动修复数据.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\财务中心\交接班.resx">
       <DependentUpon>交接班.cs</DependentUpon>
@@ -311,9 +374,6 @@
     <EmbeddedResource Include="Windows\查询中心\门锁发卡记录.resx">
       <DependentUpon>门锁发卡记录.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\接待登记\预订登记.resx">
-      <DependentUpon>预订登记.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\查询中心\预订查询.resx">
       <DependentUpon>预订查询.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +398,18 @@
     <EmbeddedResource Include="Windows\财务中心\账单合并.resx">
       <DependentUpon>账单合并.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\退房登记.resx">
+      <DependentUpon>退房登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\接待登记\预订登记.resx">
+      <DependentUpon>预订登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\系统设置\还原数据库.resx">
+      <DependentUpon>还原数据库.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\预定登记.resx">
+      <DependentUpon>预定登记.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -350,6 +422,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,17 +446,131 @@
     <Compile Include="Windows\RoomButton.Designer.cs">
       <DependentUpon>RoomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Test.cs">
+    <Compile Include="Windows\暂时离开.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="Windows\暂时离开.Designer.cs">
+      <DependentUpon>暂时离开.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\修改密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\修改密码.designer.cs">
+      <DependentUpon>修改密码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\备份数据库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\备份数据库.designer.cs">
+      <DependentUpon>备份数据库.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\安全退出\安全退出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\安全退出\安全退出.designer.cs">
+      <DependentUpon>安全退出.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\帮助\关于.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\帮助\关于.designer.cs">
+      <DependentUpon>关于.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\基础数据\批量添加房间.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\基础数据\批量添加房间.Designer.cs">
       <DependentUpon>批量添加房间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\基础数据\房价方案明细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\基础数据\房价方案明细.Designer.cs">
+      <DependentUpon>房价方案明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\打印机设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\打印机设置.designer.cs">
+      <DependentUpon>打印机设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\失物招领.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\失物招领.designer.cs">
+      <DependentUpon>失物招领.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\宾客续住.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\宾客续住.designer.cs">
+      <DependentUpon>宾客续住.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\寄存.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\寄存.designer.cs">
+      <DependentUpon>寄存.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\换房.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\换房.Designer.cs">
+      <DependentUpon>换房.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\联房开房.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\联房开房.Designer.cs">
+      <DependentUpon>联房开房.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\消费入账.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\消费入账.designer.cs">
+      <DependentUpon>消费入账.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\补打账单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\补打账单.designer.cs">
+      <DependentUpon>补打账单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\安全退出\清园旅社管理系统.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\安全退出\清园旅社管理系统.designer.cs">
+      <DependentUpon>清园旅社管理系统.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\数据初始化.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\数据初始化.designer.cs">
+      <DependentUpon>数据初始化.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\更换操作员.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\更换操作员.designer.cs">
+      <DependentUpon>更换操作员.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\权限管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\权限管理.designer.cs">
+      <DependentUpon>权限管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\用户单位设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\用户单位设置.designer.cs">
+      <DependentUpon>用户单位设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\自动修复数据.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\自动修复数据.designer.cs">
+      <DependentUpon>自动修复数据.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\财务中心\交接班.cs">
       <SubType>Form</SubType>
@@ -788,12 +980,6 @@
     <Compile Include="Windows\查询中心\门锁发卡记录.designer.cs">
       <DependentUpon>门锁发卡记录.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\接待登记\预订登记.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\接待登记\预订登记.designer.cs">
-      <DependentUpon>预订登记.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\查询中心\预订查询.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -842,6 +1028,30 @@
     <Compile Include="Windows\财务中心\账单合并.designer.cs">
       <DependentUpon>账单合并.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\接待登记\退房登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\退房登记.designer.cs">
+      <DependentUpon>退房登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\接待登记\预订登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\接待登记\预订登记.designer.cs">
+      <DependentUpon>预订登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\系统设置\还原数据库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\系统设置\还原数据库.designer.cs">
+      <DependentUpon>还原数据库.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\预定登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\预定登记.Designer.cs">
+      <DependentUpon>预定登记.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -887,6 +1097,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Hotel.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Hotel_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Hotel.mdf</DependentUpon>
+    </Content>
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -933,31 +1150,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataModels\DataClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HotelDataSet.xsc">
-      <DependentUpon>HotelDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="HotelDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HotelDataSet.Designer.cs</LastGenOutput>
-      <SubType>
-      </SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="HotelDataSet.xss">
-      <DependentUpon>HotelDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Properties\DataSources\Hotels.DataModels.roomFloors.datasource" />
-    <None Include="Properties\DataSources\Hotels.DataModels.roomManage.datasource" />
-    <None Include="Properties\DataSources\Hotels.DataModels.roomStatus.datasource" />
-    <None Include="Properties\DataSources\Hotels.DataModels.roomtype.datasource" />
-    <None Include="Properties\DataSources\Hotels.DataModels.user.datasource" />
     <None Include="Resources\返回图标.jpg" />
     <None Include="Resources\退出图标.jpg" />
     <None Include="Resources\Excel.jpg" />
@@ -966,16 +1158,36 @@
     <None Include="Resources\返回.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Hotel.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Hotel_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>Hotel.mdf</DependentUpon>
-    </Content>
-    <None Include="Properties\DataSources\Hotels.DataModels.goodUnits.datasource" />
+    <None Include="DataModels\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet.xsc">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet.xss">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Hotels.DataModels.cardTypes.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.passengerLiveRecordView.datasource" />
     <None Include="Properties\DataSources\Hotels.DataModels.passengerSourses.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.passengerTypes.datasource" />
     <None Include="Properties\DataSources\Hotels.DataModels.payWays.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.pricePlanDayRoomView.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.pricePlanHourRoomView.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomFloors.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomManage.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.RoomPricePlans.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomStatus.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomtype.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.roomtypeComboBox.datasource" />
+    <None Include="Properties\DataSources\Hotels.DataModels.user1.datasource" />
     <None Include="Resources\表格图标.png" />
   </ItemGroup>
   <ItemGroup>

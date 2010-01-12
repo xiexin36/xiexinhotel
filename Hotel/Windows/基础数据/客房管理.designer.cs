@@ -41,9 +41,10 @@
             System.Windows.Forms.Label descriptionLabel1;
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBoxFloorName = new System.Windows.Forms.TextBox();
-            this.dataGridViewManageTableRoomFloor = new DataGridViewManageTable.DataGridViewManageTable();
-            this.roomFloorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
+            this.dataGridViewManageTableRoomFloor = new DataGridViewManageTable.DataGridViewManageTable();
+            this.floorNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomFloorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.myMaskBoxMoneyHourAddPrice = new DataGridViewManageTable.MyMaskBoxMoney(this.components);
             this.myMaskBoxMoneyOnePrice = new DataGridViewManageTable.MyMaskBoxMoney(this.components);
@@ -51,6 +52,10 @@
             this.typeNameTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridViewManageTableRoomType = new DataGridViewManageTable.DataGridViewManageTable();
+            this.typeNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.onePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hourStartPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hourAddPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.isHourRoomCheckBox = new System.Windows.Forms.CheckBox();
@@ -75,11 +80,6 @@
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isHourRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.onePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hourStartPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hourAddPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.floorNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             roomFloorNameLabel = new System.Windows.Forms.Label();
             hourAddPriceLabel = new System.Windows.Forms.Label();
             hourStartPriceLabel = new System.Windows.Forms.Label();
@@ -197,9 +197,9 @@
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage3.Controls.Add(this.textBoxFloorName);
-            this.tabPage3.Controls.Add(this.dataGridViewManageTableRoomFloor);
             this.tabPage3.Controls.Add(roomFloorNameLabel);
             this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.dataGridViewManageTableRoomFloor);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -214,6 +214,15 @@
             this.textBoxFloorName.Name = "textBoxFloorName";
             this.textBoxFloorName.Size = new System.Drawing.Size(100, 21);
             this.textBoxFloorName.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(230, 397);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(371, 12);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "提示：为了保证楼层排序显示正确,楼层名以数字开头:如1楼,2楼,3楼";
             // 
             // dataGridViewManageTableRoomFloor
             // 
@@ -235,18 +244,16 @@
             this.dataGridViewManageTableRoomFloor.TabIndex = 13;
             this.dataGridViewManageTableRoomFloor.SelectionChanged += new System.EventHandler(this.dataGridViewManageTableRoomFloor_SelectionChanged);
             // 
+            // floorNameDataGridViewTextBoxColumn1
+            // 
+            this.floorNameDataGridViewTextBoxColumn1.DataPropertyName = "floorName";
+            this.floorNameDataGridViewTextBoxColumn1.HeaderText = "楼层名";
+            this.floorNameDataGridViewTextBoxColumn1.Name = "floorNameDataGridViewTextBoxColumn1";
+            // 
             // roomFloorsBindingSource
             // 
-            this.roomFloorsBindingSource.DataSource = typeof(Hotels.DataModels.roomFloors);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(230, 397);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(371, 12);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "提示：为了保证楼层排序显示正确,楼层名以数字开头:如1楼,2楼,3楼";
+            this.roomFloorsBindingSource.DataSource = typeof(Hotels.DataModels.roomFloorsView);
+            this.roomFloorsBindingSource.Filter = "";
             // 
             // tabPage2
             // 
@@ -274,7 +281,7 @@
             // 
             this.myMaskBoxMoneyHourAddPrice.Location = new System.Drawing.Point(459, 390);
             this.myMaskBoxMoneyHourAddPrice.Name = "myMaskBoxMoneyHourAddPrice";
-            this.myMaskBoxMoneyHourAddPrice.NumLength = 0;
+            this.myMaskBoxMoneyHourAddPrice.NumLength = 8;
             this.myMaskBoxMoneyHourAddPrice.Size = new System.Drawing.Size(161, 21);
             this.myMaskBoxMoneyHourAddPrice.TabIndex = 3;
             // 
@@ -282,7 +289,7 @@
             // 
             this.myMaskBoxMoneyOnePrice.Location = new System.Drawing.Point(83, 391);
             this.myMaskBoxMoneyOnePrice.Name = "myMaskBoxMoneyOnePrice";
-            this.myMaskBoxMoneyOnePrice.NumLength = 0;
+            this.myMaskBoxMoneyOnePrice.NumLength = 8;
             this.myMaskBoxMoneyOnePrice.Size = new System.Drawing.Size(171, 21);
             this.myMaskBoxMoneyOnePrice.TabIndex = 2;
             // 
@@ -290,7 +297,7 @@
             // 
             this.myMaskBoxMoneyHourStartPrice.Location = new System.Drawing.Point(459, 360);
             this.myMaskBoxMoneyHourStartPrice.Name = "myMaskBoxMoneyHourStartPrice";
-            this.myMaskBoxMoneyHourStartPrice.NumLength = 0;
+            this.myMaskBoxMoneyHourStartPrice.NumLength = 8;
             this.myMaskBoxMoneyHourStartPrice.Size = new System.Drawing.Size(161, 21);
             this.myMaskBoxMoneyHourStartPrice.TabIndex = 1;
             // 
@@ -333,9 +340,34 @@
             this.dataGridViewManageTableRoomType.TabIndex = 23;
             this.dataGridViewManageTableRoomType.SelectionChanged += new System.EventHandler(this.dataGridViewManageTableRoomType_SelectionChanged);
             // 
+            // typeNameDataGridViewTextBoxColumn1
+            // 
+            this.typeNameDataGridViewTextBoxColumn1.DataPropertyName = "typeName";
+            this.typeNameDataGridViewTextBoxColumn1.HeaderText = "房间类型";
+            this.typeNameDataGridViewTextBoxColumn1.Name = "typeNameDataGridViewTextBoxColumn1";
+            // 
+            // onePriceDataGridViewTextBoxColumn
+            // 
+            this.onePriceDataGridViewTextBoxColumn.DataPropertyName = "onePrice";
+            this.onePriceDataGridViewTextBoxColumn.HeaderText = "房间标价";
+            this.onePriceDataGridViewTextBoxColumn.Name = "onePriceDataGridViewTextBoxColumn";
+            // 
+            // hourStartPriceDataGridViewTextBoxColumn
+            // 
+            this.hourStartPriceDataGridViewTextBoxColumn.DataPropertyName = "hourStartPrice";
+            this.hourStartPriceDataGridViewTextBoxColumn.HeaderText = "房间起钟价";
+            this.hourStartPriceDataGridViewTextBoxColumn.Name = "hourStartPriceDataGridViewTextBoxColumn";
+            // 
+            // hourAddPriceDataGridViewTextBoxColumn
+            // 
+            this.hourAddPriceDataGridViewTextBoxColumn.DataPropertyName = "hourAddPrice";
+            this.hourAddPriceDataGridViewTextBoxColumn.HeaderText = "房间加钟价";
+            this.hourAddPriceDataGridViewTextBoxColumn.Name = "hourAddPriceDataGridViewTextBoxColumn";
+            // 
             // roomtypeBindingSource
             // 
-            this.roomtypeBindingSource.DataSource = typeof(Hotels.DataModels.roomtype);
+            this.roomtypeBindingSource.DataSource = typeof(Hotels.DataModels.roomTypeView);
+            this.roomtypeBindingSource.Filter = "";
             // 
             // tabPage1
             // 
@@ -376,7 +408,7 @@
             // 
             this.phoneMyMaskBoxDigit.Location = new System.Drawing.Point(380, 359);
             this.phoneMyMaskBoxDigit.Name = "phoneMyMaskBoxDigit";
-            this.phoneMyMaskBoxDigit.NumLength = 0;
+            this.phoneMyMaskBoxDigit.NumLength = 8;
             this.phoneMyMaskBoxDigit.Size = new System.Drawing.Size(147, 21);
             this.phoneMyMaskBoxDigit.TabIndex = 1;
             // 
@@ -391,6 +423,7 @@
             // 
             this.roomTypeMyComboBoxNoEdit.DataSource = this.roomtypeBindingSource;
             this.roomTypeMyComboBoxNoEdit.DisplayMember = "typeName";
+            this.roomTypeMyComboBoxNoEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomTypeMyComboBoxNoEdit.FormattingEnabled = true;
             this.roomTypeMyComboBoxNoEdit.Location = new System.Drawing.Point(380, 388);
             this.roomTypeMyComboBoxNoEdit.Name = "roomTypeMyComboBoxNoEdit";
@@ -402,6 +435,7 @@
             // 
             this.roomFloorsMyComboBoxNoEdit.DataSource = this.roomFloorsBindingSource;
             this.roomFloorsMyComboBoxNoEdit.DisplayMember = "floorName";
+            this.roomFloorsMyComboBoxNoEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomFloorsMyComboBoxNoEdit.FormattingEnabled = true;
             this.roomFloorsMyComboBoxNoEdit.Location = new System.Drawing.Point(91, 389);
             this.roomFloorsMyComboBoxNoEdit.Name = "roomFloorsMyComboBoxNoEdit";
@@ -413,7 +447,7 @@
             // 
             this.roomIdMyMaskBoxDigit.Location = new System.Drawing.Point(91, 359);
             this.roomIdMyMaskBoxDigit.Name = "roomIdMyMaskBoxDigit";
-            this.roomIdMyMaskBoxDigit.NumLength = 0;
+            this.roomIdMyMaskBoxDigit.NumLength = 8;
             this.roomIdMyMaskBoxDigit.Size = new System.Drawing.Size(152, 21);
             this.roomIdMyMaskBoxDigit.TabIndex = 0;
             // 
@@ -524,7 +558,6 @@
             this.roomIdDataGridViewTextBoxColumn.DataPropertyName = "roomId";
             this.roomIdDataGridViewTextBoxColumn.HeaderText = "房间号";
             this.roomIdDataGridViewTextBoxColumn.Name = "roomIdDataGridViewTextBoxColumn";
-            this.roomIdDataGridViewTextBoxColumn.Width = 80;
             // 
             // floorNameDataGridViewTextBoxColumn
             // 
@@ -537,6 +570,7 @@
             this.statusNameDataGridViewTextBoxColumn.DataPropertyName = "statusName";
             this.statusNameDataGridViewTextBoxColumn.HeaderText = "房间状态";
             this.statusNameDataGridViewTextBoxColumn.Name = "statusNameDataGridViewTextBoxColumn";
+            this.statusNameDataGridViewTextBoxColumn.Width = 80;
             // 
             // typeNameDataGridViewTextBoxColumn
             // 
@@ -564,36 +598,6 @@
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "房间特征";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // typeNameDataGridViewTextBoxColumn1
-            // 
-            this.typeNameDataGridViewTextBoxColumn1.DataPropertyName = "typeName";
-            this.typeNameDataGridViewTextBoxColumn1.HeaderText = "房间类型";
-            this.typeNameDataGridViewTextBoxColumn1.Name = "typeNameDataGridViewTextBoxColumn1";
-            // 
-            // onePriceDataGridViewTextBoxColumn
-            // 
-            this.onePriceDataGridViewTextBoxColumn.DataPropertyName = "onePrice";
-            this.onePriceDataGridViewTextBoxColumn.HeaderText = "房间单价";
-            this.onePriceDataGridViewTextBoxColumn.Name = "onePriceDataGridViewTextBoxColumn";
-            // 
-            // hourStartPriceDataGridViewTextBoxColumn
-            // 
-            this.hourStartPriceDataGridViewTextBoxColumn.DataPropertyName = "hourStartPrice";
-            this.hourStartPriceDataGridViewTextBoxColumn.HeaderText = "钟点起价";
-            this.hourStartPriceDataGridViewTextBoxColumn.Name = "hourStartPriceDataGridViewTextBoxColumn";
-            // 
-            // hourAddPriceDataGridViewTextBoxColumn
-            // 
-            this.hourAddPriceDataGridViewTextBoxColumn.DataPropertyName = "hourAddPrice";
-            this.hourAddPriceDataGridViewTextBoxColumn.HeaderText = "钟点补价";
-            this.hourAddPriceDataGridViewTextBoxColumn.Name = "hourAddPriceDataGridViewTextBoxColumn";
-            // 
-            // floorNameDataGridViewTextBoxColumn1
-            // 
-            this.floorNameDataGridViewTextBoxColumn1.DataPropertyName = "floorName";
-            this.floorNameDataGridViewTextBoxColumn1.HeaderText = "楼层名";
-            this.floorNameDataGridViewTextBoxColumn1.Name = "floorNameDataGridViewTextBoxColumn1";
             // 
             // 客房管理
             // 
@@ -642,12 +646,9 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonBack;
         private DataGridViewManageTable.DataGridViewManageTable dataGridViewManageTableRoomType;
-        private System.Windows.Forms.BindingSource roomFloorsBindingSource;
-        private System.Windows.Forms.BindingSource roomtypeBindingSource;
         private DataGridViewManageTable.DataGridViewManageTable dataGridViewManageTableRoomFloor;
         private System.Windows.Forms.Button buttonAddMany;
         private DataGridViewManageTable.DataGridViewManageTable dataGridViewManageTableRoomManage;
-        private System.Windows.Forms.BindingSource roomManageBindingSource;
         private DataGridViewManageTable.MyMaskBoxDigit roomIdMyMaskBoxDigit;
         private DataGridViewManageTable.MyComboBoxNoEdit roomTypeMyComboBoxNoEdit;
         private DataGridViewManageTable.MyComboBoxNoEdit roomFloorsMyComboBoxNoEdit;
@@ -659,6 +660,14 @@
         private DataGridViewManageTable.MyMaskBoxMoney myMaskBoxMoneyOnePrice;
         private DataGridViewManageTable.MyMaskBoxMoney myMaskBoxMoneyHourStartPrice;
         private System.Windows.Forms.TextBox textBoxFloorName;
+        private System.Windows.Forms.BindingSource roomFloorsBindingSource;
+        private System.Windows.Forms.BindingSource roomtypeBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn onePriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hourStartPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hourAddPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn floorNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource roomManageBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn floorNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusNameDataGridViewTextBoxColumn;
@@ -666,10 +675,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isHourRoomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn floorNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn onePriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hourStartPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hourAddPriceDataGridViewTextBoxColumn;
     }
 }

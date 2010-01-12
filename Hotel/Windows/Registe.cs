@@ -21,8 +21,8 @@ namespace Hotels.Windows
 
         private void Registe_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“hotelsDataSet.user”中。您可以根据需要移动或移除它。
-
+            this.userBindingSource.DataSource = MainWindow.db.user;
+            this.textBoxPassword.Text = "123456";
         }
         private void buttonCancle_Click(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace Hotels.Windows
                 this.user.Name = this.comboBoxName.Text;
                 this.user.PassWord = this.comboBoxName.SelectedValue.ToString();
                 this.user.Rights = Convert.ToInt32(this.comboBoxName.Tag.ToString());
-                this.Dispose();
+                this.Close();
             }
             else
             {

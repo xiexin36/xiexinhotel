@@ -30,30 +30,48 @@ namespace Hotels.DataModels
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertroom(room instance);
-    partial void Updateroom(room instance);
-    partial void Deleteroom(room instance);
-    partial void InsertroomFloors(roomFloors instance);
-    partial void UpdateroomFloors(roomFloors instance);
-    partial void DeleteroomFloors(roomFloors instance);
     partial void InsertroomStatus(roomStatus instance);
     partial void UpdateroomStatus(roomStatus instance);
     partial void DeleteroomStatus(roomStatus instance);
     partial void Insertroomtype(roomtype instance);
     partial void Updateroomtype(roomtype instance);
     partial void Deleteroomtype(roomtype instance);
-    partial void Insertuser(user instance);
-    partial void Updateuser(user instance);
-    partial void Deleteuser(user instance);
-    partial void InsertpayWays(payWays instance);
-    partial void UpdatepayWays(payWays instance);
-    partial void DeletepayWays(payWays instance);
+    partial void InsertroomFloors(roomFloors instance);
+    partial void UpdateroomFloors(roomFloors instance);
+    partial void DeleteroomFloors(roomFloors instance);
     partial void InsertgoodUnits(goodUnits instance);
     partial void UpdategoodUnits(goodUnits instance);
     partial void DeletegoodUnits(goodUnits instance);
+    partial void InsertpayWays(payWays instance);
+    partial void UpdatepayWays(payWays instance);
+    partial void DeletepayWays(payWays instance);
     partial void InsertpassengerSourses(passengerSourses instance);
     partial void UpdatepassengerSourses(passengerSourses instance);
     partial void DeletepassengerSourses(passengerSourses instance);
+    partial void Insertuser(user instance);
+    partial void Updateuser(user instance);
+    partial void Deleteuser(user instance);
+    partial void Insertroomgoods(roomgoods instance);
+    partial void Updateroomgoods(roomgoods instance);
+    partial void Deleteroomgoods(roomgoods instance);
+    partial void InsertroomtypeComboBox(roomtypeComboBox instance);
+    partial void UpdateroomtypeComboBox(roomtypeComboBox instance);
+    partial void DeleteroomtypeComboBox(roomtypeComboBox instance);
+    partial void InsertcardTypes(cardTypes instance);
+    partial void UpdatecardTypes(cardTypes instance);
+    partial void DeletecardTypes(cardTypes instance);
+    partial void InsertpassengerTypes(passengerTypes instance);
+    partial void UpdatepassengerTypes(passengerTypes instance);
+    partial void DeletepassengerTypes(passengerTypes instance);
+    partial void Insertroom(room instance);
+    partial void Updateroom(room instance);
+    partial void Deleteroom(room instance);
+    partial void Insertpassenger(passenger instance);
+    partial void Updatepassenger(passenger instance);
+    partial void Deletepassenger(passenger instance);
+    partial void InsertRoomPricePlans(RoomPricePlans instance);
+    partial void UpdateRoomPricePlans(RoomPricePlans instance);
+    partial void DeleteRoomPricePlans(RoomPricePlans instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -86,22 +104,6 @@ namespace Hotels.DataModels
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<room> room
-		{
-			get
-			{
-				return this.GetTable<room>();
-			}
-		}
-		
-		public System.Data.Linq.Table<roomFloors> roomFloors
-		{
-			get
-			{
-				return this.GetTable<roomFloors>();
-			}
-		}
-		
 		public System.Data.Linq.Table<roomStatus> roomStatus
 		{
 			get
@@ -118,27 +120,11 @@ namespace Hotels.DataModels
 			}
 		}
 		
-		public System.Data.Linq.Table<roomManage> roomManage
+		public System.Data.Linq.Table<roomFloors> roomFloors
 		{
 			get
 			{
-				return this.GetTable<roomManage>();
-			}
-		}
-		
-		public System.Data.Linq.Table<user> user
-		{
-			get
-			{
-				return this.GetTable<user>();
-			}
-		}
-		
-		public System.Data.Linq.Table<payWays> payWays
-		{
-			get
-			{
-				return this.GetTable<payWays>();
+				return this.GetTable<roomFloors>();
 			}
 		}
 		
@@ -150,6 +136,14 @@ namespace Hotels.DataModels
 			}
 		}
 		
+		public System.Data.Linq.Table<payWays> payWays
+		{
+			get
+			{
+				return this.GetTable<payWays>();
+			}
+		}
+		
 		public System.Data.Linq.Table<passengerSourses> passengerSourses
 		{
 			get
@@ -158,21 +152,201 @@ namespace Hotels.DataModels
 			}
 		}
 		
+		public System.Data.Linq.Table<user> user
+		{
+			get
+			{
+				return this.GetTable<user>();
+			}
+		}
+		
+		public System.Data.Linq.Table<roomgoods> roomgoods
+		{
+			get
+			{
+				return this.GetTable<roomgoods>();
+			}
+		}
+		
+		public System.Data.Linq.Table<roomFloorsView> roomFloorsView
+		{
+			get
+			{
+				return this.GetTable<roomFloorsView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<roomTypeView> roomTypeView
+		{
+			get
+			{
+				return this.GetTable<roomTypeView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<roomManage> roomManage
+		{
+			get
+			{
+				return this.GetTable<roomManage>();
+			}
+		}
+		
+		public System.Data.Linq.Table<roomtypeComboBox> roomtypeComboBox
+		{
+			get
+			{
+				return this.GetTable<roomtypeComboBox>();
+			}
+		}
+		
+		public System.Data.Linq.Table<cardTypes> cardTypes
+		{
+			get
+			{
+				return this.GetTable<cardTypes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<passengerTypes> passengerTypes
+		{
+			get
+			{
+				return this.GetTable<passengerTypes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<passengerLiveRecordView> passengerLiveRecordView
+		{
+			get
+			{
+				return this.GetTable<passengerLiveRecordView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<room> room
+		{
+			get
+			{
+				return this.GetTable<room>();
+			}
+		}
+		
+		public System.Data.Linq.Table<passenger> passenger
+		{
+			get
+			{
+				return this.GetTable<passenger>();
+			}
+		}
+		
+		public System.Data.Linq.Table<RoomPricePlans> RoomPricePlans
+		{
+			get
+			{
+				return this.GetTable<RoomPricePlans>();
+			}
+		}
+		
+		public System.Data.Linq.Table<pricePlanDayRoomView> pricePlanDayRoomView
+		{
+			get
+			{
+				return this.GetTable<pricePlanDayRoomView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<pricePlanHourRoomView> pricePlanHourRoomView
+		{
+			get
+			{
+				return this.GetTable<pricePlanHourRoomView>();
+			}
+		}
+		
+		private void InsertroomFloorsView(roomFloorsView obj)
+		{
+			this.InsertRoomFloors(((System.Nullable<int>)(obj.floorId)), obj.floorName);
+		}
+		
+		private void UpdateroomFloorsView(roomFloorsView obj)
+		{
+			roomFloorsView original = ((roomFloorsView)(roomFloorsView.GetOriginalEntityState(obj)));
+			this.UpdateRoomFloors(((System.Nullable<int>)(obj.floorId)), obj.floorName, ((System.Nullable<int>)(original.floorId)));
+		}
+		
+		private void DeleteroomFloorsView(roomFloorsView obj)
+		{
+			roomFloorsView original = ((roomFloorsView)(roomFloorsView.GetOriginalEntityState(obj)));
+			this.DeleteRoomFloors(((System.Nullable<int>)(original.floorId)));
+		}
+		
+		private void InsertroomTypeView(roomTypeView obj)
+		{
+			this.InsertRoomType(((System.Nullable<int>)(obj.type)), obj.typeName, ((System.Nullable<decimal>)(obj.onePrice)), ((System.Nullable<decimal>)(obj.hourStartPrice)), ((System.Nullable<decimal>)(obj.hourAddPrice)));
+		}
+		
+		private void UpdateroomTypeView(roomTypeView obj)
+		{
+			roomTypeView original = ((roomTypeView)(roomTypeView.GetOriginalEntityState(obj)));
+			this.UpdateRoomType(((System.Nullable<int>)(obj.type)), obj.typeName, ((System.Nullable<decimal>)(obj.onePrice)), ((System.Nullable<decimal>)(obj.hourStartPrice)), ((System.Nullable<decimal>)(obj.hourAddPrice)), ((System.Nullable<int>)(original.type)));
+		}
+		
+		private void DeleteroomTypeView(roomTypeView obj)
+		{
+			roomTypeView original = ((roomTypeView)(roomTypeView.GetOriginalEntityState(obj)));
+			this.DeleteRoomType(((System.Nullable<int>)(original.type)));
+		}
+		
 		private void InsertroomManage(roomManage obj)
 		{
-			this.InsertRoom(((System.Nullable<int>)(obj.roomId)), ((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.rStatue)), ((System.Nullable<int>)(obj.rFloor)), ((System.Nullable<int>)(obj.phone)), ((System.Nullable<bool>)(obj.isHourRoom)), obj.description, ((System.Nullable<System.DateTime>)(obj.time)));
+			this.InsertRoom(((System.Nullable<int>)(obj.roomId)), ((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.rStatue)), ((System.Nullable<int>)(obj.rFloor)), ((System.Nullable<int>)(obj.phone)), ((System.Nullable<bool>)(obj.isHourRoom)), obj.description, default(System.Nullable<int>), default(System.Nullable<int>));
 		}
 		
 		private void UpdateroomManage(roomManage obj)
 		{
 			roomManage original = ((roomManage)(roomManage.GetOriginalEntityState(obj)));
-			this.UpdateRoom(((System.Nullable<int>)(obj.roomId)), ((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.rStatue)), ((System.Nullable<int>)(obj.rFloor)), ((System.Nullable<int>)(obj.phone)), ((System.Nullable<bool>)(obj.isHourRoom)), obj.description, ((System.Nullable<System.DateTime>)(obj.time)), ((System.Nullable<int>)(original.roomId)));
+			this.UpdateRoom(((System.Nullable<int>)(obj.roomId)), ((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.rStatue)), ((System.Nullable<int>)(obj.rFloor)), ((System.Nullable<int>)(obj.phone)), ((System.Nullable<bool>)(obj.isHourRoom)), obj.description, default(System.Nullable<int>), default(System.Nullable<int>), ((System.Nullable<int>)(original.roomId)));
 		}
 		
 		private void DeleteroomManage(roomManage obj)
 		{
 			roomManage original = ((roomManage)(roomManage.GetOriginalEntityState(obj)));
 			this.DeleteRoom(((System.Nullable<int>)(original.roomId)));
+		}
+		
+		private void InsertpricePlanDayRoomView(pricePlanDayRoomView obj)
+		{
+			this.InsertPricePlanDayRoom(((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.pricePlanId)), ((System.Nullable<decimal>)(obj.disPrice)));
+		}
+		
+		private void UpdatepricePlanDayRoomView(pricePlanDayRoomView obj)
+		{
+			pricePlanDayRoomView original = ((pricePlanDayRoomView)(pricePlanDayRoomView.GetOriginalEntityState(obj)));
+			this.UpdatePricePlanDayRoom(((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.pricePlanId)), ((System.Nullable<decimal>)(obj.disPrice)), ((System.Nullable<int>)(original.rType)), ((System.Nullable<int>)(original.pricePlanId)));
+		}
+		
+		private void DeletepricePlanDayRoomView(pricePlanDayRoomView obj)
+		{
+			pricePlanDayRoomView original = ((pricePlanDayRoomView)(pricePlanDayRoomView.GetOriginalEntityState(obj)));
+			this.DeletePricePlanDayRoom(((System.Nullable<int>)(original.rType)), ((System.Nullable<int>)(original.pricePlanId)));
+		}
+		
+		private void InsertpricePlanHourRoomView(pricePlanHourRoomView obj)
+		{
+			this.InsertPricePlanHourRoom(((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.pricePlanId)), ((System.Nullable<decimal>)(obj.startHourPrice)), ((System.Nullable<decimal>)(obj.addHourPrice)));
+		}
+		
+		private void UpdatepricePlanHourRoomView(pricePlanHourRoomView obj)
+		{
+			pricePlanHourRoomView original = ((pricePlanHourRoomView)(pricePlanHourRoomView.GetOriginalEntityState(obj)));
+			this.UpdatePricePlanHourRoom(((System.Nullable<int>)(obj.rType)), ((System.Nullable<int>)(obj.pricePlanId)), ((System.Nullable<decimal>)(obj.startHourPrice)), ((System.Nullable<decimal>)(obj.addHourPrice)), ((System.Nullable<int>)(original.rType)), ((System.Nullable<int>)(original.pricePlanId)));
+		}
+		
+		private void DeletepricePlanHourRoomView(pricePlanHourRoomView obj)
+		{
+			pricePlanHourRoomView original = ((pricePlanHourRoomView)(pricePlanHourRoomView.GetOriginalEntityState(obj)));
+			this.DeletePricePlanHourRoom(((System.Nullable<int>)(original.rType)), ((System.Nullable<int>)(original.pricePlanId)));
 		}
 		
 		[Function(Name="dbo.selectRoomAddMany")]
@@ -183,6 +357,55 @@ namespace Hotels.DataModels
 			return ((int)(result.ReturnValue));
 		}
 		
+		[Function(Name="dbo.DeleteRoomFloors")]
+		public int DeleteRoomFloors([Parameter(Name="Original_floorId", DbType="Int")] System.Nullable<int> original_floorId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), original_floorId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DeleteRoomType")]
+		public int DeleteRoomType([Parameter(Name="Original_type", DbType="Int")] System.Nullable<int> original_type)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), original_type);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.InsertRoomFloors")]
+		public ISingleResult<InsertRoomFloors_个结果> InsertRoomFloors([Parameter(DbType="Int")] System.Nullable<int> floorId, [Parameter(DbType="NVarChar(10)")] string floorName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), floorId, floorName);
+			return ((ISingleResult<InsertRoomFloors_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.InsertRoomType")]
+		public ISingleResult<InsertRoomType_个结果> InsertRoomType([Parameter(DbType="Int")] System.Nullable<int> type, [Parameter(DbType="NVarChar(50)")] string typeName, [Parameter(DbType="Decimal")] System.Nullable<decimal> onePrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> hourStartPrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> hourAddPrice)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, typeName, onePrice, hourStartPrice, hourAddPrice);
+			return ((ISingleResult<InsertRoomType_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateRoomFloors")]
+		public ISingleResult<UpdateRoomFloors_个结果> UpdateRoomFloors([Parameter(DbType="Int")] System.Nullable<int> floorId, [Parameter(DbType="NVarChar(10)")] string floorName, [Parameter(Name="Original_floorId", DbType="Int")] System.Nullable<int> original_floorId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), floorId, floorName, original_floorId);
+			return ((ISingleResult<UpdateRoomFloors_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateRoomType")]
+		public ISingleResult<UpdateRoomType_个结果> UpdateRoomType([Parameter(DbType="Int")] System.Nullable<int> type, [Parameter(DbType="NVarChar(50)")] string typeName, [Parameter(DbType="Decimal")] System.Nullable<decimal> onePrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> hourStartPrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> hourAddPrice, [Parameter(Name="Original_type", DbType="Int")] System.Nullable<int> original_type)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, typeName, onePrice, hourStartPrice, hourAddPrice, original_type);
+			return ((ISingleResult<UpdateRoomType_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SelectRoomButton")]
+		public ISingleResult<SelectRoomButton_个结果> SelectRoomButton([Parameter(DbType="Int")] System.Nullable<int> roomTypeBegin, [Parameter(DbType="Int")] System.Nullable<int> roomTypeEnd, [Parameter(DbType="Int")] System.Nullable<int> roomFloorBegin, [Parameter(DbType="Int")] System.Nullable<int> roomFloorEnd, [Parameter(DbType="Int")] System.Nullable<int> roomStatueBegin, [Parameter(DbType="Int")] System.Nullable<int> roomStatueEnd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomTypeBegin, roomTypeEnd, roomFloorBegin, roomFloorEnd, roomStatueBegin, roomStatueEnd);
+			return ((ISingleResult<SelectRoomButton_个结果>)(result.ReturnValue));
+		}
+		
 		[Function(Name="dbo.DeleteRoom")]
 		public int DeleteRoom([Parameter(Name="Original_roomId", DbType="Int")] System.Nullable<int> original_roomId)
 		{
@@ -191,500 +414,66 @@ namespace Hotels.DataModels
 		}
 		
 		[Function(Name="dbo.InsertRoom")]
-		public ISingleResult<InsertRoom_个结果> InsertRoom([Parameter(DbType="Int")] System.Nullable<int> roomId, [Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> rStatue, [Parameter(DbType="Int")] System.Nullable<int> rFloor, [Parameter(DbType="Int")] System.Nullable<int> phone, [Parameter(DbType="Bit")] System.Nullable<bool> isHourRoom, [Parameter(DbType="NVarChar(50)")] string description, [Parameter(DbType="SmallDateTime")] System.Nullable<System.DateTime> time)
+		public ISingleResult<InsertRoom_个结果> InsertRoom([Parameter(DbType="Int")] System.Nullable<int> roomId, [Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> rStatue, [Parameter(DbType="Int")] System.Nullable<int> rFloor, [Parameter(DbType="Int")] System.Nullable<int> phone, [Parameter(DbType="Bit")] System.Nullable<bool> isHourRoom, [Parameter(DbType="NVarChar(50)")] string description, [Parameter(DbType="Int")] System.Nullable<int> passengerId, [Parameter(DbType="Int")] System.Nullable<int> rPricePlan)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomId, rType, rStatue, rFloor, phone, isHourRoom, description, time);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomId, rType, rStatue, rFloor, phone, isHourRoom, description, passengerId, rPricePlan);
 			return ((ISingleResult<InsertRoom_个结果>)(result.ReturnValue));
 		}
 		
 		[Function(Name="dbo.UpdateRoom")]
-		public ISingleResult<UpdateRoom_个结果> UpdateRoom([Parameter(DbType="Int")] System.Nullable<int> roomId, [Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> rStatue, [Parameter(DbType="Int")] System.Nullable<int> rFloor, [Parameter(DbType="Int")] System.Nullable<int> phone, [Parameter(DbType="Bit")] System.Nullable<bool> isHourRoom, [Parameter(DbType="NVarChar(50)")] string description, [Parameter(DbType="SmallDateTime")] System.Nullable<System.DateTime> time, [Parameter(Name="Original_roomId", DbType="Int")] System.Nullable<int> original_roomId)
+		public ISingleResult<UpdateRoom_个结果> UpdateRoom([Parameter(DbType="Int")] System.Nullable<int> roomId, [Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> rStatue, [Parameter(DbType="Int")] System.Nullable<int> rFloor, [Parameter(DbType="Int")] System.Nullable<int> phone, [Parameter(DbType="Bit")] System.Nullable<bool> isHourRoom, [Parameter(DbType="NVarChar(50)")] string description, [Parameter(DbType="Int")] System.Nullable<int> passengerId, [Parameter(DbType="Int")] System.Nullable<int> rPricePlan, [Parameter(Name="Original_roomId", DbType="Int")] System.Nullable<int> original_roomId)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomId, rType, rStatue, rFloor, phone, isHourRoom, description, time, original_roomId);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roomId, rType, rStatue, rFloor, phone, isHourRoom, description, passengerId, rPricePlan, original_roomId);
 			return ((ISingleResult<UpdateRoom_个结果>)(result.ReturnValue));
 		}
 		
-		[Function(Name="dbo.GetMaxFloorId")]
-		public int GetMaxFloorId([Parameter(DbType="Int")] ref System.Nullable<int> maxId)
+		[Function(Name="dbo.SelectRoom")]
+		public ISingleResult<SelectRoom_个结果> SelectRoom()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxId);
-			maxId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SelectRoom_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DeletePricePlanDayRoom")]
+		public int DeletePricePlanDayRoom([Parameter(Name="Original_rType", DbType="Int")] System.Nullable<int> original_rType, [Parameter(Name="Original_pricePlanId", DbType="Int")] System.Nullable<int> original_pricePlanId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), original_rType, original_pricePlanId);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[Function(Name="dbo.GetMaxRoomTypeId")]
-		public int GetMaxRoomTypeId([Parameter(DbType="Int")] ref System.Nullable<int> maxId)
+		[Function(Name="dbo.DeletePricePlanHourRoom")]
+		public int DeletePricePlanHourRoom([Parameter(Name="Original_rType", DbType="Int")] System.Nullable<int> original_rType, [Parameter(Name="Original_pricePlanId", DbType="Int")] System.Nullable<int> original_pricePlanId)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxId);
-			maxId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), original_rType, original_pricePlanId);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	[Table(Name="dbo.room")]
-	public partial class room : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _roomId;
-		
-		private int _rType;
-		
-		private int _rStatue;
-		
-		private int _rFloor;
-		
-		private System.Nullable<int> _phone;
-		
-		private System.Nullable<bool> _isHourRoom;
-		
-		private string _description;
-		
-		private System.Nullable<System.DateTime> _time;
-		
-		private EntityRef<roomFloors> _roomFloors;
-		
-		private EntityRef<roomStatus> _roomStatus;
-		
-		private EntityRef<roomtype> _roomtype;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnroomIdChanging(int value);
-    partial void OnroomIdChanged();
-    partial void OnrTypeChanging(int value);
-    partial void OnrTypeChanged();
-    partial void OnrStatueChanging(int value);
-    partial void OnrStatueChanged();
-    partial void OnrFloorChanging(int value);
-    partial void OnrFloorChanged();
-    partial void OnphoneChanging(System.Nullable<int> value);
-    partial void OnphoneChanged();
-    partial void OnisHourRoomChanging(System.Nullable<bool> value);
-    partial void OnisHourRoomChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    partial void OntimeChanging(System.Nullable<System.DateTime> value);
-    partial void OntimeChanged();
-    #endregion
-		
-		public room()
+		[Function(Name="dbo.InsertPricePlanDayRoom")]
+		public ISingleResult<InsertPricePlanDayRoom_个结果> InsertPricePlanDayRoom([Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> pricePlanId, [Parameter(DbType="Decimal")] System.Nullable<decimal> disPrice)
 		{
-			this._roomFloors = default(EntityRef<roomFloors>);
-			this._roomStatus = default(EntityRef<roomStatus>);
-			this._roomtype = default(EntityRef<roomtype>);
-			OnCreated();
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rType, pricePlanId, disPrice);
+			return ((ISingleResult<InsertPricePlanDayRoom_个结果>)(result.ReturnValue));
 		}
 		
-		[Column(Storage="_roomId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int roomId
+		[Function(Name="dbo.InsertPricePlanHourRoom")]
+		public ISingleResult<InsertPricePlanHourRoom_个结果> InsertPricePlanHourRoom([Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> pricePlanId, [Parameter(DbType="Decimal")] System.Nullable<decimal> startHourPrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> addHourPrice)
 		{
-			get
-			{
-				return this._roomId;
-			}
-			set
-			{
-				if ((this._roomId != value))
-				{
-					this.OnroomIdChanging(value);
-					this.SendPropertyChanging();
-					this._roomId = value;
-					this.SendPropertyChanged("roomId");
-					this.OnroomIdChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rType, pricePlanId, startHourPrice, addHourPrice);
+			return ((ISingleResult<InsertPricePlanHourRoom_个结果>)(result.ReturnValue));
 		}
 		
-		[Column(Storage="_rType", DbType="Int NOT NULL")]
-		public int rType
+		[Function(Name="dbo.UpdatePricePlanDayRoom")]
+		public ISingleResult<UpdatePricePlanDayRoom_个结果> UpdatePricePlanDayRoom([Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> pricePlanId, [Parameter(DbType="Decimal")] System.Nullable<decimal> disPrice, [Parameter(Name="Original_rType", DbType="Int")] System.Nullable<int> original_rType, [Parameter(Name="Original_pricePlanId", DbType="Int")] System.Nullable<int> original_pricePlanId)
 		{
-			get
-			{
-				return this._rType;
-			}
-			set
-			{
-				if ((this._rType != value))
-				{
-					if (this._roomtype.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnrTypeChanging(value);
-					this.SendPropertyChanging();
-					this._rType = value;
-					this.SendPropertyChanged("rType");
-					this.OnrTypeChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rType, pricePlanId, disPrice, original_rType, original_pricePlanId);
+			return ((ISingleResult<UpdatePricePlanDayRoom_个结果>)(result.ReturnValue));
 		}
 		
-		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
-		public int rStatue
+		[Function(Name="dbo.UpdatePricePlanHourRoom")]
+		public ISingleResult<UpdatePricePlanHourRoom_个结果> UpdatePricePlanHourRoom([Parameter(DbType="Int")] System.Nullable<int> rType, [Parameter(DbType="Int")] System.Nullable<int> pricePlanId, [Parameter(DbType="Decimal")] System.Nullable<decimal> startHourPrice, [Parameter(DbType="Decimal")] System.Nullable<decimal> addHourPrice, [Parameter(Name="Original_rType", DbType="Int")] System.Nullable<int> original_rType, [Parameter(Name="Original_pricePlanId", DbType="Int")] System.Nullable<int> original_pricePlanId)
 		{
-			get
-			{
-				return this._rStatue;
-			}
-			set
-			{
-				if ((this._rStatue != value))
-				{
-					if (this._roomStatus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnrStatueChanging(value);
-					this.SendPropertyChanging();
-					this._rStatue = value;
-					this.SendPropertyChanged("rStatue");
-					this.OnrStatueChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
-		public int rFloor
-		{
-			get
-			{
-				return this._rFloor;
-			}
-			set
-			{
-				if ((this._rFloor != value))
-				{
-					if (this._roomFloors.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnrFloorChanging(value);
-					this.SendPropertyChanging();
-					this._rFloor = value;
-					this.SendPropertyChanged("rFloor");
-					this.OnrFloorChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_phone", DbType="Int")]
-		public System.Nullable<int> phone
-		{
-			get
-			{
-				return this._phone;
-			}
-			set
-			{
-				if ((this._phone != value))
-				{
-					this.OnphoneChanging(value);
-					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_isHourRoom", DbType="Bit")]
-		public System.Nullable<bool> isHourRoom
-		{
-			get
-			{
-				return this._isHourRoom;
-			}
-			set
-			{
-				if ((this._isHourRoom != value))
-				{
-					this.OnisHourRoomChanging(value);
-					this.SendPropertyChanging();
-					this._isHourRoom = value;
-					this.SendPropertyChanged("isHourRoom");
-					this.OnisHourRoomChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_description", DbType="NVarChar(50)")]
-		public string description
-		{
-			get
-			{
-				return this._description;
-			}
-			set
-			{
-				if ((this._description != value))
-				{
-					this.OndescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._description = value;
-					this.SendPropertyChanged("description");
-					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_time", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> time
-		{
-			get
-			{
-				return this._time;
-			}
-			set
-			{
-				if ((this._time != value))
-				{
-					this.OntimeChanging(value);
-					this.SendPropertyChanging();
-					this._time = value;
-					this.SendPropertyChanged("time");
-					this.OntimeChanged();
-				}
-			}
-		}
-		
-		[Association(Name="roomFloors_room", Storage="_roomFloors", ThisKey="rFloor", OtherKey="floorId", IsForeignKey=true)]
-		public roomFloors roomFloors
-		{
-			get
-			{
-				return this._roomFloors.Entity;
-			}
-			set
-			{
-				roomFloors previousValue = this._roomFloors.Entity;
-				if (((previousValue != value) 
-							|| (this._roomFloors.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._roomFloors.Entity = null;
-						previousValue.room.Remove(this);
-					}
-					this._roomFloors.Entity = value;
-					if ((value != null))
-					{
-						value.room.Add(this);
-						this._rFloor = value.floorId;
-					}
-					else
-					{
-						this._rFloor = default(int);
-					}
-					this.SendPropertyChanged("roomFloors");
-				}
-			}
-		}
-		
-		[Association(Name="roomStatus_room", Storage="_roomStatus", ThisKey="rStatue", OtherKey="status", IsForeignKey=true)]
-		public roomStatus roomStatus
-		{
-			get
-			{
-				return this._roomStatus.Entity;
-			}
-			set
-			{
-				roomStatus previousValue = this._roomStatus.Entity;
-				if (((previousValue != value) 
-							|| (this._roomStatus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._roomStatus.Entity = null;
-						previousValue.room.Remove(this);
-					}
-					this._roomStatus.Entity = value;
-					if ((value != null))
-					{
-						value.room.Add(this);
-						this._rStatue = value.status;
-					}
-					else
-					{
-						this._rStatue = default(int);
-					}
-					this.SendPropertyChanged("roomStatus");
-				}
-			}
-		}
-		
-		[Association(Name="roomtype_room", Storage="_roomtype", ThisKey="rType", OtherKey="type", IsForeignKey=true)]
-		public roomtype roomtype
-		{
-			get
-			{
-				return this._roomtype.Entity;
-			}
-			set
-			{
-				roomtype previousValue = this._roomtype.Entity;
-				if (((previousValue != value) 
-							|| (this._roomtype.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._roomtype.Entity = null;
-						previousValue.room.Remove(this);
-					}
-					this._roomtype.Entity = value;
-					if ((value != null))
-					{
-						value.room.Add(this);
-						this._rType = value.type;
-					}
-					else
-					{
-						this._rType = default(int);
-					}
-					this.SendPropertyChanged("roomtype");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.roomFloors")]
-	public partial class roomFloors : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _floorId;
-		
-		private string _floorName;
-		
-		private EntitySet<room> _room;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnfloorIdChanging(int value);
-    partial void OnfloorIdChanged();
-    partial void OnfloorNameChanging(string value);
-    partial void OnfloorNameChanged();
-    #endregion
-		
-		public roomFloors()
-		{
-			this._room = new EntitySet<room>(new Action<room>(this.attach_room), new Action<room>(this.detach_room));
-			OnCreated();
-		}
-		
-		[Column(Storage="_floorId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int floorId
-		{
-			get
-			{
-				return this._floorId;
-			}
-			set
-			{
-				if ((this._floorId != value))
-				{
-					this.OnfloorIdChanging(value);
-					this.SendPropertyChanging();
-					this._floorId = value;
-					this.SendPropertyChanged("floorId");
-					this.OnfloorIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string floorName
-		{
-			get
-			{
-				return this._floorName;
-			}
-			set
-			{
-				if ((this._floorName != value))
-				{
-					this.OnfloorNameChanging(value);
-					this.SendPropertyChanging();
-					this._floorName = value;
-					this.SendPropertyChanged("floorName");
-					this.OnfloorNameChanged();
-				}
-			}
-		}
-		
-		[Association(Name="roomFloors_room", Storage="_room", ThisKey="floorId", OtherKey="rFloor")]
-		public EntitySet<room> room
-		{
-			get
-			{
-				return this._room;
-			}
-			set
-			{
-				this._room.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_room(room entity)
-		{
-			this.SendPropertyChanging();
-			entity.roomFloors = this;
-		}
-		
-		private void detach_room(room entity)
-		{
-			this.SendPropertyChanging();
-			entity.roomFloors = null;
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rType, pricePlanId, startHourPrice, addHourPrice, original_rType, original_pricePlanId);
+			return ((ISingleResult<UpdatePricePlanHourRoom_个结果>)(result.ReturnValue));
 		}
 	}
 	
@@ -1012,223 +801,50 @@ namespace Hotels.DataModels
 		}
 	}
 	
-	[Table(Name="dbo.roomManage")]
-	public partial class roomManage : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.roomFloors")]
+	public partial class roomFloors : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _roomId;
-		
-		private int _rType;
-		
-		private int _rStatue;
-		
-		private int _rFloor;
-		
-		private System.Nullable<int> _phone;
-		
-		private System.Nullable<bool> _isHourRoom;
-		
-		private string _description;
-		
-		private System.Nullable<System.DateTime> _time;
+		private int _floorId;
 		
 		private string _floorName;
 		
-		private string _statusName;
-		
-		private string _typeName;
+		private EntitySet<room> _room;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnroomIdChanging(int value);
-    partial void OnroomIdChanged();
-    partial void OnrTypeChanging(int value);
-    partial void OnrTypeChanged();
-    partial void OnrStatueChanging(int value);
-    partial void OnrStatueChanged();
-    partial void OnrFloorChanging(int value);
-    partial void OnrFloorChanged();
-    partial void OnphoneChanging(System.Nullable<int> value);
-    partial void OnphoneChanged();
-    partial void OnisHourRoomChanging(System.Nullable<bool> value);
-    partial void OnisHourRoomChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    partial void OntimeChanging(System.Nullable<System.DateTime> value);
-    partial void OntimeChanged();
+    partial void OnfloorIdChanging(int value);
+    partial void OnfloorIdChanged();
     partial void OnfloorNameChanging(string value);
     partial void OnfloorNameChanged();
-    partial void OnstatusNameChanging(string value);
-    partial void OnstatusNameChanged();
-    partial void OntypeNameChanging(string value);
-    partial void OntypeNameChanged();
     #endregion
 		
-		public roomManage()
+		public roomFloors()
 		{
+			this._room = new EntitySet<room>(new Action<room>(this.attach_room), new Action<room>(this.detach_room));
 			OnCreated();
 		}
 		
-		[Column(Storage="_roomId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int roomId
+		[Column(Storage="_floorId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int floorId
 		{
 			get
 			{
-				return this._roomId;
+				return this._floorId;
 			}
 			set
 			{
-				if ((this._roomId != value))
+				if ((this._floorId != value))
 				{
-					this.OnroomIdChanging(value);
+					this.OnfloorIdChanging(value);
 					this.SendPropertyChanging();
-					this._roomId = value;
-					this.SendPropertyChanged("roomId");
-					this.OnroomIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_rType", DbType="Int NOT NULL")]
-		public int rType
-		{
-			get
-			{
-				return this._rType;
-			}
-			set
-			{
-				if ((this._rType != value))
-				{
-					this.OnrTypeChanging(value);
-					this.SendPropertyChanging();
-					this._rType = value;
-					this.SendPropertyChanged("rType");
-					this.OnrTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
-		public int rStatue
-		{
-			get
-			{
-				return this._rStatue;
-			}
-			set
-			{
-				if ((this._rStatue != value))
-				{
-					this.OnrStatueChanging(value);
-					this.SendPropertyChanging();
-					this._rStatue = value;
-					this.SendPropertyChanged("rStatue");
-					this.OnrStatueChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
-		public int rFloor
-		{
-			get
-			{
-				return this._rFloor;
-			}
-			set
-			{
-				if ((this._rFloor != value))
-				{
-					this.OnrFloorChanging(value);
-					this.SendPropertyChanging();
-					this._rFloor = value;
-					this.SendPropertyChanged("rFloor");
-					this.OnrFloorChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_phone", DbType="Int")]
-		public System.Nullable<int> phone
-		{
-			get
-			{
-				return this._phone;
-			}
-			set
-			{
-				if ((this._phone != value))
-				{
-					this.OnphoneChanging(value);
-					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_isHourRoom", DbType="Bit")]
-		public System.Nullable<bool> isHourRoom
-		{
-			get
-			{
-				return this._isHourRoom;
-			}
-			set
-			{
-				if ((this._isHourRoom != value))
-				{
-					this.OnisHourRoomChanging(value);
-					this.SendPropertyChanging();
-					this._isHourRoom = value;
-					this.SendPropertyChanged("isHourRoom");
-					this.OnisHourRoomChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_description", DbType="NVarChar(50)")]
-		public string description
-		{
-			get
-			{
-				return this._description;
-			}
-			set
-			{
-				if ((this._description != value))
-				{
-					this.OndescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._description = value;
-					this.SendPropertyChanged("description");
-					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_time", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> time
-		{
-			get
-			{
-				return this._time;
-			}
-			set
-			{
-				if ((this._time != value))
-				{
-					this.OntimeChanging(value);
-					this.SendPropertyChanging();
-					this._time = value;
-					this.SendPropertyChanged("time");
-					this.OntimeChanged();
+					this._floorId = value;
+					this.SendPropertyChanged("floorId");
+					this.OnfloorIdChanged();
 				}
 			}
 		}
@@ -1253,43 +869,16 @@ namespace Hotels.DataModels
 			}
 		}
 		
-		[Column(Storage="_statusName", DbType="NChar(4) NOT NULL", CanBeNull=false)]
-		public string statusName
+		[Association(Name="roomFloors_room", Storage="_room", ThisKey="floorId", OtherKey="rFloor")]
+		public EntitySet<room> room
 		{
 			get
 			{
-				return this._statusName;
+				return this._room;
 			}
 			set
 			{
-				if ((this._statusName != value))
-				{
-					this.OnstatusNameChanging(value);
-					this.SendPropertyChanging();
-					this._statusName = value;
-					this.SendPropertyChanged("statusName");
-					this.OnstatusNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string typeName
-		{
-			get
-			{
-				return this._typeName;
-			}
-			set
-			{
-				if ((this._typeName != value))
-				{
-					this.OntypeNameChanging(value);
-					this.SendPropertyChanging();
-					this._typeName = value;
-					this.SendPropertyChanged("typeName");
-					this.OntypeNameChanged();
-				}
+				this._room.Assign(value);
 			}
 		}
 		
@@ -1311,6 +900,360 @@ namespace Hotels.DataModels
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.roomFloors = this;
+		}
+		
+		private void detach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.roomFloors = null;
+		}
+	}
+	
+	[Table(Name="dbo.goodUnits")]
+	public partial class goodUnits : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _goodUnitsId;
+		
+		private string _名称;
+		
+		private EntitySet<roomgoods> _roomgoods;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OngoodUnitsIdChanging(int value);
+    partial void OngoodUnitsIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public goodUnits()
+		{
+			this._roomgoods = new EntitySet<roomgoods>(new Action<roomgoods>(this.attach_roomgoods), new Action<roomgoods>(this.detach_roomgoods));
+			OnCreated();
+		}
+		
+		[Column(Storage="_goodUnitsId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int goodUnitsId
+		{
+			get
+			{
+				return this._goodUnitsId;
+			}
+			set
+			{
+				if ((this._goodUnitsId != value))
+				{
+					this.OngoodUnitsIdChanging(value);
+					this.SendPropertyChanging();
+					this._goodUnitsId = value;
+					this.SendPropertyChanged("goodUnitsId");
+					this.OngoodUnitsIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		[Association(Name="goodUnits_roomgoods", Storage="_roomgoods", ThisKey="goodUnitsId", OtherKey="RoomGoodUnitId")]
+		public EntitySet<roomgoods> roomgoods
+		{
+			get
+			{
+				return this._roomgoods;
+			}
+			set
+			{
+				this._roomgoods.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_roomgoods(roomgoods entity)
+		{
+			this.SendPropertyChanging();
+			entity.goodUnits = this;
+		}
+		
+		private void detach_roomgoods(roomgoods entity)
+		{
+			this.SendPropertyChanging();
+			entity.goodUnits = null;
+		}
+	}
+	
+	[Table(Name="dbo.payWays")]
+	public partial class payWays : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _payWayId;
+		
+		private string _名称;
+		
+		private EntitySet<passenger> _passenger;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpayWayIdChanging(int value);
+    partial void OnpayWayIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public payWays()
+		{
+			this._passenger = new EntitySet<passenger>(new Action<passenger>(this.attach_passenger), new Action<passenger>(this.detach_passenger));
+			OnCreated();
+		}
+		
+		[Column(Storage="_payWayId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int payWayId
+		{
+			get
+			{
+				return this._payWayId;
+			}
+			set
+			{
+				if ((this._payWayId != value))
+				{
+					this.OnpayWayIdChanging(value);
+					this.SendPropertyChanging();
+					this._payWayId = value;
+					this.SendPropertyChanged("payWayId");
+					this.OnpayWayIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		[Association(Name="payWays_passenger", Storage="_passenger", ThisKey="payWayId", OtherKey="PpayWay")]
+		public EntitySet<passenger> passenger
+		{
+			get
+			{
+				return this._passenger;
+			}
+			set
+			{
+				this._passenger.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.payWays = this;
+		}
+		
+		private void detach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.payWays = null;
+		}
+	}
+	
+	[Table(Name="dbo.passengerSourses")]
+	public partial class passengerSourses : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _passengerSourseId;
+		
+		private string _名称;
+		
+		private EntitySet<passenger> _passenger;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpassengerSourseIdChanging(int value);
+    partial void OnpassengerSourseIdChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    #endregion
+		
+		public passengerSourses()
+		{
+			this._passenger = new EntitySet<passenger>(new Action<passenger>(this.attach_passenger), new Action<passenger>(this.detach_passenger));
+			OnCreated();
+		}
+		
+		[Column(Storage="_passengerSourseId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int passengerSourseId
+		{
+			get
+			{
+				return this._passengerSourseId;
+			}
+			set
+			{
+				if ((this._passengerSourseId != value))
+				{
+					this.OnpassengerSourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._passengerSourseId = value;
+					this.SendPropertyChanged("passengerSourseId");
+					this.OnpassengerSourseIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		[Association(Name="passengerSourses_passenger", Storage="_passenger", ThisKey="passengerSourseId", OtherKey="Psourse")]
+		public EntitySet<passenger> passenger
+		{
+			get
+			{
+				return this._passenger;
+			}
+			set
+			{
+				this._passenger.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.passengerSourses = this;
+		}
+		
+		private void detach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.passengerSourses = null;
 		}
 	}
 	
@@ -1424,67 +1367,228 @@ namespace Hotels.DataModels
 		}
 	}
 	
-	[Table(Name="dbo.payWays")]
-	public partial class payWays : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.roomgoods")]
+	public partial class roomgoods : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _payWayId;
+		private int _GoodId;
 		
-		private string _名称;
+		private string _GoodName;
+		
+		private decimal _Price;
+		
+		private int _Remainder;
+		
+		private System.DateTime _LastTime;
+		
+		private int _RoomGoodUnitId;
+		
+		private int _GoodTypeId;
+		
+		private EntityRef<goodUnits> _goodUnits;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnpayWayIdChanging(int value);
-    partial void OnpayWayIdChanged();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
+    partial void OnGoodIdChanging(int value);
+    partial void OnGoodIdChanged();
+    partial void OnGoodNameChanging(string value);
+    partial void OnGoodNameChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    partial void OnRemainderChanging(int value);
+    partial void OnRemainderChanged();
+    partial void OnLastTimeChanging(System.DateTime value);
+    partial void OnLastTimeChanged();
+    partial void OnRoomGoodUnitIdChanging(int value);
+    partial void OnRoomGoodUnitIdChanged();
+    partial void OnGoodTypeIdChanging(int value);
+    partial void OnGoodTypeIdChanged();
     #endregion
 		
-		public payWays()
+		public roomgoods()
 		{
+			this._goodUnits = default(EntityRef<goodUnits>);
 			OnCreated();
 		}
 		
-		[Column(Storage="_payWayId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int payWayId
+		[Column(Storage="_GoodId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int GoodId
 		{
 			get
 			{
-				return this._payWayId;
+				return this._GoodId;
 			}
 			set
 			{
-				if ((this._payWayId != value))
+				if ((this._GoodId != value))
 				{
-					this.OnpayWayIdChanging(value);
+					this.OnGoodIdChanging(value);
 					this.SendPropertyChanging();
-					this._payWayId = value;
-					this.SendPropertyChanged("payWayId");
-					this.OnpayWayIdChanged();
+					this._GoodId = value;
+					this.SendPropertyChanged("GoodId");
+					this.OnGoodIdChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_名称", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string 名称
+		[Column(Storage="_GoodName", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string GoodName
 		{
 			get
 			{
-				return this._名称;
+				return this._GoodName;
 			}
 			set
 			{
-				if ((this._名称 != value))
+				if ((this._GoodName != value))
 				{
-					this.On名称Changing(value);
+					this.OnGoodNameChanging(value);
 					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
+					this._GoodName = value;
+					this.SendPropertyChanged("GoodName");
+					this.OnGoodNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Remainder", DbType="Int NOT NULL")]
+		public int Remainder
+		{
+			get
+			{
+				return this._Remainder;
+			}
+			set
+			{
+				if ((this._Remainder != value))
+				{
+					this.OnRemainderChanging(value);
+					this.SendPropertyChanging();
+					this._Remainder = value;
+					this.SendPropertyChanged("Remainder");
+					this.OnRemainderChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_LastTime", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime LastTime
+		{
+			get
+			{
+				return this._LastTime;
+			}
+			set
+			{
+				if ((this._LastTime != value))
+				{
+					this.OnLastTimeChanging(value);
+					this.SendPropertyChanging();
+					this._LastTime = value;
+					this.SendPropertyChanged("LastTime");
+					this.OnLastTimeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_RoomGoodUnitId", DbType="Int NOT NULL")]
+		public int RoomGoodUnitId
+		{
+			get
+			{
+				return this._RoomGoodUnitId;
+			}
+			set
+			{
+				if ((this._RoomGoodUnitId != value))
+				{
+					if (this._goodUnits.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoomGoodUnitIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoomGoodUnitId = value;
+					this.SendPropertyChanged("RoomGoodUnitId");
+					this.OnRoomGoodUnitIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_GoodTypeId", DbType="Int NOT NULL")]
+		public int GoodTypeId
+		{
+			get
+			{
+				return this._GoodTypeId;
+			}
+			set
+			{
+				if ((this._GoodTypeId != value))
+				{
+					this.OnGoodTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._GoodTypeId = value;
+					this.SendPropertyChanged("GoodTypeId");
+					this.OnGoodTypeIdChanged();
+				}
+			}
+		}
+		
+		[Association(Name="goodUnits_roomgoods", Storage="_goodUnits", ThisKey="RoomGoodUnitId", OtherKey="goodUnitsId", IsForeignKey=true)]
+		public goodUnits goodUnits
+		{
+			get
+			{
+				return this._goodUnits.Entity;
+			}
+			set
+			{
+				goodUnits previousValue = this._goodUnits.Entity;
+				if (((previousValue != value) 
+							|| (this._goodUnits.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._goodUnits.Entity = null;
+						previousValue.roomgoods.Remove(this);
+					}
+					this._goodUnits.Entity = value;
+					if ((value != null))
+					{
+						value.roomgoods.Add(this);
+						this._RoomGoodUnitId = value.goodUnitsId;
+					}
+					else
+					{
+						this._RoomGoodUnitId = default(int);
+					}
+					this.SendPropertyChanged("goodUnits");
 				}
 			}
 		}
@@ -1510,67 +1614,67 @@ namespace Hotels.DataModels
 		}
 	}
 	
-	[Table(Name="dbo.goodUnits")]
-	public partial class goodUnits : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.roomFloorsView")]
+	public partial class roomFloorsView : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _goodUnitsId;
+		private int _floorId;
 		
-		private string _名称;
+		private string _floorName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OngoodUnitsIdChanging(int value);
-    partial void OngoodUnitsIdChanged();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
+    partial void OnfloorIdChanging(int value);
+    partial void OnfloorIdChanged();
+    partial void OnfloorNameChanging(string value);
+    partial void OnfloorNameChanged();
     #endregion
 		
-		public goodUnits()
+		public roomFloorsView()
 		{
 			OnCreated();
 		}
 		
-		[Column(Storage="_goodUnitsId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int goodUnitsId
+		[Column(Storage="_floorId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int floorId
 		{
 			get
 			{
-				return this._goodUnitsId;
+				return this._floorId;
 			}
 			set
 			{
-				if ((this._goodUnitsId != value))
+				if ((this._floorId != value))
 				{
-					this.OngoodUnitsIdChanging(value);
+					this.OnfloorIdChanging(value);
 					this.SendPropertyChanging();
-					this._goodUnitsId = value;
-					this.SendPropertyChanged("goodUnitsId");
-					this.OngoodUnitsIdChanged();
+					this._floorId = value;
+					this.SendPropertyChanged("floorId");
+					this.OnfloorIdChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string 名称
+		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string floorName
 		{
 			get
 			{
-				return this._名称;
+				return this._floorName;
 			}
 			set
 			{
-				if ((this._名称 != value))
+				if ((this._floorName != value))
 				{
-					this.On名称Changing(value);
+					this.OnfloorNameChanging(value);
 					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
+					this._floorName = value;
+					this.SendPropertyChanged("floorName");
+					this.OnfloorNameChanged();
 				}
 			}
 		}
@@ -1596,67 +1700,139 @@ namespace Hotels.DataModels
 		}
 	}
 	
-	[Table(Name="dbo.passengerSourses")]
-	public partial class passengerSourses : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.roomTypeView")]
+	public partial class roomTypeView : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _passengerSourseId;
+		private int _type;
 		
-		private string _名称;
+		private decimal _onePrice;
+		
+		private System.Nullable<decimal> _hourStartPrice;
+		
+		private System.Nullable<decimal> _hourAddPrice;
+		
+		private string _typeName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnpassengerSourseIdChanging(int value);
-    partial void OnpassengerSourseIdChanged();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
+    partial void OntypeChanging(int value);
+    partial void OntypeChanged();
+    partial void OnonePriceChanging(decimal value);
+    partial void OnonePriceChanged();
+    partial void OnhourStartPriceChanging(System.Nullable<decimal> value);
+    partial void OnhourStartPriceChanged();
+    partial void OnhourAddPriceChanging(System.Nullable<decimal> value);
+    partial void OnhourAddPriceChanged();
+    partial void OntypeNameChanging(string value);
+    partial void OntypeNameChanged();
     #endregion
 		
-		public passengerSourses()
+		public roomTypeView()
 		{
 			OnCreated();
 		}
 		
-		[Column(Storage="_passengerSourseId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int passengerSourseId
+		[Column(Storage="_type", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int type
 		{
 			get
 			{
-				return this._passengerSourseId;
+				return this._type;
 			}
 			set
 			{
-				if ((this._passengerSourseId != value))
+				if ((this._type != value))
 				{
-					this.OnpassengerSourseIdChanging(value);
+					this.OntypeChanging(value);
 					this.SendPropertyChanging();
-					this._passengerSourseId = value;
-					this.SendPropertyChanged("passengerSourseId");
-					this.OnpassengerSourseIdChanged();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_名称", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string 名称
+		[Column(Storage="_onePrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal onePrice
 		{
 			get
 			{
-				return this._名称;
+				return this._onePrice;
 			}
 			set
 			{
-				if ((this._名称 != value))
+				if ((this._onePrice != value))
 				{
-					this.On名称Changing(value);
+					this.OnonePriceChanging(value);
 					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
+					this._onePrice = value;
+					this.SendPropertyChanged("onePrice");
+					this.OnonePriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_hourStartPrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> hourStartPrice
+		{
+			get
+			{
+				return this._hourStartPrice;
+			}
+			set
+			{
+				if ((this._hourStartPrice != value))
+				{
+					this.OnhourStartPriceChanging(value);
+					this.SendPropertyChanging();
+					this._hourStartPrice = value;
+					this.SendPropertyChanged("hourStartPrice");
+					this.OnhourStartPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_hourAddPrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> hourAddPrice
+		{
+			get
+			{
+				return this._hourAddPrice;
+			}
+			set
+			{
+				if ((this._hourAddPrice != value))
+				{
+					this.OnhourAddPriceChanging(value);
+					this.SendPropertyChanging();
+					this._hourAddPrice = value;
+					this.SendPropertyChanged("hourAddPrice");
+					this.OnhourAddPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this.OntypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._typeName = value;
+					this.SendPropertyChanged("typeName");
+					this.OntypeNameChanged();
 				}
 			}
 		}
@@ -1678,6 +1854,2807 @@ namespace Hotels.DataModels
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.roomManage")]
+	public partial class roomManage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _roomId;
+		
+		private string _floorName;
+		
+		private string _statusName;
+		
+		private string _typeName;
+		
+		private System.Nullable<int> _phone;
+		
+		private System.Nullable<bool> _isHourRoom;
+		
+		private string _description;
+		
+		private int _rType;
+		
+		private int _rStatue;
+		
+		private int _rFloor;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnroomIdChanging(int value);
+    partial void OnroomIdChanged();
+    partial void OnfloorNameChanging(string value);
+    partial void OnfloorNameChanged();
+    partial void OnstatusNameChanging(string value);
+    partial void OnstatusNameChanged();
+    partial void OntypeNameChanging(string value);
+    partial void OntypeNameChanged();
+    partial void OnphoneChanging(System.Nullable<int> value);
+    partial void OnphoneChanged();
+    partial void OnisHourRoomChanging(System.Nullable<bool> value);
+    partial void OnisHourRoomChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnrTypeChanging(int value);
+    partial void OnrTypeChanged();
+    partial void OnrStatueChanging(int value);
+    partial void OnrStatueChanged();
+    partial void OnrFloorChanging(int value);
+    partial void OnrFloorChanged();
+    #endregion
+		
+		public roomManage()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_roomId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int roomId
+		{
+			get
+			{
+				return this._roomId;
+			}
+			set
+			{
+				if ((this._roomId != value))
+				{
+					this.OnroomIdChanging(value);
+					this.SendPropertyChanging();
+					this._roomId = value;
+					this.SendPropertyChanged("roomId");
+					this.OnroomIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string floorName
+		{
+			get
+			{
+				return this._floorName;
+			}
+			set
+			{
+				if ((this._floorName != value))
+				{
+					this.OnfloorNameChanging(value);
+					this.SendPropertyChanging();
+					this._floorName = value;
+					this.SendPropertyChanged("floorName");
+					this.OnfloorNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_statusName", DbType="NChar(4) NOT NULL", CanBeNull=false)]
+		public string statusName
+		{
+			get
+			{
+				return this._statusName;
+			}
+			set
+			{
+				if ((this._statusName != value))
+				{
+					this.OnstatusNameChanging(value);
+					this.SendPropertyChanging();
+					this._statusName = value;
+					this.SendPropertyChanged("statusName");
+					this.OnstatusNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this.OntypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._typeName = value;
+					this.SendPropertyChanged("typeName");
+					this.OntypeNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_phone", DbType="Int")]
+		public System.Nullable<int> phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_isHourRoom", DbType="Bit")]
+		public System.Nullable<bool> isHourRoom
+		{
+			get
+			{
+				return this._isHourRoom;
+			}
+			set
+			{
+				if ((this._isHourRoom != value))
+				{
+					this.OnisHourRoomChanging(value);
+					this.SendPropertyChanging();
+					this._isHourRoom = value;
+					this.SendPropertyChanged("isHourRoom");
+					this.OnisHourRoomChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_description", DbType="NVarChar(50)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this.OnrTypeChanging(value);
+					this.SendPropertyChanging();
+					this._rType = value;
+					this.SendPropertyChanged("rType");
+					this.OnrTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
+		public int rStatue
+		{
+			get
+			{
+				return this._rStatue;
+			}
+			set
+			{
+				if ((this._rStatue != value))
+				{
+					this.OnrStatueChanging(value);
+					this.SendPropertyChanging();
+					this._rStatue = value;
+					this.SendPropertyChanged("rStatue");
+					this.OnrStatueChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
+		public int rFloor
+		{
+			get
+			{
+				return this._rFloor;
+			}
+			set
+			{
+				if ((this._rFloor != value))
+				{
+					this.OnrFloorChanging(value);
+					this.SendPropertyChanging();
+					this._rFloor = value;
+					this.SendPropertyChanged("rFloor");
+					this.OnrFloorChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.roomtype")]
+	public partial class roomtypeComboBox : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _type;
+		
+		private string _typeName;
+		
+		private EntitySet<room> _room;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntypeChanging(int value);
+    partial void OntypeChanged();
+    partial void OntypeNameChanging(string value);
+    partial void OntypeNameChanged();
+    #endregion
+		
+		public roomtypeComboBox()
+		{
+			this._room = new EntitySet<room>(new Action<room>(this.attach_room), new Action<room>(this.detach_room));
+			OnCreated();
+		}
+		
+		[Column(Storage="_type", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this.OntypeChanging(value);
+					this.SendPropertyChanging();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this.OntypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._typeName = value;
+					this.SendPropertyChanged("typeName");
+					this.OntypeNameChanged();
+				}
+			}
+		}
+		
+		[Association(Name="roomtypeComboBox_room", Storage="_room", ThisKey="type", OtherKey="rType")]
+		public EntitySet<room> room
+		{
+			get
+			{
+				return this._room;
+			}
+			set
+			{
+				this._room.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.roomtypeComboBox = this;
+		}
+		
+		private void detach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.roomtypeComboBox = null;
+		}
+	}
+	
+	[Table(Name="dbo.cardTypes")]
+	public partial class cardTypes : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _cardTypeId;
+		
+		private string _cardTypeName;
+		
+		private EntitySet<passenger> _passenger;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OncardTypeIdChanging(int value);
+    partial void OncardTypeIdChanged();
+    partial void OncardTypeNameChanging(string value);
+    partial void OncardTypeNameChanged();
+    #endregion
+		
+		public cardTypes()
+		{
+			this._passenger = new EntitySet<passenger>(new Action<passenger>(this.attach_passenger), new Action<passenger>(this.detach_passenger));
+			OnCreated();
+		}
+		
+		[Column(Storage="_cardTypeId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int cardTypeId
+		{
+			get
+			{
+				return this._cardTypeId;
+			}
+			set
+			{
+				if ((this._cardTypeId != value))
+				{
+					this.OncardTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._cardTypeId = value;
+					this.SendPropertyChanged("cardTypeId");
+					this.OncardTypeIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_cardTypeName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string cardTypeName
+		{
+			get
+			{
+				return this._cardTypeName;
+			}
+			set
+			{
+				if ((this._cardTypeName != value))
+				{
+					this.OncardTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._cardTypeName = value;
+					this.SendPropertyChanged("cardTypeName");
+					this.OncardTypeNameChanged();
+				}
+			}
+		}
+		
+		[Association(Name="cardTypes_passenger", Storage="_passenger", ThisKey="cardTypeId", OtherKey="PCardType")]
+		public EntitySet<passenger> passenger
+		{
+			get
+			{
+				return this._passenger;
+			}
+			set
+			{
+				this._passenger.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.cardTypes = this;
+		}
+		
+		private void detach_passenger(passenger entity)
+		{
+			this.SendPropertyChanging();
+			entity.cardTypes = null;
+		}
+	}
+	
+	[Table(Name="dbo.passengerTypes")]
+	public partial class passengerTypes : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _passengerTypeId;
+		
+		private string _passengerTypeName;
+		
+		private EntityRef<passenger> _passenger;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpassengerTypeIdChanging(int value);
+    partial void OnpassengerTypeIdChanged();
+    partial void OnpassengerTypeNameChanging(string value);
+    partial void OnpassengerTypeNameChanged();
+    #endregion
+		
+		public passengerTypes()
+		{
+			this._passenger = default(EntityRef<passenger>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_passengerTypeId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int passengerTypeId
+		{
+			get
+			{
+				return this._passengerTypeId;
+			}
+			set
+			{
+				if ((this._passengerTypeId != value))
+				{
+					this.OnpassengerTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._passengerTypeId = value;
+					this.SendPropertyChanged("passengerTypeId");
+					this.OnpassengerTypeIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_passengerTypeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string passengerTypeName
+		{
+			get
+			{
+				return this._passengerTypeName;
+			}
+			set
+			{
+				if ((this._passengerTypeName != value))
+				{
+					this.OnpassengerTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._passengerTypeName = value;
+					this.SendPropertyChanged("passengerTypeName");
+					this.OnpassengerTypeNameChanged();
+				}
+			}
+		}
+		
+		[Association(Name="passengerTypes_passenger", Storage="_passenger", ThisKey="passengerTypeId", OtherKey="PassengerId", IsUnique=true, IsForeignKey=false)]
+		public passenger passenger
+		{
+			get
+			{
+				return this._passenger.Entity;
+			}
+			set
+			{
+				passenger previousValue = this._passenger.Entity;
+				if (((previousValue != value) 
+							|| (this._passenger.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._passenger.Entity = null;
+						previousValue.passengerTypes = null;
+					}
+					this._passenger.Entity = value;
+					if ((value != null))
+					{
+						value.passengerTypes = this;
+					}
+					this.SendPropertyChanged("passenger");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.passengerLiveRecordView")]
+	public partial class passengerLiveRecordView
+	{
+		
+		private string _typeName;
+		
+		private int _passengerId;
+		
+		private System.DateTime _startDate;
+		
+		private System.DateTime _leaveDate;
+		
+		private int _roomId;
+		
+		private bool _isHourRoom;
+		
+		private decimal _roomPrice;
+		
+		private int _days;
+		
+		public passengerLiveRecordView()
+		{
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this._typeName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_passengerId", DbType="Int NOT NULL")]
+		public int passengerId
+		{
+			get
+			{
+				return this._passengerId;
+			}
+			set
+			{
+				if ((this._passengerId != value))
+				{
+					this._passengerId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_startDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime startDate
+		{
+			get
+			{
+				return this._startDate;
+			}
+			set
+			{
+				if ((this._startDate != value))
+				{
+					this._startDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_leaveDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime leaveDate
+		{
+			get
+			{
+				return this._leaveDate;
+			}
+			set
+			{
+				if ((this._leaveDate != value))
+				{
+					this._leaveDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_roomId", DbType="Int NOT NULL")]
+		public int roomId
+		{
+			get
+			{
+				return this._roomId;
+			}
+			set
+			{
+				if ((this._roomId != value))
+				{
+					this._roomId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_isHourRoom", DbType="Bit NOT NULL")]
+		public bool isHourRoom
+		{
+			get
+			{
+				return this._isHourRoom;
+			}
+			set
+			{
+				if ((this._isHourRoom != value))
+				{
+					this._isHourRoom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_roomPrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal roomPrice
+		{
+			get
+			{
+				return this._roomPrice;
+			}
+			set
+			{
+				if ((this._roomPrice != value))
+				{
+					this._roomPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_days", DbType="Int NOT NULL")]
+		public int days
+		{
+			get
+			{
+				return this._days;
+			}
+			set
+			{
+				if ((this._days != value))
+				{
+					this._days = value;
+				}
+			}
+		}
+	}
+	
+	[Table(Name="dbo.room")]
+	public partial class room : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _roomId;
+		
+		private int _rType;
+		
+		private int _rStatue;
+		
+		private int _rFloor;
+		
+		private System.Nullable<int> _phone;
+		
+		private System.Nullable<bool> _isHourRoom;
+		
+		private string _description;
+		
+		private System.Nullable<int> _passengerId;
+		
+		private System.Nullable<int> _rPricePlan;
+		
+		private EntityRef<roomFloors> _roomFloors;
+		
+		private EntityRef<roomStatus> _roomStatus;
+		
+		private EntityRef<roomtype> _roomtype;
+		
+		private EntityRef<roomtypeComboBox> _roomtypeComboBox;
+		
+		private EntityRef<passenger> _passenger;
+		
+		private EntityRef<RoomPricePlans> _RoomPricePlans;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnroomIdChanging(int value);
+    partial void OnroomIdChanged();
+    partial void OnrTypeChanging(int value);
+    partial void OnrTypeChanged();
+    partial void OnrStatueChanging(int value);
+    partial void OnrStatueChanged();
+    partial void OnrFloorChanging(int value);
+    partial void OnrFloorChanged();
+    partial void OnphoneChanging(System.Nullable<int> value);
+    partial void OnphoneChanged();
+    partial void OnisHourRoomChanging(System.Nullable<bool> value);
+    partial void OnisHourRoomChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnpassengerIdChanging(System.Nullable<int> value);
+    partial void OnpassengerIdChanged();
+    partial void OnrPricePlanChanging(System.Nullable<int> value);
+    partial void OnrPricePlanChanged();
+    #endregion
+		
+		public room()
+		{
+			this._roomFloors = default(EntityRef<roomFloors>);
+			this._roomStatus = default(EntityRef<roomStatus>);
+			this._roomtype = default(EntityRef<roomtype>);
+			this._roomtypeComboBox = default(EntityRef<roomtypeComboBox>);
+			this._passenger = default(EntityRef<passenger>);
+			this._RoomPricePlans = default(EntityRef<RoomPricePlans>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_roomId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int roomId
+		{
+			get
+			{
+				return this._roomId;
+			}
+			set
+			{
+				if ((this._roomId != value))
+				{
+					this.OnroomIdChanging(value);
+					this.SendPropertyChanging();
+					this._roomId = value;
+					this.SendPropertyChanged("roomId");
+					this.OnroomIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					if (this._roomtype.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnrTypeChanging(value);
+					this.SendPropertyChanging();
+					this._rType = value;
+					this.SendPropertyChanged("rType");
+					this.OnrTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
+		public int rStatue
+		{
+			get
+			{
+				return this._rStatue;
+			}
+			set
+			{
+				if ((this._rStatue != value))
+				{
+					if (this._roomStatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnrStatueChanging(value);
+					this.SendPropertyChanging();
+					this._rStatue = value;
+					this.SendPropertyChanged("rStatue");
+					this.OnrStatueChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
+		public int rFloor
+		{
+			get
+			{
+				return this._rFloor;
+			}
+			set
+			{
+				if ((this._rFloor != value))
+				{
+					if (this._roomFloors.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnrFloorChanging(value);
+					this.SendPropertyChanging();
+					this._rFloor = value;
+					this.SendPropertyChanged("rFloor");
+					this.OnrFloorChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_phone", DbType="Int")]
+		public System.Nullable<int> phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_isHourRoom", DbType="Bit")]
+		public System.Nullable<bool> isHourRoom
+		{
+			get
+			{
+				return this._isHourRoom;
+			}
+			set
+			{
+				if ((this._isHourRoom != value))
+				{
+					this.OnisHourRoomChanging(value);
+					this.SendPropertyChanging();
+					this._isHourRoom = value;
+					this.SendPropertyChanged("isHourRoom");
+					this.OnisHourRoomChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_description", DbType="NVarChar(50)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_passengerId", DbType="Int")]
+		public System.Nullable<int> passengerId
+		{
+			get
+			{
+				return this._passengerId;
+			}
+			set
+			{
+				if ((this._passengerId != value))
+				{
+					if (this._passenger.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnpassengerIdChanging(value);
+					this.SendPropertyChanging();
+					this._passengerId = value;
+					this.SendPropertyChanged("passengerId");
+					this.OnpassengerIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rPricePlan", DbType="Int")]
+		public System.Nullable<int> rPricePlan
+		{
+			get
+			{
+				return this._rPricePlan;
+			}
+			set
+			{
+				if ((this._rPricePlan != value))
+				{
+					if (this._RoomPricePlans.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnrPricePlanChanging(value);
+					this.SendPropertyChanging();
+					this._rPricePlan = value;
+					this.SendPropertyChanged("rPricePlan");
+					this.OnrPricePlanChanged();
+				}
+			}
+		}
+		
+		[Association(Name="roomFloors_room", Storage="_roomFloors", ThisKey="rFloor", OtherKey="floorId", IsForeignKey=true)]
+		public roomFloors roomFloors
+		{
+			get
+			{
+				return this._roomFloors.Entity;
+			}
+			set
+			{
+				roomFloors previousValue = this._roomFloors.Entity;
+				if (((previousValue != value) 
+							|| (this._roomFloors.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._roomFloors.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._roomFloors.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._rFloor = value.floorId;
+					}
+					else
+					{
+						this._rFloor = default(int);
+					}
+					this.SendPropertyChanged("roomFloors");
+				}
+			}
+		}
+		
+		[Association(Name="roomStatus_room", Storage="_roomStatus", ThisKey="rStatue", OtherKey="status", IsForeignKey=true)]
+		public roomStatus roomStatus
+		{
+			get
+			{
+				return this._roomStatus.Entity;
+			}
+			set
+			{
+				roomStatus previousValue = this._roomStatus.Entity;
+				if (((previousValue != value) 
+							|| (this._roomStatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._roomStatus.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._roomStatus.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._rStatue = value.status;
+					}
+					else
+					{
+						this._rStatue = default(int);
+					}
+					this.SendPropertyChanged("roomStatus");
+				}
+			}
+		}
+		
+		[Association(Name="roomtype_room", Storage="_roomtype", ThisKey="rType", OtherKey="type", IsForeignKey=true)]
+		public roomtype roomtype
+		{
+			get
+			{
+				return this._roomtype.Entity;
+			}
+			set
+			{
+				roomtype previousValue = this._roomtype.Entity;
+				if (((previousValue != value) 
+							|| (this._roomtype.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._roomtype.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._roomtype.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._rType = value.type;
+					}
+					else
+					{
+						this._rType = default(int);
+					}
+					this.SendPropertyChanged("roomtype");
+				}
+			}
+		}
+		
+		[Association(Name="roomtypeComboBox_room", Storage="_roomtypeComboBox", ThisKey="rType", OtherKey="type", IsForeignKey=true)]
+		public roomtypeComboBox roomtypeComboBox
+		{
+			get
+			{
+				return this._roomtypeComboBox.Entity;
+			}
+			set
+			{
+				roomtypeComboBox previousValue = this._roomtypeComboBox.Entity;
+				if (((previousValue != value) 
+							|| (this._roomtypeComboBox.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._roomtypeComboBox.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._roomtypeComboBox.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._rType = value.type;
+					}
+					else
+					{
+						this._rType = default(int);
+					}
+					this.SendPropertyChanged("roomtypeComboBox");
+				}
+			}
+		}
+		
+		[Association(Name="passenger_room", Storage="_passenger", ThisKey="passengerId", OtherKey="PassengerId", IsForeignKey=true)]
+		public passenger passenger
+		{
+			get
+			{
+				return this._passenger.Entity;
+			}
+			set
+			{
+				passenger previousValue = this._passenger.Entity;
+				if (((previousValue != value) 
+							|| (this._passenger.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._passenger.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._passenger.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._passengerId = value.PassengerId;
+					}
+					else
+					{
+						this._passengerId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("passenger");
+				}
+			}
+		}
+		
+		[Association(Name="RoomPricePlans_room", Storage="_RoomPricePlans", ThisKey="rPricePlan", OtherKey="roomPricePlanId", IsForeignKey=true)]
+		public RoomPricePlans RoomPricePlans
+		{
+			get
+			{
+				return this._RoomPricePlans.Entity;
+			}
+			set
+			{
+				RoomPricePlans previousValue = this._RoomPricePlans.Entity;
+				if (((previousValue != value) 
+							|| (this._RoomPricePlans.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._RoomPricePlans.Entity = null;
+						previousValue.room.Remove(this);
+					}
+					this._RoomPricePlans.Entity = value;
+					if ((value != null))
+					{
+						value.room.Add(this);
+						this._rPricePlan = value.roomPricePlanId;
+					}
+					else
+					{
+						this._rPricePlan = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("RoomPricePlans");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.Passenger")]
+	public partial class passenger : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PassengerId;
+		
+		private string _PName;
+		
+		private int _PRoomId;
+		
+		private string _PAddress;
+		
+		private bool _PSex;
+		
+		private string _PCardNumber;
+		
+		private System.Nullable<int> _PCardType;
+		
+		private int _Psourse;
+		
+		private string _Pphone;
+		
+		private int _PpayWay;
+		
+		private System.Nullable<decimal> _PpaidAccount;
+		
+		private decimal _PGoodAccount;
+		
+		private int _pType;
+		
+		private System.Nullable<System.DateTime> _PbirthDay;
+		
+		private string _Pdescription;
+		
+		private System.Nullable<System.DateTime> _PstartDate;
+		
+		private EntitySet<room> _room;
+		
+		private EntityRef<cardTypes> _cardTypes;
+		
+		private EntityRef<passengerSourses> _passengerSourses;
+		
+		private EntityRef<passengerTypes> _passengerTypes;
+		
+		private EntityRef<payWays> _payWays;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPassengerIdChanging(int value);
+    partial void OnPassengerIdChanged();
+    partial void OnPNameChanging(string value);
+    partial void OnPNameChanged();
+    partial void OnPRoomIdChanging(int value);
+    partial void OnPRoomIdChanged();
+    partial void OnPAddressChanging(string value);
+    partial void OnPAddressChanged();
+    partial void OnPSexChanging(bool value);
+    partial void OnPSexChanged();
+    partial void OnPCardNumberChanging(string value);
+    partial void OnPCardNumberChanged();
+    partial void OnPCardTypeChanging(System.Nullable<int> value);
+    partial void OnPCardTypeChanged();
+    partial void OnPsourseChanging(int value);
+    partial void OnPsourseChanged();
+    partial void OnPphoneChanging(string value);
+    partial void OnPphoneChanged();
+    partial void OnPpayWayChanging(int value);
+    partial void OnPpayWayChanged();
+    partial void OnPpaidAccountChanging(System.Nullable<decimal> value);
+    partial void OnPpaidAccountChanged();
+    partial void OnPGoodAccountChanging(decimal value);
+    partial void OnPGoodAccountChanged();
+    partial void OnpTypeChanging(int value);
+    partial void OnpTypeChanged();
+    partial void OnPbirthDayChanging(System.Nullable<System.DateTime> value);
+    partial void OnPbirthDayChanged();
+    partial void OnPdescriptionChanging(string value);
+    partial void OnPdescriptionChanged();
+    partial void OnPstartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnPstartDateChanged();
+    #endregion
+		
+		public passenger()
+		{
+			this._room = new EntitySet<room>(new Action<room>(this.attach_room), new Action<room>(this.detach_room));
+			this._cardTypes = default(EntityRef<cardTypes>);
+			this._passengerSourses = default(EntityRef<passengerSourses>);
+			this._passengerTypes = default(EntityRef<passengerTypes>);
+			this._payWays = default(EntityRef<payWays>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_PassengerId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int PassengerId
+		{
+			get
+			{
+				return this._PassengerId;
+			}
+			set
+			{
+				if ((this._PassengerId != value))
+				{
+					if (this._passengerTypes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPassengerIdChanging(value);
+					this.SendPropertyChanging();
+					this._PassengerId = value;
+					this.SendPropertyChanged("PassengerId");
+					this.OnPassengerIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string PName
+		{
+			get
+			{
+				return this._PName;
+			}
+			set
+			{
+				if ((this._PName != value))
+				{
+					this.OnPNameChanging(value);
+					this.SendPropertyChanging();
+					this._PName = value;
+					this.SendPropertyChanged("PName");
+					this.OnPNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PRoomId", DbType="Int NOT NULL")]
+		public int PRoomId
+		{
+			get
+			{
+				return this._PRoomId;
+			}
+			set
+			{
+				if ((this._PRoomId != value))
+				{
+					this.OnPRoomIdChanging(value);
+					this.SendPropertyChanging();
+					this._PRoomId = value;
+					this.SendPropertyChanged("PRoomId");
+					this.OnPRoomIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PAddress", DbType="NVarChar(50)")]
+		public string PAddress
+		{
+			get
+			{
+				return this._PAddress;
+			}
+			set
+			{
+				if ((this._PAddress != value))
+				{
+					this.OnPAddressChanging(value);
+					this.SendPropertyChanging();
+					this._PAddress = value;
+					this.SendPropertyChanged("PAddress");
+					this.OnPAddressChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PSex", DbType="Bit NOT NULL")]
+		public bool PSex
+		{
+			get
+			{
+				return this._PSex;
+			}
+			set
+			{
+				if ((this._PSex != value))
+				{
+					this.OnPSexChanging(value);
+					this.SendPropertyChanging();
+					this._PSex = value;
+					this.SendPropertyChanged("PSex");
+					this.OnPSexChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PCardNumber", DbType="NVarChar(20)")]
+		public string PCardNumber
+		{
+			get
+			{
+				return this._PCardNumber;
+			}
+			set
+			{
+				if ((this._PCardNumber != value))
+				{
+					this.OnPCardNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PCardNumber = value;
+					this.SendPropertyChanged("PCardNumber");
+					this.OnPCardNumberChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PCardType", DbType="Int")]
+		public System.Nullable<int> PCardType
+		{
+			get
+			{
+				return this._PCardType;
+			}
+			set
+			{
+				if ((this._PCardType != value))
+				{
+					if (this._cardTypes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPCardTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PCardType = value;
+					this.SendPropertyChanged("PCardType");
+					this.OnPCardTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Psourse", DbType="Int NOT NULL")]
+		public int Psourse
+		{
+			get
+			{
+				return this._Psourse;
+			}
+			set
+			{
+				if ((this._Psourse != value))
+				{
+					if (this._passengerSourses.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPsourseChanging(value);
+					this.SendPropertyChanging();
+					this._Psourse = value;
+					this.SendPropertyChanged("Psourse");
+					this.OnPsourseChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Pphone", DbType="NVarChar(20)")]
+		public string Pphone
+		{
+			get
+			{
+				return this._Pphone;
+			}
+			set
+			{
+				if ((this._Pphone != value))
+				{
+					this.OnPphoneChanging(value);
+					this.SendPropertyChanging();
+					this._Pphone = value;
+					this.SendPropertyChanged("Pphone");
+					this.OnPphoneChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PpayWay", DbType="Int NOT NULL")]
+		public int PpayWay
+		{
+			get
+			{
+				return this._PpayWay;
+			}
+			set
+			{
+				if ((this._PpayWay != value))
+				{
+					if (this._payWays.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPpayWayChanging(value);
+					this.SendPropertyChanging();
+					this._PpayWay = value;
+					this.SendPropertyChanged("PpayWay");
+					this.OnPpayWayChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PpaidAccount", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> PpaidAccount
+		{
+			get
+			{
+				return this._PpaidAccount;
+			}
+			set
+			{
+				if ((this._PpaidAccount != value))
+				{
+					this.OnPpaidAccountChanging(value);
+					this.SendPropertyChanging();
+					this._PpaidAccount = value;
+					this.SendPropertyChanged("PpaidAccount");
+					this.OnPpaidAccountChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PGoodAccount", DbType="Decimal(18,2) NOT NULL")]
+		public decimal PGoodAccount
+		{
+			get
+			{
+				return this._PGoodAccount;
+			}
+			set
+			{
+				if ((this._PGoodAccount != value))
+				{
+					this.OnPGoodAccountChanging(value);
+					this.SendPropertyChanging();
+					this._PGoodAccount = value;
+					this.SendPropertyChanged("PGoodAccount");
+					this.OnPGoodAccountChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_pType", DbType="Int NOT NULL")]
+		public int pType
+		{
+			get
+			{
+				return this._pType;
+			}
+			set
+			{
+				if ((this._pType != value))
+				{
+					this.OnpTypeChanging(value);
+					this.SendPropertyChanging();
+					this._pType = value;
+					this.SendPropertyChanged("pType");
+					this.OnpTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PbirthDay", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> PbirthDay
+		{
+			get
+			{
+				return this._PbirthDay;
+			}
+			set
+			{
+				if ((this._PbirthDay != value))
+				{
+					this.OnPbirthDayChanging(value);
+					this.SendPropertyChanging();
+					this._PbirthDay = value;
+					this.SendPropertyChanged("PbirthDay");
+					this.OnPbirthDayChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Pdescription", DbType="NVarChar(50)")]
+		public string Pdescription
+		{
+			get
+			{
+				return this._Pdescription;
+			}
+			set
+			{
+				if ((this._Pdescription != value))
+				{
+					this.OnPdescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Pdescription = value;
+					this.SendPropertyChanged("Pdescription");
+					this.OnPdescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PstartDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> PstartDate
+		{
+			get
+			{
+				return this._PstartDate;
+			}
+			set
+			{
+				if ((this._PstartDate != value))
+				{
+					this.OnPstartDateChanging(value);
+					this.SendPropertyChanging();
+					this._PstartDate = value;
+					this.SendPropertyChanged("PstartDate");
+					this.OnPstartDateChanged();
+				}
+			}
+		}
+		
+		[Association(Name="passenger_room", Storage="_room", ThisKey="PassengerId", OtherKey="passengerId")]
+		public EntitySet<room> room
+		{
+			get
+			{
+				return this._room;
+			}
+			set
+			{
+				this._room.Assign(value);
+			}
+		}
+		
+		[Association(Name="cardTypes_passenger", Storage="_cardTypes", ThisKey="PCardType", OtherKey="cardTypeId", IsForeignKey=true)]
+		public cardTypes cardTypes
+		{
+			get
+			{
+				return this._cardTypes.Entity;
+			}
+			set
+			{
+				cardTypes previousValue = this._cardTypes.Entity;
+				if (((previousValue != value) 
+							|| (this._cardTypes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._cardTypes.Entity = null;
+						previousValue.passenger.Remove(this);
+					}
+					this._cardTypes.Entity = value;
+					if ((value != null))
+					{
+						value.passenger.Add(this);
+						this._PCardType = value.cardTypeId;
+					}
+					else
+					{
+						this._PCardType = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("cardTypes");
+				}
+			}
+		}
+		
+		[Association(Name="passengerSourses_passenger", Storage="_passengerSourses", ThisKey="Psourse", OtherKey="passengerSourseId", IsForeignKey=true)]
+		public passengerSourses passengerSourses
+		{
+			get
+			{
+				return this._passengerSourses.Entity;
+			}
+			set
+			{
+				passengerSourses previousValue = this._passengerSourses.Entity;
+				if (((previousValue != value) 
+							|| (this._passengerSourses.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._passengerSourses.Entity = null;
+						previousValue.passenger.Remove(this);
+					}
+					this._passengerSourses.Entity = value;
+					if ((value != null))
+					{
+						value.passenger.Add(this);
+						this._Psourse = value.passengerSourseId;
+					}
+					else
+					{
+						this._Psourse = default(int);
+					}
+					this.SendPropertyChanged("passengerSourses");
+				}
+			}
+		}
+		
+		[Association(Name="passengerTypes_passenger", Storage="_passengerTypes", ThisKey="PassengerId", OtherKey="passengerTypeId", IsForeignKey=true)]
+		public passengerTypes passengerTypes
+		{
+			get
+			{
+				return this._passengerTypes.Entity;
+			}
+			set
+			{
+				passengerTypes previousValue = this._passengerTypes.Entity;
+				if (((previousValue != value) 
+							|| (this._passengerTypes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._passengerTypes.Entity = null;
+						previousValue.passenger = null;
+					}
+					this._passengerTypes.Entity = value;
+					if ((value != null))
+					{
+						value.passenger = this;
+						this._PassengerId = value.passengerTypeId;
+					}
+					else
+					{
+						this._PassengerId = default(int);
+					}
+					this.SendPropertyChanged("passengerTypes");
+				}
+			}
+		}
+		
+		[Association(Name="payWays_passenger", Storage="_payWays", ThisKey="PpayWay", OtherKey="payWayId", IsForeignKey=true)]
+		public payWays payWays
+		{
+			get
+			{
+				return this._payWays.Entity;
+			}
+			set
+			{
+				payWays previousValue = this._payWays.Entity;
+				if (((previousValue != value) 
+							|| (this._payWays.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._payWays.Entity = null;
+						previousValue.passenger.Remove(this);
+					}
+					this._payWays.Entity = value;
+					if ((value != null))
+					{
+						value.passenger.Add(this);
+						this._PpayWay = value.payWayId;
+					}
+					else
+					{
+						this._PpayWay = default(int);
+					}
+					this.SendPropertyChanged("payWays");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.passenger = this;
+		}
+		
+		private void detach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.passenger = null;
+		}
+	}
+	
+	[Table(Name="dbo.RoomPricePlans")]
+	public partial class RoomPricePlans : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _roomPricePlanId;
+		
+		private string _roomPriceName;
+		
+		private string _PricePlanStyle;
+		
+		private EntitySet<room> _room;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnroomPricePlanIdChanging(int value);
+    partial void OnroomPricePlanIdChanged();
+    partial void OnroomPriceNameChanging(string value);
+    partial void OnroomPriceNameChanged();
+    partial void OnPricePlanStyleChanging(string value);
+    partial void OnPricePlanStyleChanged();
+    #endregion
+		
+		public RoomPricePlans()
+		{
+			this._room = new EntitySet<room>(new Action<room>(this.attach_room), new Action<room>(this.detach_room));
+			OnCreated();
+		}
+		
+		[Column(Storage="_roomPricePlanId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int roomPricePlanId
+		{
+			get
+			{
+				return this._roomPricePlanId;
+			}
+			set
+			{
+				if ((this._roomPricePlanId != value))
+				{
+					this.OnroomPricePlanIdChanging(value);
+					this.SendPropertyChanging();
+					this._roomPricePlanId = value;
+					this.SendPropertyChanged("roomPricePlanId");
+					this.OnroomPricePlanIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_roomPriceName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string roomPriceName
+		{
+			get
+			{
+				return this._roomPriceName;
+			}
+			set
+			{
+				if ((this._roomPriceName != value))
+				{
+					this.OnroomPriceNameChanging(value);
+					this.SendPropertyChanging();
+					this._roomPriceName = value;
+					this.SendPropertyChanged("roomPriceName");
+					this.OnroomPriceNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PricePlanStyle", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string PricePlanStyle
+		{
+			get
+			{
+				return this._PricePlanStyle;
+			}
+			set
+			{
+				if ((this._PricePlanStyle != value))
+				{
+					this.OnPricePlanStyleChanging(value);
+					this.SendPropertyChanging();
+					this._PricePlanStyle = value;
+					this.SendPropertyChanged("PricePlanStyle");
+					this.OnPricePlanStyleChanged();
+				}
+			}
+		}
+		
+		[Association(Name="RoomPricePlans_room", Storage="_room", ThisKey="roomPricePlanId", OtherKey="rPricePlan")]
+		public EntitySet<room> room
+		{
+			get
+			{
+				return this._room;
+			}
+			set
+			{
+				this._room.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoomPricePlans = this;
+		}
+		
+		private void detach_room(room entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoomPricePlans = null;
+		}
+	}
+	
+	[Table(Name="dbo.pricePlanDayRoomView")]
+	public partial class pricePlanDayRoomView : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _typeName;
+		
+		private int _pricePlanId;
+		
+		private decimal _disPrice;
+		
+		private int _rType;
+		
+		private decimal _onePrice;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntypeNameChanging(string value);
+    partial void OntypeNameChanged();
+    partial void OnpricePlanIdChanging(int value);
+    partial void OnpricePlanIdChanged();
+    partial void OndisPriceChanging(decimal value);
+    partial void OndisPriceChanged();
+    partial void OnrTypeChanging(int value);
+    partial void OnrTypeChanged();
+    partial void OnonePriceChanging(decimal value);
+    partial void OnonePriceChanged();
+    #endregion
+		
+		public pricePlanDayRoomView()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this.OntypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._typeName = value;
+					this.SendPropertyChanged("typeName");
+					this.OntypeNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this.OnpricePlanIdChanging(value);
+					this.SendPropertyChanging();
+					this._pricePlanId = value;
+					this.SendPropertyChanged("pricePlanId");
+					this.OnpricePlanIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_disPrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal disPrice
+		{
+			get
+			{
+				return this._disPrice;
+			}
+			set
+			{
+				if ((this._disPrice != value))
+				{
+					this.OndisPriceChanging(value);
+					this.SendPropertyChanging();
+					this._disPrice = value;
+					this.SendPropertyChanged("disPrice");
+					this.OndisPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this.OnrTypeChanging(value);
+					this.SendPropertyChanging();
+					this._rType = value;
+					this.SendPropertyChanged("rType");
+					this.OnrTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_onePrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal onePrice
+		{
+			get
+			{
+				return this._onePrice;
+			}
+			set
+			{
+				if ((this._onePrice != value))
+				{
+					this.OnonePriceChanging(value);
+					this.SendPropertyChanging();
+					this._onePrice = value;
+					this.SendPropertyChanged("onePrice");
+					this.OnonePriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.pricePlanHourRoomView")]
+	public partial class pricePlanHourRoomView : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _rType;
+		
+		private string _typeName;
+		
+		private int _pricePlanId;
+		
+		private decimal _startHourPrice;
+		
+		private decimal _addHourPrice;
+		
+		private decimal _onePrice;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnrTypeChanging(int value);
+    partial void OnrTypeChanged();
+    partial void OntypeNameChanging(string value);
+    partial void OntypeNameChanged();
+    partial void OnpricePlanIdChanging(int value);
+    partial void OnpricePlanIdChanged();
+    partial void OnstartHourPriceChanging(decimal value);
+    partial void OnstartHourPriceChanged();
+    partial void OnaddHourPriceChanging(decimal value);
+    partial void OnaddHourPriceChanged();
+    partial void OnonePriceChanging(decimal value);
+    partial void OnonePriceChanged();
+    #endregion
+		
+		public pricePlanHourRoomView()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this.OnrTypeChanging(value);
+					this.SendPropertyChanging();
+					this._rType = value;
+					this.SendPropertyChanged("rType");
+					this.OnrTypeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this.OntypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._typeName = value;
+					this.SendPropertyChanged("typeName");
+					this.OntypeNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this.OnpricePlanIdChanging(value);
+					this.SendPropertyChanging();
+					this._pricePlanId = value;
+					this.SendPropertyChanged("pricePlanId");
+					this.OnpricePlanIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_startHourPrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal startHourPrice
+		{
+			get
+			{
+				return this._startHourPrice;
+			}
+			set
+			{
+				if ((this._startHourPrice != value))
+				{
+					this.OnstartHourPriceChanging(value);
+					this.SendPropertyChanging();
+					this._startHourPrice = value;
+					this.SendPropertyChanged("startHourPrice");
+					this.OnstartHourPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_addHourPrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal addHourPrice
+		{
+			get
+			{
+				return this._addHourPrice;
+			}
+			set
+			{
+				if ((this._addHourPrice != value))
+				{
+					this.OnaddHourPriceChanging(value);
+					this.SendPropertyChanging();
+					this._addHourPrice = value;
+					this.SendPropertyChanged("addHourPrice");
+					this.OnaddHourPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_onePrice", DbType="Decimal(18,2) NOT NULL")]
+		public decimal onePrice
+		{
+			get
+			{
+				return this._onePrice;
+			}
+			set
+			{
+				if ((this._onePrice != value))
+				{
+					this.OnonePriceChanging(value);
+					this.SendPropertyChanging();
+					this._onePrice = value;
+					this.SendPropertyChanged("onePrice");
+					this.OnonePriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class InsertRoomFloors_个结果
+	{
+		
+		private int _floorId;
+		
+		private string _floorName;
+		
+		public InsertRoomFloors_个结果()
+		{
+		}
+		
+		[Column(Storage="_floorId", DbType="Int NOT NULL")]
+		public int floorId
+		{
+			get
+			{
+				return this._floorId;
+			}
+			set
+			{
+				if ((this._floorId != value))
+				{
+					this._floorId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string floorName
+		{
+			get
+			{
+				return this._floorName;
+			}
+			set
+			{
+				if ((this._floorName != value))
+				{
+					this._floorName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InsertRoomType_个结果
+	{
+		
+		private int _type;
+		
+		private string _typeName;
+		
+		private decimal _onePrice;
+		
+		private System.Nullable<decimal> _hourStartPrice;
+		
+		private System.Nullable<decimal> _hourAddPrice;
+		
+		public InsertRoomType_个结果()
+		{
+		}
+		
+		[Column(Storage="_type", DbType="Int NOT NULL")]
+		public int type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this._type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this._typeName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_onePrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal onePrice
+		{
+			get
+			{
+				return this._onePrice;
+			}
+			set
+			{
+				if ((this._onePrice != value))
+				{
+					this._onePrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_hourStartPrice", DbType="Decimal(0,0)")]
+		public System.Nullable<decimal> hourStartPrice
+		{
+			get
+			{
+				return this._hourStartPrice;
+			}
+			set
+			{
+				if ((this._hourStartPrice != value))
+				{
+					this._hourStartPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_hourAddPrice", DbType="Decimal(0,0)")]
+		public System.Nullable<decimal> hourAddPrice
+		{
+			get
+			{
+				return this._hourAddPrice;
+			}
+			set
+			{
+				if ((this._hourAddPrice != value))
+				{
+					this._hourAddPrice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UpdateRoomFloors_个结果
+	{
+		
+		private int _floorId;
+		
+		private string _floorName;
+		
+		public UpdateRoomFloors_个结果()
+		{
+		}
+		
+		[Column(Storage="_floorId", DbType="Int NOT NULL")]
+		public int floorId
+		{
+			get
+			{
+				return this._floorId;
+			}
+			set
+			{
+				if ((this._floorId != value))
+				{
+					this._floorId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string floorName
+		{
+			get
+			{
+				return this._floorName;
+			}
+			set
+			{
+				if ((this._floorName != value))
+				{
+					this._floorName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UpdateRoomType_个结果
+	{
+		
+		private int _type;
+		
+		private string _typeName;
+		
+		private decimal _onePrice;
+		
+		private System.Nullable<decimal> _hourStartPrice;
+		
+		private System.Nullable<decimal> _hourAddPrice;
+		
+		public UpdateRoomType_个结果()
+		{
+		}
+		
+		[Column(Storage="_type", DbType="Int NOT NULL")]
+		public int type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this._type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this._typeName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_onePrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal onePrice
+		{
+			get
+			{
+				return this._onePrice;
+			}
+			set
+			{
+				if ((this._onePrice != value))
+				{
+					this._onePrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_hourStartPrice", DbType="Decimal(0,0)")]
+		public System.Nullable<decimal> hourStartPrice
+		{
+			get
+			{
+				return this._hourStartPrice;
+			}
+			set
+			{
+				if ((this._hourStartPrice != value))
+				{
+					this._hourStartPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_hourAddPrice", DbType="Decimal(0,0)")]
+		public System.Nullable<decimal> hourAddPrice
+		{
+			get
+			{
+				return this._hourAddPrice;
+			}
+			set
+			{
+				if ((this._hourAddPrice != value))
+				{
+					this._hourAddPrice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SelectRoomButton_个结果
+	{
+		
+		private int _roomId;
+		
+		private int _rType;
+		
+		private int _rFloor;
+		
+		private int _rStatue;
+		
+		private System.Nullable<int> _passengerId;
+		
+		private System.Nullable<int> _rPricePlan;
+		
+		private string _typeName;
+		
+		private string _floorName;
+		
+		public SelectRoomButton_个结果()
+		{
+		}
+		
+		[Column(Storage="_roomId", DbType="Int NOT NULL")]
+		public int roomId
+		{
+			get
+			{
+				return this._roomId;
+			}
+			set
+			{
+				if ((this._roomId != value))
+				{
+					this._roomId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
+		public int rFloor
+		{
+			get
+			{
+				return this._rFloor;
+			}
+			set
+			{
+				if ((this._rFloor != value))
+				{
+					this._rFloor = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
+		public int rStatue
+		{
+			get
+			{
+				return this._rStatue;
+			}
+			set
+			{
+				if ((this._rStatue != value))
+				{
+					this._rStatue = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_passengerId", DbType="Int")]
+		public System.Nullable<int> passengerId
+		{
+			get
+			{
+				return this._passengerId;
+			}
+			set
+			{
+				if ((this._passengerId != value))
+				{
+					this._passengerId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rPricePlan", DbType="Int")]
+		public System.Nullable<int> rPricePlan
+		{
+			get
+			{
+				return this._rPricePlan;
+			}
+			set
+			{
+				if ((this._rPricePlan != value))
+				{
+					this._rPricePlan = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_typeName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string typeName
+		{
+			get
+			{
+				return this._typeName;
+			}
+			set
+			{
+				if ((this._typeName != value))
+				{
+					this._typeName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_floorName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string floorName
+		{
+			get
+			{
+				return this._floorName;
+			}
+			set
+			{
+				if ((this._floorName != value))
+				{
+					this._floorName = value;
+				}
 			}
 		}
 	}
@@ -1699,7 +4676,9 @@ namespace Hotels.DataModels
 		
 		private string _description;
 		
-		private System.Nullable<System.DateTime> _time;
+		private System.Nullable<int> _passengerId;
+		
+		private System.Nullable<int> _rPricePlan;
 		
 		public InsertRoom_个结果()
 		{
@@ -1817,18 +4796,34 @@ namespace Hotels.DataModels
 			}
 		}
 		
-		[Column(Storage="_time", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> time
+		[Column(Storage="_passengerId", DbType="Int")]
+		public System.Nullable<int> passengerId
 		{
 			get
 			{
-				return this._time;
+				return this._passengerId;
 			}
 			set
 			{
-				if ((this._time != value))
+				if ((this._passengerId != value))
 				{
-					this._time = value;
+					this._passengerId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rPricePlan", DbType="Int")]
+		public System.Nullable<int> rPricePlan
+		{
+			get
+			{
+				return this._rPricePlan;
+			}
+			set
+			{
+				if ((this._rPricePlan != value))
+				{
+					this._rPricePlan = value;
 				}
 			}
 		}
@@ -1851,7 +4846,9 @@ namespace Hotels.DataModels
 		
 		private string _description;
 		
-		private System.Nullable<System.DateTime> _time;
+		private System.Nullable<int> _passengerId;
+		
+		private System.Nullable<int> _rPricePlan;
 		
 		public UpdateRoom_个结果()
 		{
@@ -1969,18 +4966,488 @@ namespace Hotels.DataModels
 			}
 		}
 		
-		[Column(Storage="_time", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> time
+		[Column(Storage="_passengerId", DbType="Int")]
+		public System.Nullable<int> passengerId
 		{
 			get
 			{
-				return this._time;
+				return this._passengerId;
 			}
 			set
 			{
-				if ((this._time != value))
+				if ((this._passengerId != value))
 				{
-					this._time = value;
+					this._passengerId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rPricePlan", DbType="Int")]
+		public System.Nullable<int> rPricePlan
+		{
+			get
+			{
+				return this._rPricePlan;
+			}
+			set
+			{
+				if ((this._rPricePlan != value))
+				{
+					this._rPricePlan = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SelectRoom_个结果
+	{
+		
+		private int _roomId;
+		
+		private int _rType;
+		
+		private int _rStatue;
+		
+		private int _rFloor;
+		
+		private System.Nullable<int> _phone;
+		
+		private System.Nullable<bool> _isHourRoom;
+		
+		private string _description;
+		
+		private System.Nullable<int> _passengerId;
+		
+		private System.Nullable<int> _rPricePlan;
+		
+		public SelectRoom_个结果()
+		{
+		}
+		
+		[Column(Storage="_roomId", DbType="Int NOT NULL")]
+		public int roomId
+		{
+			get
+			{
+				return this._roomId;
+			}
+			set
+			{
+				if ((this._roomId != value))
+				{
+					this._roomId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rStatue", DbType="Int NOT NULL")]
+		public int rStatue
+		{
+			get
+			{
+				return this._rStatue;
+			}
+			set
+			{
+				if ((this._rStatue != value))
+				{
+					this._rStatue = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rFloor", DbType="Int NOT NULL")]
+		public int rFloor
+		{
+			get
+			{
+				return this._rFloor;
+			}
+			set
+			{
+				if ((this._rFloor != value))
+				{
+					this._rFloor = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_phone", DbType="Int")]
+		public System.Nullable<int> phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this._phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_isHourRoom", DbType="Bit")]
+		public System.Nullable<bool> isHourRoom
+		{
+			get
+			{
+				return this._isHourRoom;
+			}
+			set
+			{
+				if ((this._isHourRoom != value))
+				{
+					this._isHourRoom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_description", DbType="NVarChar(50)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_passengerId", DbType="Int")]
+		public System.Nullable<int> passengerId
+		{
+			get
+			{
+				return this._passengerId;
+			}
+			set
+			{
+				if ((this._passengerId != value))
+				{
+					this._passengerId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_rPricePlan", DbType="Int")]
+		public System.Nullable<int> rPricePlan
+		{
+			get
+			{
+				return this._rPricePlan;
+			}
+			set
+			{
+				if ((this._rPricePlan != value))
+				{
+					this._rPricePlan = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InsertPricePlanDayRoom_个结果
+	{
+		
+		private int _rType;
+		
+		private int _pricePlanId;
+		
+		private decimal _disPrice;
+		
+		public InsertPricePlanDayRoom_个结果()
+		{
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this._pricePlanId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_disPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal disPrice
+		{
+			get
+			{
+				return this._disPrice;
+			}
+			set
+			{
+				if ((this._disPrice != value))
+				{
+					this._disPrice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InsertPricePlanHourRoom_个结果
+	{
+		
+		private int _rType;
+		
+		private int _pricePlanId;
+		
+		private decimal _startHourPrice;
+		
+		private decimal _addHourPrice;
+		
+		public InsertPricePlanHourRoom_个结果()
+		{
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this._pricePlanId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_startHourPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal startHourPrice
+		{
+			get
+			{
+				return this._startHourPrice;
+			}
+			set
+			{
+				if ((this._startHourPrice != value))
+				{
+					this._startHourPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_addHourPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal addHourPrice
+		{
+			get
+			{
+				return this._addHourPrice;
+			}
+			set
+			{
+				if ((this._addHourPrice != value))
+				{
+					this._addHourPrice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UpdatePricePlanDayRoom_个结果
+	{
+		
+		private int _rType;
+		
+		private int _pricePlanId;
+		
+		private decimal _disPrice;
+		
+		public UpdatePricePlanDayRoom_个结果()
+		{
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this._pricePlanId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_disPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal disPrice
+		{
+			get
+			{
+				return this._disPrice;
+			}
+			set
+			{
+				if ((this._disPrice != value))
+				{
+					this._disPrice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UpdatePricePlanHourRoom_个结果
+	{
+		
+		private int _rType;
+		
+		private int _pricePlanId;
+		
+		private decimal _startHourPrice;
+		
+		private decimal _addHourPrice;
+		
+		public UpdatePricePlanHourRoom_个结果()
+		{
+		}
+		
+		[Column(Storage="_rType", DbType="Int NOT NULL")]
+		public int rType
+		{
+			get
+			{
+				return this._rType;
+			}
+			set
+			{
+				if ((this._rType != value))
+				{
+					this._rType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_pricePlanId", DbType="Int NOT NULL")]
+		public int pricePlanId
+		{
+			get
+			{
+				return this._pricePlanId;
+			}
+			set
+			{
+				if ((this._pricePlanId != value))
+				{
+					this._pricePlanId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_startHourPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal startHourPrice
+		{
+			get
+			{
+				return this._startHourPrice;
+			}
+			set
+			{
+				if ((this._startHourPrice != value))
+				{
+					this._startHourPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_addHourPrice", DbType="Decimal(0,0) NOT NULL")]
+		public decimal addHourPrice
+		{
+			get
+			{
+				return this._addHourPrice;
+			}
+			set
+			{
+				if ((this._addHourPrice != value))
+				{
+					this._addHourPrice = value;
 				}
 			}
 		}

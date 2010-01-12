@@ -10,7 +10,7 @@ namespace DataGridViewManageTable
 {
     public partial class MyMaskBoxDigit : TextBox
     {
-        private int numLength;
+        private static int numLength;
 
         public int NumLength
         {
@@ -20,7 +20,8 @@ namespace DataGridViewManageTable
         protected System.Windows.Forms.ErrorProvider errorProvider= new System.Windows.Forms.ErrorProvider();
         public MyMaskBoxDigit()
         {            
-            InitializeComponent();               
+            InitializeComponent();
+            this.NumLength = 8;
         }
 
         public MyMaskBoxDigit(IContainer container)
@@ -29,7 +30,7 @@ namespace DataGridViewManageTable
             InitializeComponent();
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.BlinkIfDifferentError;
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaskDecimal);
-            this.numLength = 8;
+            this.NumLength = 8;
         }        
         private void MaskDecimal(object o,KeyPressEventArgs e)
         {
@@ -41,7 +42,7 @@ namespace DataGridViewManageTable
             }
             if (Char.IsDigit(e.KeyChar))
             {
-                if (this.Text.Length>=this.numLength)
+                if (this.Text.Length >= MyMaskBoxDigit.numLength)
                 {
                     e.Handled = true;
                 }
@@ -50,6 +51,7 @@ namespace DataGridViewManageTable
                     e.Handled = false;
                     errorProvider.SetError(this, "");
                 }
+                return;
             }
             else
             {

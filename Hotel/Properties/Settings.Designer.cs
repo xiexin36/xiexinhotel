@@ -120,7 +120,7 @@ namespace Hotels.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1215, 885")]
+        [global::System.Configuration.DefaultSettingValueAttribute("105, 72")]
         public global::System.Drawing.Size roomButtonSize {
             get {
                 return ((global::System.Drawing.Size)(this["roomButtonSize"]));
@@ -132,19 +132,7 @@ namespace Hotels.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9")]
-        public decimal roomButtonFont {
-            get {
-                return ((decimal)(this["roomButtonFont"]));
-            }
-            set {
-                this["roomButtonFont"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1215*885")]
+        [global::System.Configuration.DefaultSettingValueAttribute("105*72")]
         public string roomButtonSizeComboxSelcet {
             get {
                 return ((string)(this["roomButtonSizeComboxSelcet"]));
@@ -211,6 +199,30 @@ namespace Hotels.Properties {
             }
             set {
                 this["roomReservedToCancle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public decimal roomButtonFontNumber {
+            get {
+                return ((decimal)(this["roomButtonFontNumber"]));
+            }
+            set {
+                this["roomButtonFontNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("微软雅黑, 8.25pt")]
+        public global::System.Drawing.Font roomButtonFont {
+            get {
+                return ((global::System.Drawing.Font)(this["roomButtonFont"]));
+            }
+            set {
+                this["roomButtonFont"] = value;
             }
         }
     }
