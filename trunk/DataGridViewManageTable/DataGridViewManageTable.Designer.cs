@@ -35,7 +35,6 @@
             // 
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
-            this.Dock = System.Windows.Forms.DockStyle.Top;
             this.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.MultiSelect = false;
             this.RowTemplate.Height = 23;

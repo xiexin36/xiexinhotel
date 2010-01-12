@@ -32,13 +32,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="roomButtonSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">1215, 885</Value>
-    </Setting>
-    <Setting Name="roomButtonFont" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">9</Value>
+      <Value Profile="(Default)">105, 72</Value>
     </Setting>
     <Setting Name="roomButtonSizeComboxSelcet" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1215*885</Value>
+      <Value Profile="(Default)">105*72</Value>
     </Setting>
     <Setting Name="roomButtonSecondLine" Type="System.String" Scope="User">
       <Value Profile="(Default)">房类</Value>
@@ -54,6 +51,12 @@
     </Setting>
     <Setting Name="roomReservedToCancle" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="roomButtonFontNumber" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="roomButtonFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">微软雅黑, 8.25pt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

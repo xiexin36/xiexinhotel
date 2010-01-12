@@ -15,6 +15,7 @@ namespace Hotels.Windows
     {
         private DataClassesDataContext db = new DataClassesDataContext();
         private int tabIndex;
+       
         private bool isSave;
         public 客房管理()
         {          
@@ -23,11 +24,12 @@ namespace Hotels.Windows
 
         private void 客房管理_Load(object sender, EventArgs e)
         {
-            this.roomFloorsBindingSource.DataSource = this.db.roomFloors;
+            this.roomFloorsBindingSource.DataSource = this.db.roomFloorsView;
             this.roomManageBindingSource.DataSource = this.db.roomManage;
-            this.roomtypeBindingSource.DataSource = this.db.roomtype;
+            this.roomtypeBindingSource.DataSource = this.db.roomTypeView;
             isSave = true;
-
+            this.roomIdMyMaskBoxDigit.NumLength = 4;
+            this.phoneMyMaskBoxDigit.NumLength = 15;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -120,12 +122,10 @@ namespace Hotels.Windows
         {
             if (this.dataGridViewManageTableRoomFloor.SelectedRows.Count > 0)
             {
-                roomFloors rt = (roomFloors)this.roomFloorsBindingSource.List[this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index];
+                roomFloorsView rt = (roomFloorsView)this.roomFloorsBindingSource.List[this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index];
                 roomManage rm = ((IList<roomManage>)this.roomManageBindingSource.List).FirstOrDefault(r => r.rFloor == rt.floorId);
                 if (rm != null)
-                {
                     MessageBox.Show("房间表中具有该楼层的房间,无法删除该房间类型");
-                }
                 else
                 {
                     this.roomFloorsBindingSource.RemoveAt(this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index);
@@ -140,7 +140,7 @@ namespace Hotels.Windows
         {
             if (this.dataGridViewManageTableRoomType.SelectedRows.Count > 0)
             {
-                roomtype rt = (roomtype)this.roomtypeBindingSource.List[this.dataGridViewManageTableRoomType.SelectedRows[0].Index];
+                roomTypeView rt = (roomTypeView)this.roomtypeBindingSource.List[this.dataGridViewManageTableRoomType.SelectedRows[0].Index];
                 roomManage rm = ((IList<roomManage>)this.roomManageBindingSource.List).FirstOrDefault(r => r.rType == rt.type);
                 if (rm != null)
                 {
@@ -196,16 +196,17 @@ namespace Hotels.Windows
                 MessageBox.Show("房间楼层名不能为空,请重新!");
                 return;
             }
-            roomFloors rf = ((IList<roomFloors>)this.roomFloorsBindingSource.List).FirstOrDefault(r => (r.floorName).Equals(this.textBoxFloorName.Text));
+            roomFloorsView rf = ((IList<roomFloorsView>)this.roomFloorsBindingSource.List).FirstOrDefault(r => (r.floorName).Equals(this.textBoxFloorName.Text));
             if (rf != null)
             {
                 MessageBox.Show("楼层[" + rf.floorName + "]已经存在,请输入其他的房间类型");
                 return;
             }
-            rf = new roomFloors();
-            int? id = null;
-            db.GetMaxFloorId(ref id);
-            rf.floorId=(int)(id+1);
+            rf = new roomFloorsView();
+            if (roomFloorsBindingSource.Count == 0)
+                rf.floorId = 1;
+            else
+                rf.floorId = ((IList<roomFloorsView>)this.roomFloorsBindingSource.List).Max(p => p.floorId) + 1;
             rf.floorName = this.textBoxFloorName.Text;          
             this.roomFloorsBindingSource.Add(rf);
             this.roomFloorsBindingSource.MoveLast();
@@ -218,16 +219,17 @@ namespace Hotels.Windows
                 MessageBox.Show("房间类型与单价不能为空,请重新!");
                 return;
             }
-            roomtype rt = ((IList<roomtype>)this.roomtypeBindingSource.List).FirstOrDefault(r => (r.typeName).Equals(this.typeNameTextBox.Text));
+            roomTypeView rt = ((IList<roomTypeView>)this.roomtypeBindingSource.List).FirstOrDefault(r => (r.typeName).Equals(this.typeNameTextBox.Text));
             if (rt != null)
             {
                 MessageBox.Show("房间类型[" + rt.typeName + "]已经存在,请输入其他的房间类型");
                 return;
             }
-            rt = new roomtype();
-            int? id=null;
-            db.GetMaxRoomTypeId(ref id);
-            rt.type = (int)(id+1);          
+            rt = new roomTypeView();
+            if (roomtypeBindingSource.Count == 0)
+                rt.type = 1;
+            else
+                rt.type = ((IList<roomTypeView>)this.roomtypeBindingSource.List).Max(p => p.type) + 1;          
             rt.typeName = this.typeNameTextBox.Text;
             rt.onePrice = Convert.ToDecimal(this.myMaskBoxMoneyOnePrice.Text);
             if (this.myMaskBoxMoneyHourStartPrice.Text != "")
@@ -268,7 +270,7 @@ namespace Hotels.Windows
             if (this.roomtypeBindingSource.Count == 0)
                 return;
             int index = dataGridViewManageTableRoomType.SelectedRows[0].Index;
-            roomtype rt = (roomtype)this.roomtypeBindingSource.List[index];
+            roomTypeView rt = (roomTypeView)this.roomtypeBindingSource.List[index];
             if (rt.typeName.Equals(this.typeNameTextBox.Text))
             {
                 rt.onePrice = Convert.ToDecimal(this.myMaskBoxMoneyOnePrice.Text);
@@ -279,7 +281,7 @@ namespace Hotels.Windows
             }
             else
             {
-                roomtype rtt = ((IList<roomtype>)this.roomtypeBindingSource.List).FirstOrDefault(r => (r.typeName).Equals(this.typeNameTextBox.Text));
+                roomTypeView rtt = ((IList<roomTypeView>)this.roomtypeBindingSource.List).FirstOrDefault(r => (r.typeName).Equals(this.typeNameTextBox.Text));
                 if (rtt != null)
                 {
                     MessageBox.Show("已经存在相同的房间类型名,无法修改");
@@ -298,14 +300,14 @@ namespace Hotels.Windows
         {
             if (this.roomFloorsBindingSource.Count == 0)
                 return;
-            roomFloors rf = ((IList<roomFloors>)this.roomFloorsBindingSource.List).FirstOrDefault(r => (r.floorName).Equals(this.textBoxFloorName.Text));
+            roomFloorsView rf = ((IList<roomFloorsView>)this.roomFloorsBindingSource.List).FirstOrDefault(r => (r.floorName).Equals(this.textBoxFloorName.Text));
             if (rf != null)
             {
                 MessageBox.Show("已经存在相同的楼层名,无法修改");
                 return;
             } 
             int index = this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index;
-            rf = (roomFloors)this.roomFloorsBindingSource.List[index];                   
+            rf = (roomFloorsView)this.roomFloorsBindingSource.List[index];                   
             rf.floorName = this.textBoxFloorName.Text;
         }
 
@@ -331,17 +333,31 @@ namespace Hotels.Windows
                     case false: this.isHourRoomCheckBox.CheckState = CheckState.Unchecked; break;
                 }
             }
+            else
+            {
+                this.roomIdMyMaskBoxDigit.Text = "";
+                this.descriptionTextBox.Text = "";
+                this.phoneMyMaskBoxDigit.Text = "";
+                this.isHourRoomCheckBox.CheckState = CheckState.Indeterminate;
+            }
         }
 
         private void dataGridViewManageTableRoomType_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewManageTableRoomType.SelectedRows.Count > 0)
             {
-                roomtype rt = (roomtype)this.roomtypeBindingSource.List[this.dataGridViewManageTableRoomType.SelectedRows[0].Index];
+                roomTypeView rt = (roomTypeView)this.roomtypeBindingSource.List[this.dataGridViewManageTableRoomType.SelectedRows[0].Index];
                 this.typeNameTextBox.Text = rt.typeName;
                 this.myMaskBoxMoneyHourAddPrice.Text = rt.hourAddPrice.ToString();
                 this.myMaskBoxMoneyHourStartPrice.Text = rt.hourStartPrice.ToString();
                 this.myMaskBoxMoneyOnePrice.Text = rt.onePrice.ToString();
+            }
+            else
+            {
+                this.typeNameTextBox.Text = "";
+                this.myMaskBoxMoneyHourAddPrice.Text = "";
+                this.myMaskBoxMoneyHourStartPrice.Text ="";
+                this.myMaskBoxMoneyOnePrice.Text = "";
             }
         }
 
@@ -349,9 +365,11 @@ namespace Hotels.Windows
         {
             if (this.dataGridViewManageTableRoomFloor.SelectedRows.Count > 0)
             {
-                roomFloors rt = (roomFloors)this.roomFloorsBindingSource.List[this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index];
+                roomFloorsView rt = (roomFloorsView)this.roomFloorsBindingSource.List[this.dataGridViewManageTableRoomFloor.SelectedRows[0].Index];
                 this.textBoxFloorName.Text = rt.floorName;
             }
+            else
+                this.textBoxFloorName.Text = "";
         }
 
         /// <summary>

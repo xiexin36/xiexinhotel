@@ -60,9 +60,14 @@ namespace Hotels.Windows
         {
             string a = this.myComboBoxNoEditRoomButtonSize.Text;
             Settings.Default.roomButtonSizeComboxSelcet = a;
-            int Sizewidth = Convert.ToInt32(a.Substring(0, 4));
-            int Sizeheight = Convert.ToInt32(a.Substring(5, 4));
+            int Sizewidth = Convert.ToInt32(a.Substring(0, 3));
+            int Sizeheight = Convert.ToInt32(a.Substring(4, 2));
             Settings.Default.roomButtonSize = new Size(Sizewidth, Sizeheight);     
+        }
+
+        private void numericUpDownRoomButtonFont_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Default.roomButtonFont = new Font("微软雅黑", (float)this.numericUpDownRoomButtonFont.Value);
         }
     }
 }
